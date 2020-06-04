@@ -2,9 +2,15 @@
   <section id="app" class="bg-purple">
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">
-          <img src="./assets/logo.png" width="60" height="60" alt="" />
-        </a>
+        <router-link class="navbar-brand" to="/">
+          <img
+            src="./assets/logo.png"
+            active-class="active"
+            width="60"
+            height="60"
+            alt
+          />
+        </router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -18,11 +24,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">KELAS</a>
+            <li class="nav-item">
+              <router-link class="nav-link" active-class="active" to="/kelas"
+                >KELAS</router-link
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">MADING</a>
+              <router-link class="nav-link" active-class="active" to="/mading"
+                >MADING</router-link
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">ALUR BELAJAR</a>
@@ -37,30 +47,27 @@
         </div>
       </nav>
     </div>
-    <Home />
+    <router-view />
   </section>
 </template>
 
 <script>
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import Home from "./components/Home.vue";
+import "material-icons/iconfont/material-icons.css";
 
 export default {
   name: "App",
-  components: {
-    Home,
-  },
 };
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700?family=Red+Hat+Display:wght@400;500;700&display=swap");
 body {
   color: #fff;
 }
-.active > .nav-link {
+.active > .nav-link,
+.navbar-nav .nav-link.active {
   color: #31de31 !important;
 }
 .bg-purple {
@@ -70,12 +77,14 @@ body {
   color: #150e20 !important;
 }
 #app {
+  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 30px;
 }
 .text-merri {
-  font-family: "Merriweather", serif;
+  /* font-family: "Merriweather", serif; */
+  font-family: "Red Hat Display", sans-serif;
 }
 .navbar {
   padding-top: 30px;

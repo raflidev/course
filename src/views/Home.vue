@@ -4,14 +4,11 @@
       <div class="container mt-5">
         <div class="row">
           <div class="col-lg-7">
-            <h1 class="text-merri pb-3">
-              Build Your Future Career
-            </h1>
+            <h1 class="text-merri pb-3">Build Your Future Career</h1>
             <h5 class="font-weight-light">
               Pelajari koding untuk membuat website dan aplikasi
-              <br />
-              ingin menjenjang karir programmer atau membuat karya? <br />
-              kami tunggu dikelas!
+              <br />ingin menjenjang karir programmer atau membuat karya?
+              <br />kami tunggu dikelas!
             </h5>
             <form class="pt-4">
               <div class="form-group">
@@ -45,7 +42,34 @@
         </div>
       </div>
     </section>
-    <section class="kelas-populer py-5 mt-5">
+    <section class="kenapa-kami py-5 mt-5">
+      <div class="mt-5 text-purple">
+        <h1 class="text-merri pb-3 text-center">Kenapa [brand]?</h1>
+        <div class="row justify-content-center mt-5">
+          <div class="col col-12 col-lg-11">
+            <div class="row justify-content-center mt-4">
+              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                <span class="material-icons">android</span>
+                <br />Akses kelas seumur hidup
+              </div>
+              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                <span class="material-icons">chat</span>
+                <br />Konsultasi terbuka tiap waktu
+              </div>
+              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                <span class="material-icons">save_alt</span>
+                <br />Materi dapat didownload
+              </div>
+              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                <span class="material-icons">translate</span>
+                <br />Berbahasa indonesia
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="kelas-populer py-5 border-top">
       <div class="mt-5 container text-purple">
         <h1 class="text-merri pb-3 text-center">Kelas Populer</h1>
         <div class="row justify-content-center mt-5">
@@ -55,7 +79,7 @@
                 <div class="card">
                   <div class="card-body">
                     <img
-                      src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
+                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
                       class="card-img-top"
                     />
                     <h6 class="line-height-1 mb-0 mt-3 text-600">
@@ -63,9 +87,9 @@
                     </h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
-                    <div class="row ">
+                    <div class="row">
                       <div class="col-auto">
-                        <div class="mr-2 ">
+                        <div class="mr-2">
                           <img
                             src="../assets/logo.png"
                             width="50"
@@ -73,7 +97,7 @@
                           />
                         </div>
                       </div>
-                      <div class="col mt-2 pl-2">
+                      <div class="col pl-2">
                         <h6 class="mb-0 line-height-1 text-600">
                           Rafli Ramadhan
                         </h6>
@@ -95,9 +119,9 @@
                     </h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
-                    <div class="row ">
+                    <div class="row">
                       <div class="col-auto">
-                        <div class="mr-2 ">
+                        <div class="mr-2">
                           <img
                             src="../assets/logo.png"
                             width="50"
@@ -105,7 +129,7 @@
                           />
                         </div>
                       </div>
-                      <div class="col mt-2 pl-2">
+                      <div class="col pl-2">
                         <h6 class="mb-0 line-height-1 text-600">
                           Rafli Ramadhan
                         </h6>
@@ -127,9 +151,9 @@
                     </h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
-                    <div class="row ">
+                    <div class="row">
                       <div class="col-auto">
-                        <div class="mr-2 ">
+                        <div class="mr-2">
                           <img
                             src="../assets/logo.png"
                             width="50"
@@ -137,7 +161,7 @@
                           />
                         </div>
                       </div>
-                      <div class="col mt-2 pl-2">
+                      <div class="col pl-2">
                         <h6 class="mb-0 line-height-1 text-600">
                           Rafli Ramadhan
                         </h6>
@@ -167,9 +191,9 @@
                         detail dan mudah dipahami.
                       </h6>
                       <hr />
-                      <div class="row ">
+                      <div class="row">
                         <div class="col-auto">
-                          <div class="mr-2 ">
+                          <div class="mr-2">
                             <img
                               src="../assets/logo.png"
                               width="50"
@@ -195,9 +219,9 @@
                         ilmu di era revolusi industri 4.0.
                       </h6>
                       <hr />
-                      <div class="row ">
+                      <div class="row">
                         <div class="col-auto">
-                          <div class="mr-2 ">
+                          <div class="mr-2">
                             <img
                               src="../assets/logo.png"
                               width="50"
@@ -223,9 +247,9 @@
                         dan yang paling penting biayanya sangat terjangkau.
                       </h6>
                       <hr />
-                      <div class="row ">
+                      <div class="row">
                         <div class="col-auto">
-                          <div class="mr-2 ">
+                          <div class="mr-2">
                             <img
                               src="../assets/logo.png"
                               width="50"
@@ -247,9 +271,74 @@
             </div>
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-outline-secondary">
-              REVIEW LAINNYA
-            </button>
+            <a href="#" class="btn btn-outline-secondary">REVIEW LAINNYA</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cari-mentor py-5 border-top bg-purple">
+      <div class="container">
+        <div class="mt-5 container text-center">
+          <h1 class="text-merri pb-3">Ingin Menjadi Mentor?</h1>
+          <p>
+            Diskusikan ide anda dan keahlian anda kepada kami, pasti kami sambut
+            hangat
+          </p>
+          <a href class="btn btn-outline-purple my-3">TERTARIK</a>
+        </div>
+      </div>
+    </section>
+    <section class="footer py-5">
+      <div class="container text-purple">
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <h5 class="text-600">Office</h5>
+            <p class="text-gray-500">
+              brand@gmail.com
+              <br />Bekasi, Indonesia
+            </p>
+          </div>
+          <div class="col-lg col-6">
+            <h5 class="text-600">Social</h5>
+            <ul class="text-gray-500 list-unstyled sitemap">
+              <li>
+                <a href="http://">Instagram</a>
+              </li>
+              <li>
+                <a href="http://">Youtube</a>
+              </li>
+              <li>
+                <a href="http://">Twitter</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg col-6">
+            <h5 class="text-600">Information</h5>
+            <ul class="text-gray-500 list-unstyled sitemap">
+              <li>
+                <a href="http://">Cara Membeli Kelas</a>
+              </li>
+              <li>
+                <a href="http://">FAQ</a>
+              </li>
+              <li>
+                <a href="http://">Kebijakan Privasi</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg col-6">
+            <h5 class="text-600">Resources</h5>
+            <ul class="text-gray-500 list-unstyled sitemap">
+              <li>
+                <a href="http://">Biaya Kelas</a>
+              </li>
+              <li>
+                <a href="http://">Menjadi Mentor</a>
+              </li>
+              <li>
+                <a href="http://">Contact Us</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -264,8 +353,11 @@ export default {
 </script>
 
 <style>
+.cari-mentor,
+.kenapa-kami,
 .kelas-populer,
-.ulasan-mereka {
+.ulasan-mereka,
+.footer {
   background-color: #fff;
 }
 h1 {
@@ -273,5 +365,17 @@ h1 {
 }
 h5 {
   line-height: 30px;
+}
+.why {
+  min-height: 15rem;
+}
+.material-icons {
+  font-size: 40px;
+}
+section.footer .sitemap a {
+  color: inherit;
+}
+section.footer {
+  background-color: #fafafa;
 }
 </style>
