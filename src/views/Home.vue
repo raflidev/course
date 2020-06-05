@@ -22,19 +22,10 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                />
+                <input type="password" class="form-control" id="exampleInputPassword1" />
               </div>
               <div class="form-group">
-                <button
-                  type="submit"
-                  class="btn btn-outline-purple form-control"
-                >
-                  Submit
-                </button>
+                <button type="submit" class="btn btn-outline-purple form-control">Login</button>
               </div>
             </form>
           </div>
@@ -82,25 +73,17 @@
                       src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
                       class="card-img-top"
                     />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">
-                      Full-Stack Web Developer
-                    </h6>
+                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
                     <div class="row">
                       <div class="col-auto">
                         <div class="mr-2">
-                          <img
-                            src="../assets/logo.png"
-                            width="50"
-                            height="50"
-                          />
+                          <img src="../assets/logo.png" width="50" height="50" />
                         </div>
                       </div>
                       <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">
-                          Rafli Ramadhan
-                        </h6>
+                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                         <p class="text-gray-500">Full-Stack Developer</p>
                       </div>
                     </div>
@@ -114,25 +97,17 @@
                       src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
                       class="card-img-top"
                     />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">
-                      Full-Stack Web Developer
-                    </h6>
+                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
                     <div class="row">
                       <div class="col-auto">
                         <div class="mr-2">
-                          <img
-                            src="../assets/logo.png"
-                            width="50"
-                            height="50"
-                          />
+                          <img src="../assets/logo.png" width="50" height="50" />
                         </div>
                       </div>
                       <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">
-                          Rafli Ramadhan
-                        </h6>
+                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                         <p class="text-gray-500">Full-Stack Developer</p>
                       </div>
                     </div>
@@ -146,25 +121,17 @@
                       src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
                       class="card-img-top"
                     />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">
-                      Full-Stack Web Developer
-                    </h6>
+                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
                     <span class="text-gray-500">Rp. 360.000</span>
                     <hr />
                     <div class="row">
                       <div class="col-auto">
                         <div class="mr-2">
-                          <img
-                            src="../assets/logo.png"
-                            width="50"
-                            height="50"
-                          />
+                          <img src="../assets/logo.png" width="50" height="50" />
                         </div>
                       </div>
                       <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">
-                          Rafli Ramadhan
-                        </h6>
+                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                         <p class="text-gray-500">Full-Stack Developer</p>
                       </div>
                     </div>
@@ -194,17 +161,11 @@
                       <div class="row">
                         <div class="col-auto">
                           <div class="mr-2">
-                            <img
-                              src="../assets/logo.png"
-                              width="50"
-                              height="50"
-                            />
+                            <img src="../assets/logo.png" width="50" height="50" />
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">
-                            Rafli Ramadhan
-                          </h6>
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                           <span class="text-gray-500">Tukang Bakso</span>
                         </div>
                       </div>
@@ -222,17 +183,11 @@
                       <div class="row">
                         <div class="col-auto">
                           <div class="mr-2">
-                            <img
-                              src="../assets/logo.png"
-                              width="50"
-                              height="50"
-                            />
+                            <img src="../assets/logo.png" width="50" height="50" />
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">
-                            Rafli Ramadhan
-                          </h6>
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                           <span class="text-gray-500">Tukang Bakso</span>
                         </div>
                       </div>
@@ -250,17 +205,11 @@
                       <div class="row">
                         <div class="col-auto">
                           <div class="mr-2">
-                            <img
-                              src="../assets/logo.png"
-                              width="50"
-                              height="50"
-                            />
+                            <img src="../assets/logo.png" width="50" height="50" />
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">
-                            Rafli Ramadhan
-                          </h6>
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
                           <span class="text-gray-500">Tukang Bakso</span>
                         </div>
                       </div>
@@ -288,67 +237,12 @@
         </div>
       </div>
     </section>
-    <section class="footer py-5">
-      <div class="container text-purple">
-        <div class="row">
-          <div class="col-lg-4 col-6">
-            <h5 class="text-600">Office</h5>
-            <p class="text-gray-500">
-              brand@gmail.com
-              <br />Bekasi, Indonesia
-            </p>
-          </div>
-          <div class="col-lg col-6">
-            <h5 class="text-600">Social</h5>
-            <ul class="text-gray-500 list-unstyled sitemap">
-              <li>
-                <a href="http://">Instagram</a>
-              </li>
-              <li>
-                <a href="http://">Youtube</a>
-              </li>
-              <li>
-                <a href="http://">Twitter</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg col-6">
-            <h5 class="text-600">Information</h5>
-            <ul class="text-gray-500 list-unstyled sitemap">
-              <li>
-                <a href="http://">Cara Membeli Kelas</a>
-              </li>
-              <li>
-                <a href="http://">FAQ</a>
-              </li>
-              <li>
-                <a href="http://">Kebijakan Privasi</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg col-6">
-            <h5 class="text-600">Resources</h5>
-            <ul class="text-gray-500 list-unstyled sitemap">
-              <li>
-                <a href="http://">Biaya Kelas</a>
-              </li>
-              <li>
-                <a href="http://">Menjadi Mentor</a>
-              </li>
-              <li>
-                <a href="http://">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 </template>
 
 <script>
 export default {
-  name: "Home",
+  name: "Home"
 };
 </script>
 
@@ -366,16 +260,7 @@ h1 {
 h5 {
   line-height: 30px;
 }
-.why {
-  min-height: 15rem;
-}
 .material-icons {
   font-size: 40px;
-}
-section.footer .sitemap a {
-  color: inherit;
-}
-section.footer {
-  background-color: #fafafa;
 }
 </style>
