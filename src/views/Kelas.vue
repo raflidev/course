@@ -14,187 +14,189 @@
       </div>
     </section>
     <section class="bg-white text-purple py-3">
-      <div class="row justify-content-center">
-        <div class="col-lg-9 col-sm-12">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-11 col-sm-12">
+            <div class="row justify-content-center">
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="kelas/fullstack-web-developer" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-4 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
+              <div class="col-lg-4 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <img
+                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                        class="card-img-top"
+                      />
 
-                    <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                    <h6>Rp 360.000</h6>
-                    <span>10 Episode</span>
-                    <span class="mx-2">·</span>
-                    <span>Pemula</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
+                      <h6>Rp 360.000</h6>
+                      <span>10 Episode</span>
+                      <span class="mx-2">·</span>
+                      <span>Pemula</span>
+                      <hr />
+                      <div class="row">
+                        <div class="col-auto">
+                          <div class="mr-2">
+                            <img src="../assets/logo.png" width="50" height="50" />
+                          </div>
+                        </div>
+                        <div class="col pl-2">
+                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <p class="text-gray-500">Full-Stack Developer</p>
                         </div>
                       </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
                     </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

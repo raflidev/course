@@ -4,6 +4,9 @@ import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
 import Kelas from "../views/Kelas.vue";
 import Roadmap from "../views/Roadmap.vue";
+import Redirect from "../views/Redirect.vue";
+import DetailMading from "../views/detail/Mading.vue";
+import DetailKelas from "../views/detail/Kelas.vue";
 
 Vue.use(VueRouter);
 
@@ -28,8 +31,21 @@ const routes = [
     name: "Roadmap",
     component: Roadmap,
   },
+  {
+    path: "/kelas/fullstack-web-developer",
+    name: "Detailkelas",
+    component: DetailKelas,
+  },
+  {
+    path: "/mading/perbankan",
+    name: "DetailMading",
+    component: DetailMading,
+  },
+  {
+    path: "*",
+    component: Redirect,
+  },
 ];
-
 const router = new VueRouter({
   routes,
   mode: "history",

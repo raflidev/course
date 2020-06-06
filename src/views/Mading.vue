@@ -14,67 +14,87 @@
       </div>
     </section>
     <section class="bg-white text-purple py-3">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="mading/perbankan" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
+                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
+                      <span>@rafliram</span>
+                      <span class="mx-2">·</span>
+                      <span>18 menit lalu</span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

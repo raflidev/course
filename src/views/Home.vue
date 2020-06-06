@@ -29,7 +29,9 @@
               </div>
             </form>
           </div>
-          <div class="col-lg-5"></div>
+          <div class="col-lg-5">
+            <img src="@/assets/browser.svg" class="img-fluid d-none d-sm-block mt-5" />
+          </div>
         </div>
       </div>
     </section>
@@ -233,7 +235,9 @@
             Diskusikan ide anda dan keahlian anda kepada kami, pasti kami sambut
             hangat
           </p>
-          <a href class="btn btn-outline-purple my-3">TERTARIK</a>
+          <img src="@/assets/moment.svg" class="img-fluid" height="200" width="200" />
+          <br />
+          <a href class="btn btn-outline-purple my-5">SAYA TERTARIK</a>
         </div>
       </div>
     </section>

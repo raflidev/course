@@ -4,77 +4,38 @@
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Roadmap</h1>
         <p class="font-weight-light">Tuntunan cara kamu belajar paling efektif</p>
-        <form action="get">
-          <div class="form-row justify-content-center">
-            <div class="col-lg-6 col-sm-12">
-              <input type="text" class="form-control" placeholder="Cari karya" />
-            </div>
-          </div>
-        </form>
       </div>
     </section>
-    <section class="bg-white text-purple py-3">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="row justify-content-center">
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 my-3">
-              <div class="card">
-                <a href="http://" class="stretched-link custom-card">
-                  <div class="card-body">
-                    <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                    <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                  </div>
-                </a>
+    <section class="bg-white text-purple py-3 roadmap">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-11">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 my-3">
+                <div class="card">
+                  <a href="http://" class="stretched-link custom-card">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <img
+                            src="https://buildwithangga.com//storage/assets/images/thumbnail%20kelas%20react%20web%20front%20end%20developer%20buildwith%20angga.png"
+                            class="card-img-top"
+                          />
+                        </div>
+                        <div class="col-lg-6">
+                          <h5
+                            class="card-title line-height-1 mb-0 text-600 pt-2"
+                          >Fullstack Web Developer</h5>
+                          <div class="card-text">
+                            <span>Menengah</span>
+                            <span class="mx-2">·</span>
+                            <span>5 Kelas</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
