@@ -2,8 +2,8 @@
   <main>
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
-        <h1 class="text-merri pb-3">Mading</h1>
-        <p class="font-weight-light">Kumpulan karya member yang telah belajar di[brand]</p>
+        <h1 class="text-merri pb-3">Roadmap</h1>
+        <p class="font-weight-light">Tuntunan cara kamu belajar paling efektif</p>
         <form action="get">
           <div class="form-row justify-content-center">
             <div class="col-lg-6 col-sm-12">
@@ -108,14 +108,3 @@
     </section>
   </main>
 </template>
-
-<style>
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.card:hover {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-}
-</style>

@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
 import Kelas from "../views/Kelas.vue";
+import Roadmap from "../views/Roadmap.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
     path: "/kelas",
     name: "Kelas",
     component: Kelas,
+  },
+  {
+    path: "/roadmap",
+    name: "Roadmap",
+    component: Roadmap,
   },
 ];
 

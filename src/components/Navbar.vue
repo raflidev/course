@@ -23,7 +23,7 @@
           <router-link class="nav-link" active-class="active" to="/mading">MADING</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ALUR BELAJAR</a>
+          <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
         </li>
         <li class="nav-item">
           <span class="nav-divider"></span>
