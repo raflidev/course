@@ -147,7 +147,7 @@
     </section>
     <section class="ulasan-mereka py-5 border-top">
       <div class="container text-purple">
-        <div class="mt-5 container text-purple">
+        <div class="mt-5 text-purple">
           <h1 class="text-merri pb-3 text-center">Ulasan Mereka</h1>
           <div class="row justify-content-center mt-5">
             <div class="col col-12 col-lg-12">
