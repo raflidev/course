@@ -42,19 +42,19 @@
           <div class="col col-12 col-lg-11">
             <div class="row justify-content-center mt-4">
               <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons">android</span>
+                <span class="material-icons big-icon">android</span>
                 <br />Akses kelas seumur hidup
               </div>
               <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons">chat</span>
+                <span class="material-icons big-icon">chat</span>
                 <br />Konsultasi terbuka tiap waktu
               </div>
               <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons">save_alt</span>
+                <span class="material-icons big-icon">save_alt</span>
                 <br />Materi dapat didownload
               </div>
               <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons">translate</span>
+                <span class="material-icons big-icon">translate</span>
                 <br />Berbahasa indonesia
               </div>
             </div>
@@ -264,7 +264,7 @@ h1 {
 h5 {
   line-height: 30px;
 }
-.material-icons {
+.big-icon {
   font-size: 40px;
 }
 </style>

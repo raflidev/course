@@ -20,7 +20,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-6 my-3">
                 <div class="card">
-                  <a href="mading/perbankan" class="stretched-link custom-card">
+                  <a href="mading/aplikasi-perbankan" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
                       <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>

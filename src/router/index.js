@@ -37,7 +37,7 @@ const routes = [
     component: DetailKelas,
   },
   {
-    path: "/mading/perbankan",
+    path: "/mading/aplikasi-perbankan",
     name: "DetailMading",
     component: DetailMading,
   },
