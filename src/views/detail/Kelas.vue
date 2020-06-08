@@ -4,6 +4,7 @@
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Fullstack Web Developer</h1>
         <h5 class="text-muted">Dibuat oleh Rafli Ramadhan</h5>
+        <a href="#beli" class="btn btn-outline-purple mt-3">BELI KELAS</a>
       </div>
     </section>
     <section class="bg-white text-purple py-3">
@@ -19,7 +20,7 @@
                         id="youtube-5481"
                         frameborder="0"
                         allowfullscreen="1"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                         title="Player for 3  HTML Add Images"
                         width="875"
                         height="410"
@@ -40,63 +41,75 @@
                 <div class="my-5">
                   <h4 class="text-merri font-weight-bold">Materi kelas</h4>
                   <span class="text-muted">materi yang akan kamu pelajari</span>
-                  <div
-                    class="card mt-3"
-                    id="accordionExample"
-                    data-toggle="collapse"
-                    data-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    <div>
-                      <div class="card-header" id="headingOne">Basic</div>
-                    </div>
-                  </div>
-                  <div
-                    id="collapseOne"
-                    class="collapse show"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      <div class="card my-2">
-                        <div class="card-header">Instalasi Tools</div>
-                      </div>
-                      <div class="card my-2">
-                        <div class="card-header">Konfigurasi</div>
-                      </div>
-                      <div class="card my-2">
-                        <div class="card-header">Assets</div>
+                  <div class="overflow-auto" height="300">
+                    <div
+                      class="card mt-3"
+                      id="accordionExample"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      <div>
+                        <div class="card-header" id="headingOne">
+                          <div>
+                            Basic
+                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    class="card mt-3"
-                    id="accordionExample"
-                    data-toggle="collapse"
-                    data-target="#collapseTwo"
-                    aria-expanded="true"
-                    aria-controls="collapseTwo"
-                  >
-                    <div>
-                      <div class="card-header" id="headingTwo">HTML Basic</div>
+                    <div
+                      id="collapseOne"
+                      class="collapse show"
+                      aria-labelledby="headingOne"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="card my-2">
+                          <div class="card-header">Instalasi Tools</div>
+                        </div>
+                        <div class="card my-2">
+                          <div class="card-header">Konfigurasi</div>
+                        </div>
+                        <div class="card my-2">
+                          <div class="card-header">Assets</div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div
-                    id="collapseTwo"
-                    class="collapse"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordionExample"
-                  >
-                    <div class="card-body">
-                      <div class="card my-2">
-                        <div class="card-header">Add Table</div>
+                    <div
+                      class="card mt-3"
+                      id="accordionExample"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="collapseTwo"
+                    >
+                      <div>
+                        <div class="card-header" id="headingTwo">
+                          <div>
+                            HTML Basic
+                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
+                          </div>
+                        </div>
                       </div>
-                      <div class="card my-2">
-                        <div class="card-header">Add Image</div>
-                      </div>
-                      <div class="card my-2">
-                        <div class="card-header">Form</div>
+                    </div>
+                    <div
+                      id="collapseTwo"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                      data-parent="#accordionExample"
+                    >
+                      <div class="card-body">
+                        <div class="card my-2">
+                          <div class="card-header">Add Table</div>
+                        </div>
+                        <div class="card my-2">
+                          <div class="card-header">Add Image</div>
+                        </div>
+                        <div class="card my-2">
+                          <div class="card-header">Form</div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -125,7 +138,6 @@
                     <img src="@/assets/logo.png" class="m-2" width="50" />
                   </a>
                 </div>
-
                 <hr />
                 <h5 class="m-0">Sistem Operasi</h5>
                 <p>Windows, Linux, Mac OS</p>
@@ -133,6 +145,57 @@
                 <p>4 GB</p>
                 <h5 class="m-0">Penyimpanan Kosong</h5>
                 <p>5 GB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-purple text-purple my-4" id="beli">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4">
+            <div class="card p-3 my-3">
+              <div class="card-body">
+                <div class="text-center">
+                  <span>Fullstack Web Developer</span>
+                  <h1>Rp. 360.000</h1>
+                </div>
+                <hr />
+                <div>
+                  <div class="item-fitur">
+                    <p class="fitur">Akses Kelas Selamanya</p>
+                    <p class="icon">
+                      <i class="material-icons">check_circle</i>
+                    </p>
+                  </div>
+                  <div class="item-fitur">
+                    <p class="fitur">Konsultasi Kapanpun</p>
+                    <p class="icon">
+                      <i class="material-icons">check_circle</i>
+                    </p>
+                  </div>
+                  <div class="item-fitur">
+                    <p class="fitur">Materi Update</p>
+                    <p class="icon">
+                      <i class="material-icons">check_circle</i>
+                    </p>
+                  </div>
+                  <div class="item-fitur">
+                    <p class="fitur">Source Code</p>
+                    <p class="icon">
+                      <i class="material-icons">check_circle</i>
+                    </p>
+                  </div>
+                  <div class="item-fitur">
+                    <p class="fitur">Sertifikat Kelulusan</p>
+                    <p class="icon">
+                      <i class="material-icons">check_circle</i>
+                    </p>
+                  </div>
+                </div>
+                <hr />
+                <button class="btn btn-primary form-control">BELI SEKARANG</button>
               </div>
             </div>
           </div>
@@ -147,13 +210,20 @@ export default {};
 </script>
 
 <style>
-.ic-accord-materi {
-  float: left;
-  margin-left: -10px;
-  margin-top: 10px;
-  color: #322f56;
+.accord-icon {
+  float: right;
 }
-.btn-accord-materi {
+.accord-materi {
+  float: right;
+}
+.item-fitur {
+  width: 100%;
+  overflow: hidden;
+}
+.item-fitur .fitur {
   float: left;
+}
+.item-fitur .icon {
+  float: right;
 }
 </style>

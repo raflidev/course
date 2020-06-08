@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700&family=Red+Hat+Display:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Red+Hat+Display:wght@400;500;700&display=swap");
 body {
   color: #fff;
 }
