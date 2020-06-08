@@ -14,16 +14,18 @@
               <div class="col-lg-12">
                 <div class="card">
                   <div class="card-body">
-                    <iframe
-                      id="youtube-5481"
-                      frameborder="0"
-                      allowfullscreen="1"
-                      allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                      title="Player for 3  HTML Add Images"
-                      width="875"
-                      height="410"
-                      src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=1&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.buildwithangga.com%2Fkelas%2Fwebsite-tiketsaya&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.buildwithangga.com&amp;widgetid=2"
-                    ></iframe>
+                    <div class="embed-responsive embed-responsive-16by9">
+                      <iframe
+                        id="youtube-5481"
+                        frameborder="0"
+                        allowfullscreen="1"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        title="Player for 3  HTML Add Images"
+                        width="875"
+                        height="410"
+                        src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=1&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.buildwithangga.com%2Fkelas%2Fwebsite-tiketsaya&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.buildwithangga.com&amp;widgetid=2"
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -35,7 +37,7 @@
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nihil iusto impedit nam, id odit enim! Rerum, aliquam nulla. Cumque, similique voluptatum dolorum adipisci qui dolorem id sit delectus provident optio.</p>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quaerat tempora quae culpa accusantium voluptatum. Quae harum quidem eaque totam ipsam quibusdam consectetur? Temporibus porro, suscipit, quidem eaque consequatur dolorum nulla vero ipsa dignissimos molestias ad voluptas atque, eum veniam error.</p>
                 </div>
-                <div class="mt-5">
+                <div class="my-5">
                   <h4 class="text-merri font-weight-bold">Materi kelas</h4>
                   <span class="text-muted">materi yang akan kamu pelajari</span>
                   <div
@@ -68,34 +70,34 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  class="card mt-3"
-                  id="accordionExample"
-                  data-toggle="collapse"
-                  data-target="#collapseTwo"
-                  aria-expanded="true"
-                  aria-controls="collapseTwo"
-                >
-                  <div>
-                    <div class="card-header" id="headingTwo">HTML Basic</div>
+                  <div
+                    class="card mt-3"
+                    id="accordionExample"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="true"
+                    aria-controls="collapseTwo"
+                  >
+                    <div>
+                      <div class="card-header" id="headingTwo">HTML Basic</div>
+                    </div>
                   </div>
-                </div>
-                <div
-                  id="collapseTwo"
-                  class="collapse"
-                  aria-labelledby="headingTwo"
-                  data-parent="#accordionExample"
-                >
-                  <div class="card-body">
-                    <div class="card my-2">
-                      <div class="card-header">Add Table</div>
-                    </div>
-                    <div class="card my-2">
-                      <div class="card-header">Add Image</div>
-                    </div>
-                    <div class="card my-2">
-                      <div class="card-header">Form</div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <div class="card my-2">
+                        <div class="card-header">Add Table</div>
+                      </div>
+                      <div class="card my-2">
+                        <div class="card-header">Add Image</div>
+                      </div>
+                      <div class="card my-2">
+                        <div class="card-header">Form</div>
+                      </div>
                     </div>
                   </div>
                 </div>
