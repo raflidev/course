@@ -13,7 +13,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-6 my-3">
                 <div class="card">
-                  <a href="http://" class="stretched-link custom-card">
+                  <a href="roadmap/fullstack-web-developer" class="stretched-link custom-card">
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-6">

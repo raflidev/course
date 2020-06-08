@@ -67,13 +67,22 @@
                     >
                       <div class="card-body">
                         <div class="card my-2">
-                          <div class="card-header">Instalasi Tools</div>
+                          <div class="card-header">
+                            Instalasi Tools
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">Konfigurasi</div>
+                          <div class="card-header">
+                            Konfigurasi
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">Assets</div>
+                          <div class="card-header">
+                            Assets
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -102,13 +111,22 @@
                     >
                       <div class="card-body">
                         <div class="card my-2">
-                          <div class="card-header">Add Table</div>
+                          <div class="card-header">
+                            Add Table
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">Add Image</div>
+                          <div class="card-header">
+                            Add Image
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">Form</div>
+                          <div class="card-header">
+                            Form
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -212,6 +230,9 @@ export default {};
 <style>
 .accord-icon {
   float: right;
+}
+.accord-icon-item {
+  float: left;
 }
 .accord-materi {
   float: right;
