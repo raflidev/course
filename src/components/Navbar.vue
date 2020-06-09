@@ -29,7 +29,7 @@
           <span class="nav-divider"></span>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-dark" href="#">LOGIN</a>
+          <router-link class="nav-link btn btn-dark" active-class="active" to="/login">LOGIN</router-link>
         </li>
       </ul>
     </div>

@@ -3,6 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
 import Kelas from "../views/Kelas.vue";
+import Login from "../views/Login.vue";
+import Register from "../views/Register.vue";
 import Roadmap from "../views/Roadmap.vue";
 import Redirect from "../views/Redirect.vue";
 import DetailRoadmap from "../views/detail/Roadmap.vue";
@@ -16,6 +18,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/Login",
+    name: "Login",
+    component: Login
+  },
+  {
+    path: "/Daftar",
+    name: "Register",
+    component: Register
   },
   {
     path: "/mading",
