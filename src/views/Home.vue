@@ -1,41 +1,30 @@
 <template>
   <main>
     <section>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-lg-7">
-            <h1 class="text-merri pb-3">Build Your Future Career</h1>
-            <h5 class="font-weight-light">
-              Pelajari koding untuk membuat website dan aplikasi
-              <br />ingin menjenjang karir programmer atau membuat karya?
-              <br />kami tunggu dikelas!
-            </h5>
-            <form class="pt-4">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
+      <div class="wave-container">
+        <div class="container mt-5">
+          <div class="row">
+            <div class="col-lg-7">
+              <h1 class="text-merri pb-3">Make Your Dreams Come True</h1>
+              <h5 class="font-weight-light">
+                Pelajari koding untuk membuat website dan aplikasi
+                <br />ingin menjenjang karir programmer atau membuat karya?
+                <br />kami tunggu dikelas!
+              </h5>
+            </div>
+            <div class="col-lg-5">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                  <img src="@/assets/browser.svg" class="img-fluid d-none d-sm-block" />
+                </div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" />
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-outline-purple form-control">Login</button>
-              </div>
-            </form>
-          </div>
-          <div class="col-lg-5">
-            <img src="@/assets/browser.svg" class="img-fluid d-none d-sm-block mt-5" />
+            </div>
           </div>
         </div>
+        <img id="wave" class src="@/assets/waves.svg" alt srcset />
       </div>
     </section>
-    <section class="kenapa-kami py-5 mt-5">
+    <section class="kenapa-kami py-5">
       <div class="mt-5 text-purple">
         <h1 class="text-merri pb-3 text-center">Kenapa [brand]?</h1>
         <div class="row justify-content-center mt-5">
@@ -251,6 +240,9 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
 .cari-mentor,
 .kenapa-kami,
 .kelas-populer,
@@ -266,5 +258,32 @@ h5 {
 }
 .big-icon {
   font-size: 40px;
+}
+/* #wave {
+  position: absolute;
+  height: 70px;
+  width: 600px;
+  background: #e0efe3;
+} */
+.wave-container {
+  position: relative;
+  /* background: #09f; */
+  /* color: #fff; */
+  /* text-align: center; */
+  overflow: hidden;
+}
+@keyframes animateWave {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.wave-container > svg {
+  display: block;
+  transform-origin: bottom;
+  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 </style>

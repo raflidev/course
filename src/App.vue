@@ -1,10 +1,10 @@
 <template>
   <section id="app" class="bg-purple">
     <div class="container">
-      <Navbar />
+      <Navbar v-if="!$route.meta.hideNavigation" />
     </div>
     <router-view />
-    <Footer />
+    <Footer v-if="!$route.meta.hideNavigation" />
   </section>
 </template>
 

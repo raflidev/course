@@ -17,56 +17,58 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/Login",
     name: "Login",
-    component: Login
+    component: Login,
+    meta: { hideNavigation: true },
   },
   {
     path: "/Daftar",
     name: "Register",
-    component: Register
+    component: Register,
+    meta: { hideNavigation: true },
   },
   {
     path: "/mading",
     name: "Mading",
-    component: Mading
+    component: Mading,
   },
   {
     path: "/kelas",
     name: "Kelas",
-    component: Kelas
+    component: Kelas,
   },
   {
     path: "/roadmap",
     name: "Roadmap",
-    component: Roadmap
+    component: Roadmap,
   },
   {
     path: "/roadmap/fullstack-web-developer",
     name: "DetailRoadmap",
-    component: DetailRoadmap
+    component: DetailRoadmap,
   },
   {
     path: "/kelas/fullstack-web-developer",
     name: "Detailkelas",
-    component: DetailKelas
+    component: DetailKelas,
   },
   {
     path: "/mading/aplikasi-perbankan",
     name: "DetailMading",
-    component: DetailMading
+    component: DetailMading,
   },
   {
     path: "*",
-    component: Redirect
-  }
+    component: Redirect,
+  },
 ];
 const router = new VueRouter({
   routes,
-  mode: "history"
+  mode: "history",
 });
 
 export default router;

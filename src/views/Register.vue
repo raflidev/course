@@ -6,36 +6,32 @@
           <div class="col-lg-11">
             <div class="row justify-content-center">
               <div class="col-lg-5">
-                <div class="card">
-                  <div class="card-body">
-                    <form action method="post">
-                      <h2 class="text-merri">Daftar Akun</h2>
-                      <p>Daftar untuk mulai belajar</p>
-                      <div class="form-group">
-                        <input type="text" class="form-control my-4" placeholder="Nama Lengkap" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control my-4" placeholder="Email Address" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control my-4" placeholder="Password" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control my-4" placeholder="Ulangi Password" />
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control my-4" placeholder="Keahlianmu" />
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary form-control">Masuk</button>
-                      </div>
-                      <p>
-                        Belum punya akun?
-                        <router-link active-class="active" to="/daftar">daftar</router-link>
-                      </p>
-                    </form>
+                <form action method="post">
+                  <h2 class="text-merri">Daftar Akun</h2>
+                  <p>Daftar untuk mulai belajar</p>
+                  <div class="form-group">
+                    <input type="text" class="form-control my-4" placeholder="Nama Lengkap" />
                   </div>
-                </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control my-4" placeholder="Email Address" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control my-4" placeholder="Password" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control my-4" placeholder="Ulangi Password" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control my-4" placeholder="Keahlianmu" />
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary form-control">Masuk</button>
+                  </div>
+                  <p>
+                    Sudah punya akun?
+                    <router-link active-class="active" to="/login">Login</router-link>
+                  </p>
+                </form>
               </div>
             </div>
           </div>
