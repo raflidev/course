@@ -19,7 +19,7 @@
           <div class="col-lg-11 col-sm-12">
             <div class="row justify-content-center">
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="kelas/fullstack-web-developer" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -79,7 +79,7 @@
                 </div>
               </div>
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -109,7 +109,7 @@
                 </div>
               </div>
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -139,7 +139,7 @@
                 </div>
               </div>
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -169,7 +169,7 @@
                 </div>
               </div>
               <div class="col-lg-4 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <img
@@ -232,12 +232,4 @@
 </template>
 
 <style>
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.card:hover {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-}
 </style>

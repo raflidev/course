@@ -19,7 +19,7 @@
           <div class="col-lg-9">
             <div class="row justify-content-center">
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="mading/aplikasi-perbankan" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -32,7 +32,7 @@
                 </div>
               </div>
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -45,7 +45,7 @@
                 </div>
               </div>
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -58,7 +58,7 @@
                 </div>
               </div>
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -71,7 +71,7 @@
                 </div>
               </div>
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -84,7 +84,7 @@
                 </div>
               </div>
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="http://" class="stretched-link custom-card">
                     <div class="card-body">
                       <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
@@ -129,13 +129,3 @@
   </main>
 </template>
 
-<style>
-a.custom-card,
-a.custom-card:hover {
-  color: inherit;
-  text-decoration: none;
-}
-.card:hover {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
-}
-</style>

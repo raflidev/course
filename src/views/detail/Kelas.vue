@@ -51,7 +51,7 @@
                       aria-controls="collapseOne"
                     >
                       <div>
-                        <div class="card-header" id="headingOne">
+                        <div class="card-header shadow-box" id="headingOne">
                           <div>
                             Basic
                             <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
@@ -67,19 +67,19 @@
                     >
                       <div class="card-body">
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Instalasi Tools
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Konfigurasi
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Assets
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
@@ -95,7 +95,7 @@
                       aria-controls="collapseTwo"
                     >
                       <div>
-                        <div class="card-header" id="headingTwo">
+                        <div class="card-header shadow-box" id="headingTwo">
                           <div>
                             HTML Basic
                             <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
@@ -111,19 +111,19 @@
                     >
                       <div class="card-body">
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Add Table
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Add Image
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
-                          <div class="card-header">
+                          <div class="card-header shadow-box">
                             Form
                             <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>

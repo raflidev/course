@@ -12,7 +12,7 @@
           <div class="col-lg-11">
             <div class="row justify-content-center">
               <div class="col-lg-6 my-3">
-                <div class="card">
+                <div class="card shadow-box">
                   <a href="roadmap/fullstack-web-developer" class="stretched-link custom-card">
                     <div class="card-body">
                       <div class="row">

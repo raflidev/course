@@ -58,7 +58,7 @@
           <div class="col col-12 col-lg-11">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow-box">
                   <div class="card-body">
                     <img
                       src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
@@ -82,7 +82,7 @@
                 </div>
               </div>
               <div class="col-11 col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow-box">
                   <div class="card-body">
                     <img
                       src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
@@ -106,7 +106,7 @@
                 </div>
               </div>
               <div class="col-11 col-lg-4 mb-4">
-                <div class="card">
+                <div class="card shadow-box">
                   <div class="card-body">
                     <img
                       src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
@@ -142,7 +142,7 @@
             <div class="col col-12 col-lg-12">
               <div class="row justify-content-center">
                 <div class="col-11 col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card shadow-box">
                     <div class="card-body p-3">
                       <h6 class="line-height-1">
                         Mentornya keren cara menyampaikan setiap materinya juga
@@ -164,7 +164,7 @@
                   </div>
                 </div>
                 <div class="col-11 col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card shadow-box">
                     <div class="card-body p-3">
                       <h6 class="line-height-1">
                         Kelas yang paling recommended pokoknya buat investasi
@@ -186,7 +186,7 @@
                   </div>
                 </div>
                 <div class="col-11 col-lg-4 mb-4">
-                  <div class="card">
+                  <div class="card shadow-box">
                     <div class="card-body p-3">
                       <h6 class="line-height-1">
                         Kelas yang sangat bermanfaat dan ilmu up-to-date sekali
@@ -239,51 +239,3 @@ export default {
 };
 </script>
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
-.cari-mentor,
-.kenapa-kami,
-.kelas-populer,
-.ulasan-mereka,
-.footer {
-  background-color: #fff;
-}
-h1 {
-  font-weight: 700;
-}
-h5 {
-  line-height: 30px;
-}
-.big-icon {
-  font-size: 40px;
-}
-/* #wave {
-  position: absolute;
-  height: 70px;
-  width: 600px;
-  background: #e0efe3;
-} */
-.wave-container {
-  position: relative;
-  /* background: #09f; */
-  /* color: #fff; */
-  /* text-align: center; */
-  overflow: hidden;
-}
-@keyframes animateWave {
-  0% {
-    transform: scale(1, 0);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
-
-.wave-container > svg {
-  display: block;
-  transform-origin: bottom;
-  animation: animateWave 1000ms cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-</style>

@@ -7,18 +7,28 @@
             <div class="row justify-content-center">
               <div class="col-lg-5">
                 <form action method="post">
-                  <h2 class="text-merri">Login</h2>
+                  <h2 class="text-merri">Masuk</h2>
                   <p>masuk untuk mulai belajar</p>
                   <div class="form-group">
                     <label for>Email Address</label>
-                    <input type="text" class="form-control" placeholder="Email Address" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Email Address"
+                    />
                   </div>
                   <div class="form-group">
                     <label for>Password</label>
-                    <input type="text" class="form-control" placeholder="Password" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Password"
+                    />
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary form-control">Masuk</button>
+                    <button type="submit" class="btn btn-primary form-control">
+                      Masuk
+                    </button>
                   </div>
                   <p>
                     Belum punya akun?
@@ -34,6 +44,4 @@
   </main>
 </template>
 
-
-<style>
-</style>
+<style></style>

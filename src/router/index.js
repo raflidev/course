@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
 import Kelas from "../views/Kelas.vue";
 import Login from "../views/Login.vue";
+import Dashboard from "../views/Dashboard.vue";
 import Register from "../views/Register.vue";
 import Roadmap from "../views/Roadmap.vue";
 import Redirect from "../views/Redirect.vue";
@@ -29,6 +30,12 @@ const routes = [
     path: "/Daftar",
     name: "Register",
     component: Register,
+    meta: { hideNavigation: true },
+  },
+  {
+    path: "/Dashboard",
+    name: "Dashboard",
+    component: Dashboard,
     meta: { hideNavigation: true },
   },
   {
