@@ -6,6 +6,9 @@ body {
 .navbar-nav .nav-link.active {
   color: #31de31 !important;
 }
+.bg-green {
+  background-color: #31de31 !important;
+}
 .bg-purple {
   background-color: #150e20 !important;
 }

@@ -1,6 +1,6 @@
 <template>
   <main class="dashboard">
-    <aside class="sidebar">
+    <aside class="sidebar d-none d-sm-block">
       <div class="card py-5">
         <div class="card-body text-center">
           <img src="@/assets/logo.png" width="100" class="img-fluid pb-4" />
@@ -20,14 +20,14 @@
         </div>
       </div>
     </aside>
-    <div class="main-core">
+    <div class="main-core d-none d-sm-block">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <h4>Progress Belajar</h4>
             <p class="text-muted">Berikut ini adalah daftar kelas yang anda ikuti</p>
             <div class="item-kelas">
-              <p class="title">Fullstack Web Development</p>
+              <p class="title">Fullstack Web Developer</p>
               <div class="progress my-2">
                 <div
                   class="progress-bar"
@@ -58,7 +58,7 @@
               <a href class="btn mr-2 btn-sm btn-outline-secondary">LANJUTKAN BELAJAR</a>
             </div>
             <div class="item-kelas">
-              <p class="title">Fullstack Javascript Developement</p>
+              <p class="title">Fullstack Javascript Developer</p>
               <div class="progress my-2">
                 <div
                   class="progress-bar bg-success"
@@ -81,20 +81,93 @@
                 <div class="col-lg-12 border-bottom">
                   <img
                     src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                    width="100"
-                    class="float-left"
+                    width="140"
+                    class="float-left mr-3 pt-5"
                   />
                   <div class="float-left">
                     <div class="badge badge-secondary mr-2">All Level</div>
                     <div class="badge badge-warning mr-2">PREMIUM</div>
-                    <p class="title m-0">Fullstack Web Designer</p>
+                    <p class="title m-0">
+                      <a
+                        href="/kelas/fullstack-web-developer"
+                        class="text-decoration-none text-purple"
+                      >Fullstack Web Designer</a>
+                    </p>
 
                     <p
                       class="text-muted"
-                      style="width:320px"
+                      style="width:300px"
                     >Pelajari desain website yang apik dari awal dari mulai mendesain sampai membuat kodingnya</p>
                   </div>
+                  <a href="#" class="btn btn-secondary btn-sm form-control mb-3">KELAS LAINNYA</a>
                 </div>
+                <div class="col-lg-12">
+                  <h4 class="title mt-4">Terakhir Dipelajari</h4>
+                  <p class="text-muted m-0">Ayo, selesaikan kelas</p>
+                </div>
+                <div class="col-lg-12 my-2">
+                  <div class="item-kelas">
+                    <img
+                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                      width="140"
+                      class="float-left mr-3"
+                    />
+                    <div class="float-left" style="width: 200px;">
+                      <p class="title m-0">Membuat Form Login</p>
+                      <p class="text-muted mb-0">Fullstack Web Developer</p>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
+                  </div>
+                </div>
+                <div class="col-lg-12 my-2">
+                  <div class="item-kelas">
+                    <img
+                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                      width="140"
+                      class="float-left mr-3"
+                    />
+                    <div class="float-left" style="width: 200px;">
+                      <p class="title m-0">Tipe data</p>
+                      <p class="text-muted mb-0">Python Pemula</p>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
+                  </div>
+                </div>
+                <div class="col-lg-12 my-2">
+                  <div class="item-kelas">
+                    <img
+                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                      width="140"
+                      class="float-left mr-3"
+                    />
+                    <div class="float-left" style="width: 200px;">
+                      <p class="title m-0">Mendeploy Ke Heroku</p>
+                      <p class="text-muted mb-0">Fullstack Javascript Developer</p>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- mobile layout -->
+    <div class="d-block fixed-bottom d-sm-none pt-2 py-2 bg-green">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="row">
+              <div class="col-4">
+                <a href>
+                  <div class="item-menu text-center">
+                    <p class="mb-0">
+                      <i class="material-icons">assessment</i>
+                    </p>
+                    <p class="mb-0 mt-0">Progress</p>
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -108,6 +181,9 @@
 export default {};
 </script>
 <style>
+.item-menu {
+  font-size: 12px;
+}
 div.progress {
   width: 350px;
 }
