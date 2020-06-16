@@ -11,6 +11,8 @@ import Redirect from "../views/Redirect.vue";
 import DetailRoadmap from "../views/detail/Roadmap.vue";
 import DetailMading from "../views/detail/Mading.vue";
 import DetailKelas from "../views/detail/Kelas.vue";
+import HomeDashboard from "../views/dashboard/Home.vue";
+import KelasDashboard from "../views/dashboard/Kelas.vue";
 
 Vue.use(VueRouter);
 
@@ -37,6 +39,22 @@ const routes = [
     name: "Dashboard",
     component: Dashboard,
     meta: { hideNavigation: true },
+    children: [
+      {
+        path: "/",
+        redirect: "progress",
+      },
+      {
+        path: "progress",
+        component: HomeDashboard,
+        meta: { hideNavigation: true },
+      },
+      {
+        path: "kelas",
+        component: KelasDashboard,
+        meta: { hideNavigation: true },
+      },
+    ],
   },
   {
     path: "/mading",
