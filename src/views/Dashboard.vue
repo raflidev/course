@@ -22,11 +22,7 @@
         </div>
       </div>
     </aside>
-    <div class="main-core d-none d-sm-block">
-      <div class="container">
-        <router-view></router-view>
-      </div>
-    </div>
+
     <!-- mobile layout -->
     <div class="header-mobile d-block d-sm-none">
       <div class="container">
@@ -42,145 +38,39 @@
         </div>
       </div>
     </div>
-    <div class="d-block d-sm-none bg-white py-4 main-core-mobile">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h4 class="mb-0">Progress Belajar</h4>
-            <p class="text-muted">Berikut ini adalah daftar kelas yang anda ikuti</p>
-            <div class="item-kelas">
-              <div class="row">
-                <div class="col-12">
-                  <div style="float:left;width:300px">
-                    <p class="title">Fullstack Web Developer</p>
-                    <div class="progress progress-mobile my-2">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 50%;"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >50%</div>
-                    </div>
-                    <p class="text-muted">4 dari 10 materi telah selesai</p>
-                    <a href class="btn mr-2 btn-sm btn-outline-secondary">LANJUTKAN</a>
-                    <a href class="btn btn-sm btn-success disabled">CETAK SERTIFIKAT</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-kelas">
-              <div class="row">
-                <div class="col-12">
-                  <div style="float:left;width:300px">
-                    <p class="title">Fullstack Web Developer</p>
-                    <div class="progress progress-mobile my-2">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 50%;"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >50%</div>
-                    </div>
-                    <p class="text-muted">4 dari 10 materi telah selesai</p>
-                    <a href class="btn mr-2 btn-sm btn-outline-secondary">LANJUTKAN</a>
-                    <a href class="btn btn-sm btn-success disabled">CETAK SERTIFIKAT</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item-kelas">
-              <div class="row">
-                <div class="col-12">
-                  <div style="float:left;width:300px">
-                    <p class="title">Fullstack Web Developer</p>
-                    <div class="progress progress-mobile my-2">
-                      <div
-                        class="progress-bar"
-                        role="progressbar"
-                        style="width: 50%;"
-                        aria-valuenow="100"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      >50%</div>
-                    </div>
-                    <p class="text-muted">4 dari 10 materi telah selesai</p>
-                    <a href class="btn mr-2 btn-sm btn-outline-secondary">LANJUTKAN</a>
-                    <a href class="btn btn-sm btn-success disabled">CETAK SERTIFIKAT</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 border-top">
-            <h4 class="title mt-4">Terakhir Dipelajari</h4>
-            <p class="text-muted m-0">Ayo, selesaikan kelas</p>
-          </div>
-          <div class="col-lg-12 my-2">
-            <div class="item-kelas">
-              <div class="float-left" style="width: 240px;">
-                <p class="title m-0">Membuat Form Login</p>
-                <p class="text-muted mb-0">Fullstack Web Developer</p>
-              </div>
-              <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
-            </div>
-          </div>
-          <div class="col-lg-12 my-2">
-            <div class="item-kelas">
-              <div class="float-left" style="width: 240px;">
-                <p class="title m-0">Membuat Form Login</p>
-                <p class="text-muted mb-0">Fullstack Web Developer</p>
-              </div>
-              <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
-            </div>
-          </div>
-          <div class="col-lg-12 my-2">
-            <div class="item-kelas">
-              <div class="float-left" style="width: 240px;">
-                <p class="title m-0">Membuat Form Login</p>
-                <p class="text-muted mb-0">Fullstack Web Developer</p>
-              </div>
-              <a href="#" class="btn btn-sm btn-outline-secondary mt-3 ml-2">LANJUT</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <router-view></router-view>
     <div class="d-block fixed-bottom d-sm-none pt-2 py-2 bg-purple">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-10">
             <div class="row">
               <div class="col-4">
-                <a href>
+                <router-link active-class="active" to="/dashboard/progress">
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">assessment</i>
                     </p>
                     <p class="mb-0 mt-0">Progress</p>
                   </div>
-                </a>
+                </router-link>
               </div>
               <div class="col-4">
-                <a href>
+                <router-link active-class="active" to="/dashboard/kelas">
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
-                      <i class="material-icons">assessment</i>
+                      <i class="material-icons">school</i>
                     </p>
-                    <p class="mb-0 mt-0">Progress</p>
+                    <p class="mb-0 mt-0">Kelas</p>
                   </div>
-                </a>
+                </router-link>
               </div>
               <div class="col-4">
                 <a href>
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
-                      <i class="material-icons">assessment</i>
+                      <i class="material-icons">face</i>
                     </p>
-                    <p class="mb-0 mt-0">Progress</p>
+                    <p class="mb-0 mt-0">Akun</p>
                   </div>
                 </a>
               </div>

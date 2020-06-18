@@ -13,6 +13,7 @@ import DetailMading from "../views/detail/Mading.vue";
 import DetailKelas from "../views/detail/Kelas.vue";
 import HomeDashboard from "../views/dashboard/Home.vue";
 import KelasDashboard from "../views/dashboard/Kelas.vue";
+import KaryaDashboard from "../views/dashboard/Karya.vue";
 
 Vue.use(VueRouter);
 
@@ -20,19 +21,19 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: Home
   },
   {
     path: "/Login",
     name: "Login",
     component: Login,
-    meta: { hideNavigation: true },
+    meta: { hideNavigation: true }
   },
   {
     path: "/Daftar",
     name: "Register",
     component: Register,
-    meta: { hideNavigation: true },
+    meta: { hideNavigation: true }
   },
   {
     path: "/Dashboard",
@@ -42,58 +43,63 @@ const routes = [
     children: [
       {
         path: "/",
-        redirect: "progress",
+        redirect: "progress"
       },
       {
         path: "progress",
         component: HomeDashboard,
-        meta: { hideNavigation: true },
+        meta: { hideNavigation: true }
       },
       {
         path: "kelas",
         component: KelasDashboard,
-        meta: { hideNavigation: true },
+        meta: { hideNavigation: true }
       },
-    ],
+      {
+        path: "karya",
+        component: KaryaDashboard,
+        meta: { hideNavigation: true }
+      }
+    ]
   },
   {
     path: "/mading",
     name: "Mading",
-    component: Mading,
+    component: Mading
   },
   {
     path: "/kelas",
     name: "Kelas",
-    component: Kelas,
+    component: Kelas
   },
   {
     path: "/roadmap",
     name: "Roadmap",
-    component: Roadmap,
+    component: Roadmap
   },
   {
     path: "/roadmap/fullstack-web-developer",
     name: "DetailRoadmap",
-    component: DetailRoadmap,
+    component: DetailRoadmap
   },
   {
     path: "/kelas/fullstack-web-developer",
     name: "Detailkelas",
-    component: DetailKelas,
+    component: DetailKelas
   },
   {
     path: "/mading/aplikasi-perbankan",
     name: "DetailMading",
-    component: DetailMading,
+    component: DetailMading
   },
   {
     path: "*",
-    component: Redirect,
-  },
+    component: Redirect
+  }
 ];
 const router = new VueRouter({
   routes,
-  mode: "history",
+  mode: "history"
 });
 
 export default router;
