@@ -11,28 +11,18 @@
                   <p>masuk untuk mulai belajar</p>
                   <div class="form-group">
                     <label for>Email Address</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Email Address"
-                    />
+                    <input type="text" class="form-control" placeholder="Email Address" />
                   </div>
                   <div class="form-group">
                     <label for>Password</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Password"
-                    />
+                    <input type="text" class="form-control" placeholder="Password" />
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary form-control">
-                      Masuk
-                    </button>
+                    <router-link class="btn btn-primary form-control" to="/dashboard/">Masuk</router-link>
                   </div>
                   <p>
                     Belum punya akun?
-                    <a href="/daftar">Daftar</a>
+                    <router-link to="/daftar">Daftar</router-link>
                   </p>
                 </form>
               </div>

@@ -25,11 +25,12 @@
                     <input type="text" class="form-control my-4" placeholder="Keahlianmu" />
                   </div>
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary form-control">Masuk</button>
+                    <!-- <button type="submit" class="btn btn-primary form-control">Masuk</button> -->
+                    <router-link class="btn btn-primary form-control" to="/login/">Daftar</router-link>
                   </div>
                   <p>
                     Sudah punya akun?
-                    <router-link active-class="active" to="/login">Login</router-link>
+                    <router-link to="/login">Login</router-link>
                   </p>
                 </form>
               </div>

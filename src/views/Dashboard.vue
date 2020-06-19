@@ -17,8 +17,11 @@
         </div>
         <div class="menu">
           <div class="list-menu-header">Pengaturan Akun</div>
-          <a href="http://">Edit Profil</a>
-          <a href="http://">Logout</a>
+          <router-link active-class="active" to="/dashboard/user">Edit Profil</router-link>
+          <router-link
+            class="mt-3 font-weight-light text-decoration-none float-left text-white"
+            to="/"
+          >Logout</router-link>
         </div>
       </div>
     </aside>
@@ -33,7 +36,11 @@
               <p class="mb-0">Rafli Ramadhan</p>
               <p class="font-weight-light">Web Developer</p>
             </div>
-            <a href class="mt-3 font-weight-light text-decoration-none float-left text-white">Logout</a>
+            <router-link
+              class="mt-3 font-weight-light text-decoration-none float-left text-white"
+              to="/"
+            >Logout</router-link>
+            <!-- <a href class="mt-3 font-weight-light text-decoration-none float-left text-white">Logout</a> -->
           </div>
         </div>
       </div>
@@ -45,7 +52,7 @@
           <div class="col-10">
             <div class="row">
               <div class="col-4">
-                <router-link active-class="active" to="/dashboard/progress">
+                <router-link active-class="active" class="text-white" to="/dashboard/progress">
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">assessment</i>
@@ -55,7 +62,7 @@
                 </router-link>
               </div>
               <div class="col-4">
-                <router-link active-class="active" to="/dashboard/kelas">
+                <router-link active-class="active" class="text-white" to="/dashboard/kelas">
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">school</i>
@@ -65,14 +72,14 @@
                 </router-link>
               </div>
               <div class="col-4">
-                <a href>
+                <router-link active-class="active" class="text-white" to="/dashboard/user">
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">face</i>
                     </p>
-                    <p class="mb-0 mt-0">Akun</p>
+                    <p class="mb-0 mt-0">Edit Profil</p>
                   </div>
-                </a>
+                </router-link>
               </div>
             </div>
           </div>
@@ -86,9 +93,16 @@
 export default {};
 </script>
 <style>
-a.active {
-  color: #218221 !important;
+.sidebar .card {
+  color: #fff;
+  background-color: #150e20 !important;
 }
+a.active {
+  color: #31de31 !important;
+}
+/* .item-menu {
+  color: #fff;
+} */
 .main-core-mobile {
   padding-bottom: 80px !important;
 }
@@ -151,7 +165,7 @@ main.dashboard {
   display: block;
   padding: 5px 0;
   font-size: 15px;
-  color: #150e20;
+  color: #fff;
 }
 
 .menu a:hover {
