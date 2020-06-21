@@ -19,7 +19,7 @@
           <div class="list-menu-header">Pengaturan Akun</div>
           <router-link active-class="active" to="/dashboard/user">Edit Profil</router-link>
           <router-link
-            class="mt-3 font-weight-light text-decoration-none float-left text-white"
+            class="font-weight-light text-decoration-none float-left text-white"
             to="/"
           >Logout</router-link>
         </div>
@@ -52,7 +52,11 @@
           <div class="col-10">
             <div class="row">
               <div class="col-4">
-                <router-link active-class="active" class="text-white" to="/dashboard/progress">
+                <router-link
+                  active-class="active"
+                  class="text-white text-decoration-none"
+                  to="/dashboard/progress"
+                >
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">assessment</i>
@@ -62,7 +66,11 @@
                 </router-link>
               </div>
               <div class="col-4">
-                <router-link active-class="active" class="text-white" to="/dashboard/kelas">
+                <router-link
+                  active-class="active"
+                  class="text-white text-decoration-none"
+                  to="/dashboard/kelas"
+                >
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">school</i>
@@ -72,7 +80,11 @@
                 </router-link>
               </div>
               <div class="col-4">
-                <router-link active-class="active" class="text-white" to="/dashboard/user">
+                <router-link
+                  active-class="active"
+                  class="text-white text-decoration-none"
+                  to="/dashboard/user"
+                >
                   <div class="item-menu text-center">
                     <p class="mb-0 icon">
                       <i class="material-icons">face</i>

@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
+import User from "../views/User.vue";
 import Kelas from "../views/Kelas.vue";
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
@@ -36,6 +37,7 @@ const routes = [
     component: Register,
     meta: { hideNavigation: true },
   },
+
   {
     path: "/Dashboard",
     name: "Dashboard",
@@ -72,6 +74,11 @@ const routes = [
     path: "/mading",
     name: "Mading",
     component: Mading,
+  },
+  {
+    path: "/User/rafliram",
+    name: "User",
+    component: User,
   },
   {
     path: "/kelas",

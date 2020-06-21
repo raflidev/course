@@ -11,6 +11,12 @@
                 <br />ingin menjenjang karir programmer atau membuat karya?
                 <br />kami tunggu dikelas!
               </h5>
+
+              <input
+                type="text"
+                class="form-control col-lg-9 col-12 mt-4"
+                placeholder="Cari kelas ex: Javascript"
+              />
             </div>
             <div class="col-lg-5">
               <div class="row justify-content-center">
@@ -25,26 +31,51 @@
       </div>
     </section>
     <section class="kenapa-kami py-5">
-      <div class="mt-5 text-purple">
-        <h1 class="text-merri pb-3 text-center">Kenapa [brand]?</h1>
-        <div class="row justify-content-center mt-5">
-          <div class="col col-12 col-lg-11">
-            <div class="row justify-content-center mt-4">
-              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons big-icon">android</span>
-                <br />Akses kelas seumur hidup
+      <div class="container">
+        <div class="mt-5 text-purple">
+          <h1 class="text-merri pb-3 text-center">Kenapa Skill-up?</h1>
+          <div class="row mt-5 justify-content-center">
+            <div class="col-6 col-lg-6">
+              <div class="row mt-4">
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">android</span>
+                  <br />Lifetime Akses kelas
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">chat</span>
+                  <br />Lifetime Konsultasi
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">save_alt</span>
+                  <br />Materi Dapat Didownload
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">timeline</span>
+                  <br />Pemula Sampai Mahir
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">translate</span>
+                  <br />Berbahasa Indonesia
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">assignment_turned_in</span>
+                  <br />Sertifikat
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">update</span>
+                  <br />Materi Terupdate
+                </div>
+                <div class="col-11 col-lg-3 my-2 mb-4 text-center">
+                  <span class="material-icons big-icon">insert_emoticon</span>
+                  <br />Gampang Dipahami
+                </div>
               </div>
-              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons big-icon">chat</span>
-                <br />Konsultasi terbuka tiap waktu
-              </div>
-              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons big-icon">save_alt</span>
-                <br />Materi dapat didownload
-              </div>
-              <div class="col-11 col-lg-3 my-2 mb-4 text-center">
-                <span class="material-icons big-icon">translate</span>
-                <br />Berbahasa indonesia
+            </div>
+            <div class="col-lg-6">
+              <div class="row justify-content-center">
+                <div class="col-9">
+                  <img src="@/assets/feature.svg" class="img-fluid" width="400" />
+                </div>
               </div>
             </div>
           </div>
