@@ -3,11 +3,11 @@
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Kelas</h1>
-        <p class="font-weight-light">Pelajari banyak teknologi di[brand]</p>
+        <p class="font-weight-light">Pelajari banyak teknologi di Skill-up</p>
         <form action="get">
           <div class="form-row justify-content-center py-4">
             <div class="col-lg-6 col-sm-12">
-              <input type="text" class="form-control" placeholder="Cari kelas" />
+              <input type="text" class="form-control" placeholder="Cari kelas" v-model="search" />
             </div>
           </div>
         </form>
@@ -18,20 +18,17 @@
         <div class="row justify-content-center">
           <div class="col-lg-11 col-sm-12">
             <div class="row justify-content-center">
-              <div class="col-lg-4 my-3">
+              <div class="col-lg-4 my-3" v-for="kelas in mencariKelas" :key="kelas.index">
                 <div class="card shadow-box">
                   <a href="kelas/fullstack-web-developer" class="stretched-link custom-card">
                     <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
+                      <img v-bind:src="kelas.image" class="card-img-top" />
 
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
+                      <h5 class="line-height-1 mb-0 mt-3 text-600">{{kelas.nama}}</h5>
+                      <h6>Rp {{kelas.harga}}</h6>
+                      <span>{{kelas.episode}} Episode</span>
                       <span class="mx-2">·</span>
-                      <span>Pemula</span>
+                      <span>{{kelas.tingkat}}</span>
                       <hr />
                       <div class="row">
                         <div class="col-auto">
@@ -40,158 +37,8 @@
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>Pemula</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>Pemula</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>Pemula</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>Pemula</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-4 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img
-                        src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                        class="card-img-top"
-                      />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h5>
-                      <h6>Rp 360.000</h6>
-                      <span>10 Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>Pemula</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <p class="text-gray-500">Full-Stack Developer</p>
+                          <h6 class="mb-0 line-height-1 text-600">{{kelas.mentor.nama}}</h6>
+                          <p class="text-gray-500">{{kelas.mentor.skill}}</p>
                         </div>
                       </div>
                     </div>
@@ -230,6 +77,61 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      search: "a",
+      kelas: [
+        {
+          nama: "Full-Stack Javascript",
+          harga: 500000,
+          episode: 82,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "Rafli Ramadhan",
+            skill: "Full-Stack Developer"
+          }
+        },
+        {
+          nama: "Full-Stack Web Developer",
+          harga: 360000,
+          episode: 67,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "David Santoso",
+            skill: "Front-end Developer"
+          }
+        },
+        {
+          nama: "Front-end Android",
+          harga: 280000,
+          episode: 40,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "Mayang Sagu",
+            skill: "Android Developer"
+          }
+        }
+      ]
+    };
+  },
+  computed: {
+    mencariKelas() {
+      return this.kelas.filter(post => {
+        return post.nama.toLowerCase().includes(this.search.toLowerCase());
+      });
+    }
+  }
+};
+</script>
 
 <style>
 </style>

@@ -3,11 +3,11 @@
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Mading</h1>
-        <p class="font-weight-light">Kumpulan karya member yang telah belajar di[brand]</p>
+        <p class="font-weight-light">Kumpulan karya member yang telah belajar di Skill-up</p>
         <form action="get">
           <div class="form-row justify-content-center">
             <div class="col-lg-6 col-sm-12">
-              <input type="text" class="form-control" placeholder="Cari karya" />
+              <input type="text" class="form-control" placeholder="Cari karya" v-model="search" />
             </div>
           </div>
         </form>
@@ -18,80 +18,15 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <div class="row justify-content-center">
-              <div class="col-lg-6 my-3">
+              <div class="col-lg-6 my-3" v-for="mading in mencariMading" :key="mading.index">
                 <div class="card shadow-box">
                   <a href="mading/aplikasi-perbankan" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-6 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-6 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-6 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-6 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-lg-6 my-3">
-                <div class="card shadow-box">
-                  <a href="http://" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <h3 class="card-title line-height-1 mb-0 text-600">Aplikasi Perbankan</h3>
-                      <p class="card-text">Aplikasi khusus perbankan dan pengolahan data uang</p>
-                      <span>@rafliram</span>
-                      <span class="mx-2">·</span>
-                      <span>18 menit lalu</span>
+                    <div class="card-body mading">
+                      <h3 class="card-title line-height-1 mb-0 text-600">{{mading.nama}}</h3>
+                      <p class="card-text">{{mading.desc}}</p>
+                      <span>@{{mading.penulis}}</span>
+                      <span class="mx-2">&middot;</span>
+                      <span>{{mading.waktu}}</span>
                     </div>
                   </a>
                 </div>
@@ -128,4 +63,47 @@
     </section>
   </main>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      search: "",
+      mading: [
+        {
+          nama: "Aplikasi Perbankan",
+          desc: "Aplikasi khusus perbankan dan pengelohan data uang",
+          penulis: "rafliram",
+          waktu: "30 menit lalu"
+        },
+        {
+          nama: "COVID-19 Counter",
+          desc: "penghitung orang yang terjangkit virus",
+          penulis: "rafliram",
+          waktu: "30 menit lalu"
+        },
+        {
+          nama: "Cari Film",
+          desc: "Cara mudah untuk mencari film kesukaanmu",
+          penulis: "rafliram",
+          waktu: "30 menit lalu"
+        },
+        {
+          nama: "Portal Berita",
+          desc: "Cara mudah untuk mencari film kesukaanmu",
+          penulis: "rafliram",
+          waktu: "30 menit lalu"
+        }
+      ]
+    };
+  },
+  computed: {
+    mencariMading() {
+      return this.mading.filter(post => {
+        return post.nama.toLowerCase().includes(this.search.toLowerCase());
+      });
+    }
+  }
+};
+</script>
 
