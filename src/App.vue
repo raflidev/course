@@ -12,6 +12,7 @@
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "material-icons/iconfont/material-icons.css";
+import "owl.carousel/dist/assets/owl.carousel.min.css";
 import "@/assets/css/style.css";
 import Footer from "./components/Footer.vue";
 import Navbar from "./components/Navbar.vue";
@@ -20,9 +21,7 @@ export default {
   name: "App",
   components: {
     Footer,
-    Navbar
-  }
+    Navbar,
+  },
 };
 </script>
-
-

@@ -1,0 +1,89 @@
+{
+  "kelas": [
+    {
+      "nama": "Full-Stack Javascript",
+      "harga": 500000,
+      "episode": 82,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "mentor": {
+        "nama": "Rafli Ramadhan",
+        "skill": "Full-Stack Developer"
+      }
+    },
+    {
+      "nama": "Full-Stack Web Developer",
+      "harga": 360000,
+      "episode": 67,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "mentor": {
+        "nama": "David Santoso",
+        "skill": "Front-end Developer"
+      }
+    },
+    {
+      "nama": "Front-end Android",
+      "harga": 280000,
+      "episode": 40,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "mentor": {
+        "nama": "Mayang Sagu",
+        "skill": "Android Developer"
+      }
+    }
+  ],
+  "ulasan": [
+    {
+      "pesan": "Materi yang disampaikan sangat mudah dipahami dan membuat saya ingin berkarya lebih semangat",
+      "oleh": "Mang Rudi"
+    },
+    {
+      "pesan": "Kelas yang sangat sesuai teknologi dengan masa sekarang",
+      "oleh": "Fujimaru Ritsuka"
+    },
+    {
+      "pesan": "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
+      "oleh": "Rin Tohsaka"
+    },
+    {
+      "pesan": "Bagus, Terimakasih",
+      "oleh": "Rei Ayanami"
+    },
+    {
+      "pesan": "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
+      "oleh": "Rin Tohsaka"
+    },
+    {
+      "pesan": "Bagus, Terimakasih",
+      "oleh": "Rei Ayanami"
+    }
+  ],
+  "mading": [
+    {
+      "nama": "Aplikasi Perbankan",
+      "desc": "Aplikasi khusus perbankan dan pengelohan data uang",
+      "penulis": "rafliram",
+      "waktu": "30 menit lalu"
+    },
+    {
+      "nama": "COVID-19 Counter",
+      "desc": "penghitung orang yang terjangkit virus",
+      "penulis": "rafliram",
+      "waktu": "30 menit lalu"
+    },
+    {
+      "nama": "Cari Film",
+      "desc": "Cara mudah untuk mencari film kesukaanmu",
+      "penulis": "rafliram",
+      "waktu": "30 menit lalu"
+    },
+    {
+      "nama": "Portal Berita",
+      "desc": "Cara mudah untuk mencari film kesukaanmu",
+      "penulis": "rafliram",
+      "waktu": "30 menit lalu"
+    }
+  ]
+}

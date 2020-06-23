@@ -17,26 +17,34 @@
                 placeholder="Cari kelas ex: Javascript"
                 v-model="search"
               />
-              <div class="col-lg-10 bg-white result-item text-purple rounded mt-2" v-show="search">
+              <div
+                class="col-lg-10 bg-white result-item text-purple rounded mt-2"
+                v-show="search"
+              >
                 <div
                   class="box-item p-4 mb-0 border-bottom"
                   v-for="kelas in tampilData"
                   :key="kelas.index"
                 >
                   <img
-                    src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
+                    :src="kelas.image"
                     width="130"
                     class="img-fluid mr-3 float-left"
                   />
-                  <h5 class="m-0">{{kelas.nama}}</h5>
-                  <p class="font-weight-light">Dibuat oleh {{kelas.mentor}}</p>
+                  <h5 class="m-0">{{ kelas.nama }}</h5>
+                  <p class="font-weight-light">
+                    Dibuat oleh {{ kelas.mentor.nama }}
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
-                  <img src="@/assets/browser.svg" class="img-fluid d-none d-sm-block" />
+                  <img
+                    src="@/assets/browser.svg"
+                    class="img-fluid d-none d-sm-block"
+                  />
                 </div>
               </div>
             </div>
@@ -73,7 +81,9 @@
                   <br />Berbahasa Indonesia
                 </div>
                 <div class="col-6 col-lg-3 my-2 mb-4 text-center">
-                  <span class="material-icons big-icon">assignment_turned_in</span>
+                  <span class="material-icons big-icon"
+                    >assignment_turned_in</span
+                  >
                   <br />Sertifikat
                 </div>
                 <div class="col-6 col-lg-3 my-2 mb-4 text-center">
@@ -89,7 +99,11 @@
             <div class="col-lg-6 d-none d-sm-block">
               <div class="row justify-content-center">
                 <div class="col-9">
-                  <img src="@/assets/feature.svg" class="img-fluid" width="400" />
+                  <img
+                    src="@/assets/feature.svg"
+                    class="img-fluid"
+                    width="400"
+                  />
                 </div>
               </div>
             </div>
@@ -103,73 +117,34 @@
         <div class="row justify-content-center mt-5">
           <div class="col col-12 col-lg-11">
             <div class="row justify-content-center">
-              <div class="col-11 col-lg-4 mb-4">
+              <div
+                class="col-11 col-lg-4 mb-4"
+                v-for="kelas in kelas"
+                :key="kelas.index"
+              >
                 <div class="card shadow-box">
                   <div class="card-body">
-                    <img
-                      src="https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg"
-                      class="card-img-top"
-                    />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
-                    <span class="text-gray-500">Rp. 360.000</span>
+                    <img v-bind:src="kelas.image" class="card-img-top" />
+                    <h6 class="line-height-1 mb-0 mt-3 text-600">
+                      {{ kelas.nama }}
+                    </h6>
+                    <span class="text-gray-500">Rp. {{ kelas.harga }}</span>
                     <hr />
                     <div class="row">
                       <div class="col-auto">
                         <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
+                          <img
+                            src="../assets/logo.png"
+                            width="50"
+                            height="50"
+                          />
                         </div>
                       </div>
                       <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-11 col-lg-4 mb-4">
-                <div class="card shadow-box">
-                  <div class="card-body">
-                    <img
-                      src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
-                      class="card-img-top"
-                    />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
-                    <span class="text-gray-500">Rp. 360.000</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
-                        </div>
-                      </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-11 col-lg-4 mb-4">
-                <div class="card shadow-box">
-                  <div class="card-body">
-                    <img
-                      src="https://www.buildwithangga.com/storage/assets/thumbnails/thumbnail_kelas_fullstack_web_developer_buildwithangga.png"
-                      class="card-img-top"
-                    />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">Full-Stack Web Developer</h6>
-                    <span class="text-gray-500">Rp. 360.000</span>
-                    <hr />
-                    <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
-                        </div>
-                      </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                        <p class="text-gray-500">Full-Stack Developer</p>
+                        <h6 class="mb-0 line-height-1 text-600">
+                          {{ kelas.mentor.nama }}
+                        </h6>
+                        <p class="text-gray-500">{{ kelas.mentor.skill }}</p>
                       </div>
                     </div>
                   </div>
@@ -187,66 +162,31 @@
           <div class="row justify-content-center mt-5">
             <div class="col col-12 col-lg-12">
               <div class="row justify-content-center">
-                <div class="col-11 col-lg-4 mb-4">
+                <div
+                  class="col-11 col-lg-4 mb-4"
+                  v-for="index in ulasanCount"
+                  :key="index"
+                >
                   <div class="card shadow-box">
                     <div class="card-body p-3">
                       <h6 class="line-height-1">
-                        Mentornya keren cara menyampaikan setiap materinya juga
-                        detail dan mudah dipahami.
+                        {{ ulasan[index - 1].pesan }}
                       </h6>
                       <hr />
                       <div class="row">
                         <div class="col-auto">
                           <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
+                            <img
+                              src="../assets/logo.png"
+                              width="50"
+                              height="50"
+                            />
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <span class="text-gray-500">Tukang Bakso</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-11 col-lg-4 mb-4">
-                  <div class="card shadow-box">
-                    <div class="card-body p-3">
-                      <h6 class="line-height-1">
-                        Kelas yang paling recommended pokoknya buat investasi
-                        ilmu di era revolusi industri 4.0.
-                      </h6>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
-                          <span class="text-gray-500">Tukang Bakso</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-11 col-lg-4 mb-4">
-                  <div class="card shadow-box">
-                    <div class="card-body p-3">
-                      <h6 class="line-height-1">
-                        Kelas yang sangat bermanfaat dan ilmu up-to-date sekali
-                        dan yang paling penting biayanya sangat terjangkau.
-                      </h6>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">Rafli Ramadhan</h6>
+                          <h6 class="mb-0 line-height-1 text-600">
+                            {{ ulasan[index - 1].oleh }}
+                          </h6>
                           <span class="text-gray-500">Tukang Bakso</span>
                         </div>
                       </div>
@@ -255,9 +195,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="text-center">
-            <a href="#" class="btn btn-outline-secondary">REVIEW LAINNYA</a>
           </div>
         </div>
       </div>
@@ -270,12 +207,36 @@
             Diskusikan ide anda dan keahlian anda kepada kami, pasti kami sambut
             hangat
           </p>
-          <img src="@/assets/moment.svg" class="img-fluid" height="200" width="200" />
+          <img
+            src="@/assets/moment.svg"
+            class="img-fluid"
+            height="200"
+            width="200"
+          />
           <br />
           <a href class="btn btn-outline-purple my-5">SAYA TERTARIK</a>
         </div>
       </div>
     </section>
+    <!-- <section class="py-5 bg-white">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <carousel
+            :items="3"
+            :autoplay="true"
+            :autoplaySpeed="400"
+            :dots="false"
+          >
+            <img src="https://placeimg.com/200/200/any?1" />
+            <img src="https://placeimg.com/200/200/any?2" />
+            <img src="https://placeimg.com/200/200/any?3" />
+            <img src="https://placeimg.com/200/200/any?4" />
+            <img src="https://placeimg.com/200/200/any?5" />
+            <img src="https://placeimg.com/200/200/any?6" />
+          </carousel>
+        </div>
+      </div>
+    </section> -->
   </main>
 </template>
 
@@ -285,40 +246,37 @@
   z-index: 99;
 }
 </style>
-
 <script>
+// import carousel from "v-owl-carousel";
+import axios from "axios";
 export default {
   name: "Home",
+  // components: { carousel },
   data() {
     return {
       show: false,
       search: "",
-      kelas: [
-        {
-          nama: "Fullstack Javascript",
-          mentor: "Rafli Ramadhan",
-          premium: true
-        },
-        {
-          nama: "HTML Dasar",
-          mentor: "Rafli Ramadhan",
-          premium: false
-        },
-        {
-          nama: "Codegniter 4",
-          mentor: "Rafli Ramadhan",
-          premium: false
-        }
-      ]
+      kelas: [],
+      ulasan: [],
+      ulasanCount: 3,
     };
+  },
+  mounted() {
+    axios
+      .get("/api.json")
+      .then(
+        (response) => (
+          (this.kelas = response.data.kelas),
+          (this.ulasan = response.data.ulasan)
+        )
+      );
   },
   computed: {
     tampilData() {
-      return this.kelas.filter(post => {
+      return this.kelas.filter((post) => {
         return post.nama.toLowerCase().includes(this.search.toLowerCase());
       });
-    }
-  }
+    },
+  },
 };
 </script>
-
