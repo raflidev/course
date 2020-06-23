@@ -114,12 +114,30 @@
     <section class="kelas-populer py-5 border-top">
       <div class="mt-5 container text-purple">
         <h1 class="text-merri pb-3 text-center">Kelas Populer</h1>
-        <div class="row justify-content-center mt-5">
-          <div class="col col-12 col-lg-11">
+        <div class="row  mt-5">
+          <carousel v-if="loaded" :margin="20" :nav="false" :dots="false">
+            <div
+              class="card shadow-box"
+              v-for="ulasan in ulasan"
+              :key="ulasan.index"
+            >
+              <div class="card-body p-3">
+                <h6 class="line-height-1" style="min-height:60px">
+                  {{ ulasan.pesan }}
+                </h6>
+                <hr />
+                <h6 class="mb-0 line-height-1 text-600">
+                  {{ ulasan.oleh }}
+                </h6>
+                <span class="text-gray-500">Tukang Bakso</span>
+              </div>
+            </div>
+          </carousel>
+          <!-- <div class="col col-12 col-lg-11">
             <div class="row justify-content-center">
               <div
                 class="col-11 col-lg-4 mb-4"
-                v-for="kelas in kelas"
+                v-for="kelas in populer"
                 :key="kelas.index"
               >
                 <div class="card shadow-box">
@@ -151,7 +169,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -218,25 +236,6 @@
         </div>
       </div>
     </section>
-    <!-- <section class="py-5 bg-white">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <carousel
-            :items="3"
-            :autoplay="true"
-            :autoplaySpeed="400"
-            :dots="false"
-          >
-            <img src="https://placeimg.com/200/200/any?1" />
-            <img src="https://placeimg.com/200/200/any?2" />
-            <img src="https://placeimg.com/200/200/any?3" />
-            <img src="https://placeimg.com/200/200/any?4" />
-            <img src="https://placeimg.com/200/200/any?5" />
-            <img src="https://placeimg.com/200/200/any?6" />
-          </carousel>
-        </div>
-      </div>
-    </section> -->
   </main>
 </template>
 
@@ -247,36 +246,42 @@
 }
 </style>
 <script>
-// import carousel from "v-owl-carousel";
+import carousel from "v-owl-carousel";
 import axios from "axios";
 export default {
   name: "Home",
-  // components: { carousel },
+  components: { carousel },
   data() {
     return {
+      loaded: false,
       show: false,
       search: "",
       kelas: [],
+      populer: [],
       ulasan: [],
-      ulasanCount: 3,
+      ulasanCount: 3
     };
   },
   mounted() {
+    if (this.kelas !== null) {
+      this.loaded = true;
+    }
     axios
       .get("/api.json")
       .then(
-        (response) => (
+        response => (
           (this.kelas = response.data.kelas),
-          (this.ulasan = response.data.ulasan)
+          (this.ulasan = response.data.ulasan),
+          (this.populer = response.data.populer)
         )
       );
   },
   computed: {
     tampilData() {
-      return this.kelas.filter((post) => {
+      return this.kelas.filter(post => {
         return post.nama.toLowerCase().includes(this.search.toLowerCase());
       });
-    },
-  },
+    }
+  }
 };
 </script>
