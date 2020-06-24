@@ -17,34 +17,27 @@
                 placeholder="Cari kelas ex: Javascript"
                 v-model="search"
               />
-              <div
-                class="col-lg-10 bg-white result-item text-purple rounded mt-2"
-                v-show="search"
-              >
+              <div class="col-lg-10 bg-white result-item text-purple rounded mt-2" v-show="search">
                 <div
                   class="box-item p-4 mb-0 border-bottom"
                   v-for="kelas in tampilData"
                   :key="kelas.index"
                 >
-                  <img
-                    :src="kelas.image"
-                    width="130"
-                    class="img-fluid mr-3 float-left"
-                  />
-                  <h5 class="m-0">{{ kelas.nama }}</h5>
-                  <p class="font-weight-light">
-                    Dibuat oleh {{ kelas.mentor.nama }}
-                  </p>
+                  <a
+                    href="kelas/fullstack-web-developer"
+                    class="stretched-link text-decoration-none text-purple"
+                  >
+                    <img :src="kelas.image" width="130" class="img-fluid mr-3 float-left" />
+                    <h5 class="m-0">{{ kelas.nama }}</h5>
+                    <p class="font-weight-light">Dibuat oleh {{ kelas.mentor.nama }}</p>
+                  </a>
                 </div>
               </div>
             </div>
             <div class="col-lg-5">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
-                  <img
-                    src="@/assets/browser.svg"
-                    class="img-fluid d-none d-sm-block"
-                  />
+                  <img src="@/assets/browser.svg" class="img-fluid d-none d-sm-block" />
                 </div>
               </div>
             </div>
@@ -81,9 +74,7 @@
                   <br />Berbahasa Indonesia
                 </div>
                 <div class="col-6 col-lg-3 my-2 mb-4 text-center">
-                  <span class="material-icons big-icon"
-                    >assignment_turned_in</span
-                  >
+                  <span class="material-icons big-icon">assignment_turned_in</span>
                   <br />Sertifikat
                 </div>
                 <div class="col-6 col-lg-3 my-2 mb-4 text-center">
@@ -99,11 +90,7 @@
             <div class="col-lg-6 d-none d-sm-block">
               <div class="row justify-content-center">
                 <div class="col-9">
-                  <img
-                    src="@/assets/feature.svg"
-                    class="img-fluid"
-                    width="400"
-                  />
+                  <img src="@/assets/feature.svg" class="img-fluid" width="400" />
                 </div>
               </div>
             </div>
@@ -114,54 +101,24 @@
     <section class="kelas-populer py-5 border-top">
       <div class="mt-5 container text-purple">
         <h1 class="text-merri pb-3 text-center">Kelas Populer</h1>
-        <div class="row  mt-5">
-          <carousel v-if="loaded" :margin="20" :nav="false" :dots="false">
-            <div
-              class="card shadow-box"
-              v-for="ulasan in ulasan"
-              :key="ulasan.index"
-            >
-              <div class="card-body p-3">
-                <h6 class="line-height-1" style="min-height:60px">
-                  {{ ulasan.pesan }}
-                </h6>
-                <hr />
-                <h6 class="mb-0 line-height-1 text-600">
-                  {{ ulasan.oleh }}
-                </h6>
-                <span class="text-gray-500">Tukang Bakso</span>
-              </div>
-            </div>
-          </carousel>
-          <!-- <div class="col col-12 col-lg-11">
+        <div class="row justify-content-center mt-5">
+          <div class="col col-12 col-lg-11">
             <div class="row justify-content-center">
-              <div
-                class="col-11 col-lg-4 mb-4"
-                v-for="kelas in populer"
-                :key="kelas.index"
-              >
+              <div class="col-11 col-lg-4 mb-4" v-for="kelas in populer" :key="kelas.index">
                 <div class="card shadow-box">
                   <div class="card-body">
                     <img v-bind:src="kelas.image" class="card-img-top" />
-                    <h6 class="line-height-1 mb-0 mt-3 text-600">
-                      {{ kelas.nama }}
-                    </h6>
+                    <h6 class="line-height-1 mb-0 mt-3 text-600">{{ kelas.nama }}</h6>
                     <span class="text-gray-500">Rp. {{ kelas.harga }}</span>
                     <hr />
                     <div class="row">
                       <div class="col-auto">
                         <div class="mr-2">
-                          <img
-                            src="../assets/logo.png"
-                            width="50"
-                            height="50"
-                          />
+                          <img src="../assets/logo.png" width="50" height="50" />
                         </div>
                       </div>
                       <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">
-                          {{ kelas.mentor.nama }}
-                        </h6>
+                        <h6 class="mb-0 line-height-1 text-600">{{ kelas.mentor.nama }}</h6>
                         <p class="text-gray-500">{{ kelas.mentor.skill }}</p>
                       </div>
                     </div>
@@ -169,7 +126,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </section>
@@ -177,34 +134,40 @@
       <div class="container text-purple">
         <div class="mt-5 text-purple">
           <h1 class="text-merri pb-3 text-center">Ulasan Mereka</h1>
-          <div class="row justify-content-center mt-5">
+          <carousel
+            class="mt-5"
+            v-if="ulasan !== null"
+            :margin="20"
+            :dots="false"
+            :nav="false"
+            :items="3"
+            :autoplay="true"
+          >
+            <div class="card shadow-box" v-for="ulasan in ulasan" :key="ulasan.index">
+              <div class="card-body p-3">
+                <h6 class="line-height-1" style="min-height:70px">{{ulasan.pesan}}</h6>
+                <hr />
+                <h6 class="mb-0 line-height-1 text-600">{{ulasan.oleh}}</h6>
+                <span class="text-gray-500">Tukang Bakso</span>
+              </div>
+            </div>
+          </carousel>
+          <!-- <div class="row justify-content-center mt-5">
             <div class="col col-12 col-lg-12">
               <div class="row justify-content-center">
-                <div
-                  class="col-11 col-lg-4 mb-4"
-                  v-for="index in ulasanCount"
-                  :key="index"
-                >
+                <div class="col-11 col-lg-4 mb-4" v-for="index in ulasanCount" :key="index">
                   <div class="card shadow-box">
                     <div class="card-body p-3">
-                      <h6 class="line-height-1">
-                        {{ ulasan[index - 1].pesan }}
-                      </h6>
+                      <h6 class="line-height-1">{{ ulasan[index - 1].pesan }}</h6>
                       <hr />
                       <div class="row">
                         <div class="col-auto">
                           <div class="mr-2">
-                            <img
-                              src="../assets/logo.png"
-                              width="50"
-                              height="50"
-                            />
+                            <img src="../assets/logo.png" width="50" height="50" />
                           </div>
                         </div>
                         <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">
-                            {{ ulasan[index - 1].oleh }}
-                          </h6>
+                          <h6 class="mb-0 line-height-1 text-600">{{ ulasan[index - 1].oleh }}</h6>
                           <span class="text-gray-500">Tukang Bakso</span>
                         </div>
                       </div>
@@ -213,7 +176,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </section>
@@ -225,12 +188,7 @@
             Diskusikan ide anda dan keahlian anda kepada kami, pasti kami sambut
             hangat
           </p>
-          <img
-            src="@/assets/moment.svg"
-            class="img-fluid"
-            height="200"
-            width="200"
-          />
+          <img src="@/assets/moment.svg" class="img-fluid" height="200" width="200" />
           <br />
           <a href class="btn btn-outline-purple my-5">SAYA TERTARIK</a>
         </div>
@@ -254,27 +212,57 @@ export default {
   data() {
     return {
       loaded: false,
+      loadedUlasan: false,
       show: false,
       search: "",
       kelas: [],
       populer: [],
-      ulasan: [],
-      ulasanCount: 3
+      ulasan: [
+        {
+          pesan:
+            "Materi yang disampaikan sangat mudah dipahami dan membuat saya ingin berkarya lebih semangat",
+          oleh: "Mang Rudi"
+        },
+        {
+          pesan: "Kelas yang sangat sesuai teknologi dengan masa sekarang",
+          oleh: "Fujimaru Ritsuka"
+        },
+        {
+          pesan:
+            "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
+          oleh: "Rin Tohsaka"
+        },
+        {
+          pesan: "Bagus, Terimakasih",
+          oleh: "Rei Ayanami"
+        },
+        {
+          pesan:
+            "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
+          oleh: "Rin Tohsaka"
+        },
+        {
+          pesan: "Bagus, Terimakasih",
+          oleh: "Rei Ayanami"
+        }
+      ]
     };
   },
+
   mounted() {
-    if (this.kelas !== null) {
-      this.loaded = true;
-    }
     axios
       .get("/api.json")
       .then(
         response => (
           (this.kelas = response.data.kelas),
-          (this.ulasan = response.data.ulasan),
           (this.populer = response.data.populer)
         )
-      );
+      )
+      .catch(err => console.log(err));
+
+    if (this.kelas !== null) {
+      this.loaded = true;
+    }
   },
   computed: {
     tampilData() {

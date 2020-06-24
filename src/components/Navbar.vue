@@ -29,6 +29,19 @@
           <span class="nav-divider"></span>
         </li>
         <li class="nav-item">
+          <router-link class="nav-link" active-class="active" to="/roadmap">
+            <span class="material-icons">favorite_border</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" active-class="active" to="/roadmap">
+            <span class="material-icons">shopping_cart</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <span class="nav-divider"></span>
+        </li>
+        <li class="nav-item">
           <router-link class="nav-link btn btn-dark" active-class="active" to="/login">LOGIN</router-link>
         </li>
       </ul>
