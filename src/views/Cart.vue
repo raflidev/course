@@ -1,7 +1,7 @@
 <template>
   <main class="bg-white text-purple" style="min-height:300px">
     <div class="container">
-      <h1 class="text-merri py-3">Cart</h1>
+      <h1 class="text-merri py-3">Keranjang</h1>
       <div class="row">
         <div class="col-lg-9">
           <table class="table table-striped table-responsive">
@@ -19,24 +19,34 @@
               <td>{{ kelas.nama }} - {{ kelas.mentor.nama }}</td>
               <td>Rp. {{ kelas.harga }}</td>
               <td>
-                <button v-on:click="hapusKelas(index)" class="btn btn-danger">
-                  hapus
-                </button>
+                <button v-on:click="hapusKelas(index)" class="btn btn-danger">Hapus</button>
               </td>
             </tr>
             <tr v-show="cart.length > 0">
               <td colspan="3" class="text-right">Total Semua</td>
-              <td class="font-weight-bold">
-                Rp.{{ formatPrice(totalHarga()) }}
+              <td class="font-weight-bold">Rp.{{ formatPrice(totalHarga()) }}</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="text-right">
+                <button class="btn btn-lg btn-success">Beli Sekarang</button>
               </td>
             </tr>
           </table>
         </div>
         <div class="col-lg-3">
-          <h4>Detail Pesanan</h4>
-
-          <p class="mb-0 font-weight-bold">Nama Klien</p>
-          Rafli Ramadhan
+          <h4 class="mb-4">Detail Client</h4>
+          <div class="pb-2">
+            <p class="mb-0 font-weight-bold">Nama Lengkap</p>
+            <span>Rafli Ramadhan</span>
+          </div>
+          <div class="pb-2">
+            <p class="mb-0 font-weight-bold">Username</p>
+            <span>@rafliram</span>
+          </div>
+          <div class="pb-2">
+            <p class="mb-0 font-weight-bold">Email</p>
+            <span>rafliramdhn@gmail.com</span>
+          </div>
         </div>
       </div>
     </div>
@@ -48,11 +58,11 @@ import axios from "axios";
 export default {
   data() {
     return {
-      cart: [],
+      cart: []
     };
   },
   mounted() {
-    axios.get("/api.json").then((response) => (this.cart = response.data.cart));
+    axios.get("/api.json").then(response => (this.cart = response.data.cart));
   },
   methods: {
     hapusKelas(index) {
@@ -69,8 +79,8 @@ export default {
     formatPrice(value) {
       let val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
-  },
+    }
+  }
 };
 </script>
 

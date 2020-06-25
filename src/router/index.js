@@ -96,17 +96,17 @@ const routes = [
     component: Roadmap,
   },
   {
-    path: "/roadmap/fullstack-web-developer",
+    path: "/roadmap/:id",
     name: "DetailRoadmap",
     component: DetailRoadmap,
   },
   {
-    path: "/kelas/fullstack-web-developer",
+    path: "/kelas/:slug",
     name: "Detailkelas",
     component: DetailKelas,
   },
   {
-    path: "/mading/aplikasi-perbankan",
+    path: "/mading/:id",
     name: "DetailMading",
     component: DetailMading,
   },

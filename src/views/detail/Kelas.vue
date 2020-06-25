@@ -2,7 +2,7 @@
   <main>
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
-        <h1 class="text-merri pb-3">Fullstack Web Developer</h1>
+        <h1 class="text-merri pb-3">{{kelasDetail.nama}}</h1>
         <h5 class="text-muted">Dibuat oleh Rafli Ramadhan</h5>
         <a href="#beli" class="btn btn-outline-purple mt-3">BELI KELAS</a>
       </div>
@@ -24,7 +24,7 @@
                         title="Player for 3  HTML Add Images"
                         width="875"
                         height="410"
-                        src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=1&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.buildwithangga.com%2Fkelas%2Fwebsite-tiketsaya&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.buildwithangga.com&amp;widgetid=2"
+                        src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.buildwithangga.com%2Fkelas%2Fwebsite-tiketsaya&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.buildwithangga.com&amp;widgetid=2"
                       ></iframe>
                     </div>
                   </div>
@@ -224,7 +224,70 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      kelas: [
+        {
+          nama: "Full-Stack Javascript",
+          slug: "fullstack-javascript",
+          harga: 500000,
+          episode: 82,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "Rafli Ramadhan",
+            skill: "Full-Stack Developer"
+          }
+        },
+        {
+          nama: "Full-Stack Web Developer",
+          slug: "fullstack-web-developer",
+
+          harga: 360000,
+          episode: 67,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "David Santoso",
+            skill: "Front-end Developer"
+          }
+        },
+        {
+          nama: "Front-end Android",
+          slug: "frontend-android",
+
+          harga: 280000,
+          episode: 40,
+          image:
+            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+          tingkat: "Pemula",
+          mentor: {
+            nama: "Mayang Sagu",
+            skill: "Android Developer"
+          }
+        }
+      ],
+      kelasDetail: []
+    };
+  },
+  methods: {
+    getKelas() {
+      this.kelas.forEach(e => {
+        if (e.slug == this.$route.params.slug) {
+          this.kelasDetail = e;
+          console.log(this.kelasDetail);
+        }
+      });
+    }
+  },
+  mounted() {},
+  created() {
+    this.getKelas();
+  }
+};
 </script>
 
 <style>

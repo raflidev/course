@@ -13,19 +13,20 @@
             <div class="row justify-content-center">
               <div class="col-lg-4 my-3" v-for="kelas in wishlist" :key="kelas.index">
                 <div class="card shadow-box">
-                  <a href="kelas/fullstack-web-developer" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img v-bind:src="kelas.image" class="card-img-top" />
+                  <div class="card-body">
+                    <img v-bind:src="kelas.image" class="card-img-top" />
 
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">{{ kelas.nama }}</h5>
-                      <h6>Rp {{ kelas.harga }}</h6>
-                      <span>{{ kelas.episode }} Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>{{ kelas.tingkat }}</span>
-                      <hr />
-                      <button class="btn btn-dark form-control text-uppercase">masukan keranjang</button>
-                    </div>
-                  </a>
+                    <h5 class="line-height-1 mb-0 mt-3 text-600">{{ kelas.nama }}</h5>
+                    <h6>Rp {{ kelas.harga }}</h6>
+                    <span>{{ kelas.episode }} Episode</span>
+                    <span class="mx-2">·</span>
+                    <span>{{ kelas.tingkat }}</span>
+                    <hr />
+                    <button
+                      v-on:click="addCart(kelas)"
+                      class="btn btn-dark form-control text-uppercase"
+                    >masukan keranjang</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -66,13 +67,20 @@ import axios from "axios";
 export default {
   data() {
     return {
-      wishlist: []
+      wishlist: [],
+      cart: []
     };
   },
   mounted() {
     axios
       .get("/api.json")
       .then(response => (this.wishlist = response.data.wishlist));
+  },
+  methods: {
+    addCart(kelas) {
+      this.cart.push(kelas);
+      console.log(this.cart);
+    }
   }
 };
 </script>

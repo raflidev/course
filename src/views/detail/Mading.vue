@@ -2,7 +2,7 @@
   <main>
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
-        <h1 class="text-merri pb-3">Aplikasi Perbankan</h1>
+        <h1 class="text-merri pb-3">{{mading.nama}}</h1>
         <h5>Rafli Ramadhan</h5>
       </div>
     </section>
@@ -14,13 +14,13 @@
               <div class="col-lg-8">
                 <div class="card mb-4">
                   <div class="card-body">
-                    <h4>Aplikasi Perbankan</h4>
-                    <p class="text-muted">18 menit lalu</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur vel officiis exercitationem culpa? Laboriosam vel corporis et dolore possimus provident aspernatur!</p>
+                    <h4>{{mading.nama}}</h4>
+                    <p class="text-muted">{{mading.waktu}}</p>
+                    <p>{{mading.desc}}</p>
                     <p>
                       <span class="font-weight-bold">Link karya:</span>
                       <br />
-                      <a href="http://google.com">http://google.com</a>
+                      <a :href="mading.link">{{mading.link}}</a>
                     </p>
                     <hr />
                     <div class="container">
@@ -44,3 +44,21 @@
     </section>
   </main>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      mading: []
+    };
+  },
+  created() {
+    axios
+      .get("/api.json")
+      .then(
+        response => (this.mading = response.data.mading[this.$route.params.id])
+      );
+  }
+};
+</script>

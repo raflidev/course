@@ -37,6 +37,7 @@
   "kelas": [
     {
       "nama": "Full-Stack Javascript",
+      "slug": "fullstack-javascript",
       "harga": 500000,
       "episode": 82,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
@@ -48,6 +49,8 @@
     },
     {
       "nama": "Full-Stack Web Developer",
+      "slug": "fullstack-web-developer",
+
       "harga": 360000,
       "episode": 67,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
@@ -59,6 +62,8 @@
     },
     {
       "nama": "Front-end Android",
+      "slug": "frontend-android",
+
       "harga": 280000,
       "episode": 40,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
@@ -148,25 +153,127 @@
       "nama": "Aplikasi Perbankan",
       "desc": "Aplikasi khusus perbankan dan pengelohan data uang",
       "penulis": "rafliram",
+      "link": "http://aplikasi-perbankan.com",
       "waktu": "30 menit lalu"
     },
     {
       "nama": "COVID-19 Counter",
       "desc": "penghitung orang yang terjangkit virus",
       "penulis": "rafliram",
+      "link": "https://covid19.go.id",
       "waktu": "30 menit lalu"
     },
     {
       "nama": "Cari Film",
       "desc": "Cara mudah untuk mencari film kesukaanmu",
+      "link": "http://carifilm.herokuapp.com/",
       "penulis": "rafliram",
       "waktu": "30 menit lalu"
     },
     {
       "nama": "Portal Berita",
       "desc": "Cara mudah untuk mencari film kesukaanmu",
+      "link": "http://detik.com/",
       "penulis": "rafliram",
       "waktu": "30 menit lalu"
+    }
+  ],
+  "roadmap": [
+    {
+      "nama": "Full-Stack Web Developer",
+      "level": "Menengah",
+      "kelas": [
+        {
+          "nama": "HTML & CSS Dasar",
+          "episode": "10",
+          "menit": 40,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Javascript Dasar",
+          "episode": "15",
+          "menit": 50,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Javascript DOM",
+          "episode": "20",
+          "menit": 60,
+          "level": "Pemula"
+        },
+        {
+          "nama": "PHP DASAR",
+          "episode": "20",
+          "menit": 60,
+          "level": "Pemula"
+        },
+        {
+          "nama": "PHP OPP",
+          "episode": "20",
+          "menit": 60,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Bootstrap CSS Framework",
+          "episode": "14",
+          "menit": 70,
+          "level": "Menengah"
+        },
+        {
+          "nama": "Vue Javascript Framework",
+          "episode": "23",
+          "menit": 150,
+          "level": "Menengah"
+        },
+        {
+          "nama": "Laravel PHP Framework",
+          "episode": "23",
+          "menit": 150,
+          "level": "Menengah"
+        }
+      ]
+    },
+    {
+      "nama": "Web Desainer",
+      "level": "Menengah",
+      "kelas": [
+        {
+          "nama": "Figma UI/UX Designing",
+          "episode": "10",
+          "menit": 40,
+          "level": "Pemula"
+        },
+        {
+          "nama": "HTML & CSS Dasar",
+          "episode": "10",
+          "menit": 40,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Javascript Dasar",
+          "episode": "15",
+          "menit": 50,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Javascript DOM",
+          "episode": "20",
+          "menit": 60,
+          "level": "Pemula"
+        },
+        {
+          "nama": "Tailwind CSS Framework",
+          "episode": "14",
+          "menit": 70,
+          "level": "Menengah"
+        },
+        {
+          "nama": "Vue Javascript Framework",
+          "episode": "23",
+          "menit": 150,
+          "level": "Menengah"
+        }
+      ]
     }
   ]
 }

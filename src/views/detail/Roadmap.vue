@@ -4,7 +4,8 @@
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">
           Alur Belajar
-          <br />Fullstack Web Developer
+          <br />
+          {{roadmap.nama}}
         </h1>
         <p class="font-weight-light">Pelajari dan tuntaskan kelas</p>
       </div>
@@ -14,7 +15,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-11">
             <div class="row justify-content-center">
-              <div class="col-lg-8 my-2">
+              <div class="col-lg-9 my-2" v-for="(kelas,index) in roadmap.kelas" :key="kelas.index">
                 <div class="card shadow-box">
                   <div class="card-body">
                     <div class="row">
@@ -25,13 +26,13 @@
                         />
                       </div>
                       <div class="col-lg-7">
-                        <h4>1. HTML & CSS Dasar</h4>
+                        <h4>{{index + 1}}. {{kelas.nama}}</h4>
                         <div>
-                          <span class="text-muted">10 Episode</span>
+                          <span class="text-muted">{{kelas.episode}} Episode</span>
                           <span class="mx-2">·</span>
-                          <span class="text-muted">40 Menit</span>
+                          <span class="text-muted">{{kelas.menit}} Menit</span>
                           <span class="mx-2">·</span>
-                          <span class="text-muted">Pemula</span>
+                          <span class="text-muted">{{kelas.level}}</span>
                         </div>
                         <button class="btn btn-primary my-3">BELAJAR</button>
                       </div>
@@ -48,7 +49,22 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+export default {
+  data() {
+    return {
+      roadmap: null
+    };
+  },
+  created() {
+    axios
+      .get("/api.json")
+      .then(
+        response =>
+          (this.roadmap = response.data.roadmap[this.$route.params.id])
+      );
+  }
+};
 </script>
 
 <style>
