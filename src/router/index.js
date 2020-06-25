@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+// Landing Layout
 import Home from "../views/Home.vue";
 import Mading from "../views/Mading.vue";
 import User from "../views/User.vue";
@@ -8,10 +9,14 @@ import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
 import Register from "../views/Register.vue";
 import Roadmap from "../views/Roadmap.vue";
+import Wishlist from "../views/Wishlist.vue";
+import Cart from "../views/Cart.vue";
 import Redirect from "../views/Redirect.vue";
+// Detail Layout
 import DetailRoadmap from "../views/detail/Roadmap.vue";
 import DetailMading from "../views/detail/Mading.vue";
 import DetailKelas from "../views/detail/Kelas.vue";
+// Dashboard Layout
 import HomeDashboard from "../views/dashboard/Home.vue";
 import KelasDashboard from "../views/dashboard/Kelas.vue";
 import KaryaDashboard from "../views/dashboard/Karya.vue";
@@ -104,6 +109,16 @@ const routes = [
     path: "/mading/aplikasi-perbankan",
     name: "DetailMading",
     component: DetailMading,
+  },
+  {
+    path: "/wishlist",
+    name: "Wishlist",
+    component: Wishlist,
+  },
+  {
+    path: "/Cart",
+    name: "Cart",
+    component: Cart,
   },
   {
     path: "*",

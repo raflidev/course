@@ -26,23 +26,38 @@
           <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
         </li>
         <li class="nav-item">
-          <span class="nav-divider"></span>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/roadmap">
+          <router-link class="nav-link" active-class="active" to="/wishlist">
             <span class="material-icons">favorite_border</span>
+            <span class="badge badge-notify">{{ countWishlist }}</span>
+            <span class="d-sm-none">WISHLIST</span>
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/roadmap">
+          <router-link class="nav-link" active-class="active" to="/cart">
             <span class="material-icons">shopping_cart</span>
+            <span class="badge badge-notify">{{ countCard.length }}</span>
+            <span class="d-sm-none">CART</span>
           </router-link>
         </li>
         <li class="nav-item">
           <span class="nav-divider"></span>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link btn btn-dark" active-class="active" to="/login">LOGIN</router-link>
+          <router-link
+            v-show="login == false"
+            class="nav-link btn btn-dark"
+            active-class="active"
+            to="/login"
+          >LOGIN</router-link>
+          <router-link
+            v-show="login == true"
+            class="nav-link btn btn-link text-uppercase"
+            active-class="active"
+            to="/dashboard"
+          >
+            <img src="@/assets/logo.png" width="30" class="mr-3" />
+            hi, Rafli
+          </router-link>
         </li>
       </ul>
     </div>
@@ -50,7 +65,35 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
-  name: "Navbar"
+  name: "Navbar",
+  data() {
+    return {
+      login: true,
+      countWishlist: null,
+      countCard: []
+    };
+  },
+  mounted() {
+    axios
+      .get("/api.json")
+      .then(
+        response => (
+          (this.countWishlist = response.data.wishlist.length),
+          (this.countCard = response.data.cart)
+        )
+      );
+  }
 };
 </script>
+
+<style>
+.badge-notify {
+  color: white;
+  background: red;
+  position: relative;
+  top: -20px;
+  left: -35px;
+}
+</style>
