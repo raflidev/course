@@ -224,57 +224,16 @@
 </template>
 
 <script>
+import store from "@/services/store.js";
 export default {
   data() {
     return {
-      kelas: [
-        {
-          nama: "Full-Stack Javascript",
-          slug: "fullstack-javascript",
-          harga: 500000,
-          episode: 82,
-          image:
-            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-          tingkat: "Pemula",
-          mentor: {
-            nama: "Rafli Ramadhan",
-            skill: "Full-Stack Developer"
-          }
-        },
-        {
-          nama: "Full-Stack Web Developer",
-          slug: "fullstack-web-developer",
-
-          harga: 360000,
-          episode: 67,
-          image:
-            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-          tingkat: "Pemula",
-          mentor: {
-            nama: "David Santoso",
-            skill: "Front-end Developer"
-          }
-        },
-        {
-          nama: "Front-end Android",
-          slug: "frontend-android",
-
-          harga: 280000,
-          episode: 40,
-          image:
-            "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-          tingkat: "Pemula",
-          mentor: {
-            nama: "Mayang Sagu",
-            skill: "Android Developer"
-          }
-        }
-      ],
+      kelas: store.kelas,
       kelasDetail: []
     };
   },
   methods: {
-    getKelas() {
+    getAllKelas() {
       this.kelas.forEach(e => {
         if (e.slug == this.$route.params.slug) {
           this.kelasDetail = e;
@@ -285,7 +244,7 @@ export default {
   },
   mounted() {},
   created() {
-    this.getKelas();
+    this.getAllKelas();
   }
 };
 </script>
