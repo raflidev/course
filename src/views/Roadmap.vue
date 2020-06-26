@@ -3,17 +3,26 @@
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Roadmap</h1>
-        <p class="font-weight-light">Tuntunan cara kamu belajar paling efektif</p>
+        <p class="font-weight-light">
+          Tuntunan cara kamu belajar paling efektif
+        </p>
       </div>
     </section>
     <section class="bg-white text-purple py-3 roadmap">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-11" v-for="(roadmap,index) in roadmap" :key="roadmap.index">
+          <div
+            class="col-lg-11"
+            v-for="(roadmap, index) in roadmap"
+            :key="roadmap.index"
+          >
             <div class="row justify-content-center">
               <div class="col-lg-6 my-3">
                 <div class="card shadow-box">
-                  <a :href="'roadmap/' +index " class="stretched-link custom-card">
+                  <a
+                    :href="'roadmap/' + index"
+                    class="stretched-link custom-card"
+                  >
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-6">
@@ -23,11 +32,15 @@
                           />
                         </div>
                         <div class="col-lg-6">
-                          <h5 class="card-title line-height-1 mb-0 text-600 pt-2">{{roadmap.nama}}</h5>
+                          <h5
+                            class="card-title line-height-1 mb-0 text-600 pt-2"
+                          >
+                            {{ roadmap.nama }}
+                          </h5>
                           <div class="card-text">
-                            <span>{{roadmap.level}}</span>
+                            <span>{{ roadmap.level }}</span>
                             <span class="mx-2">·</span>
-                            <span>{{roadmap.kelas.length}} Kelas</span>
+                            <span>{{ roadmap.kelas.length }} Kelas</span>
                           </div>
                         </div>
                       </div>
@@ -69,17 +82,11 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapState } from "vuex";
 export default {
-  data() {
-    return {
-      roadmap: null
-    };
-  },
+  computed: mapState(["roadmap"]),
   created() {
-    axios
-      .get("/api.json")
-      .then(response => (this.roadmap = response.data.roadmap));
-  }
+    this.$store.dispatch("loadRoadmap");
+  },
 };
 </script>

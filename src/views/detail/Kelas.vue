@@ -2,7 +2,7 @@
   <main>
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
-        <h1 class="text-merri pb-3">{{kelasDetail.nama}}</h1>
+        <h1 class="text-merri pb-3">{{ kelasDetail.nama }}</h1>
         <h5 class="text-muted">Dibuat oleh Rafli Ramadhan</h5>
         <a href="#beli" class="btn btn-outline-purple mt-3">BELI KELAS</a>
       </div>
@@ -35,8 +35,20 @@
               <div class="col-lg-8">
                 <h4 class="text-merri font-weight-bold">Tentang kelas</h4>
                 <div class="mt-3">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores nihil iusto impedit nam, id odit enim! Rerum, aliquam nulla. Cumque, similique voluptatum dolorum adipisci qui dolorem id sit delectus provident optio.</p>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam quaerat tempora quae culpa accusantium voluptatum. Quae harum quidem eaque totam ipsam quibusdam consectetur? Temporibus porro, suscipit, quidem eaque consequatur dolorum nulla vero ipsa dignissimos molestias ad voluptas atque, eum veniam error.</p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Dolores nihil iusto impedit nam, id odit enim! Rerum,
+                    aliquam nulla. Cumque, similique voluptatum dolorum adipisci
+                    qui dolorem id sit delectus provident optio.
+                  </p>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Totam quaerat tempora quae culpa accusantium voluptatum.
+                    Quae harum quidem eaque totam ipsam quibusdam consectetur?
+                    Temporibus porro, suscipit, quidem eaque consequatur dolorum
+                    nulla vero ipsa dignissimos molestias ad voluptas atque, eum
+                    veniam error.
+                  </p>
                 </div>
                 <div class="my-5">
                   <h4 class="text-merri font-weight-bold">Materi kelas</h4>
@@ -54,7 +66,9 @@
                         <div class="card-header shadow-box" id="headingOne">
                           <div>
                             Basic
-                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
+                            <i class="accord-icon material-icons mt-1"
+                              >keyboard_arrow_down</i
+                            >
                           </div>
                         </div>
                       </div>
@@ -69,19 +83,25 @@
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Instalasi Tools
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Konfigurasi
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Assets
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                       </div>
@@ -98,7 +118,9 @@
                         <div class="card-header shadow-box" id="headingTwo">
                           <div>
                             HTML Basic
-                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
+                            <i class="accord-icon material-icons mt-1"
+                              >keyboard_arrow_down</i
+                            >
                           </div>
                         </div>
                       </div>
@@ -113,19 +135,25 @@
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Add Table
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Add Image
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Form
-                            <i class="accord-icon-item material-icons pr-2">lock</i>
+                            <i class="accord-icon-item material-icons pr-2"
+                              >lock</i
+                            >
                           </div>
                         </div>
                       </div>
@@ -213,7 +241,9 @@
                   </div>
                 </div>
                 <hr />
-                <button class="btn btn-primary form-control">BELI SEKARANG</button>
+                <button class="btn btn-primary form-control">
+                  BELI SEKARANG
+                </button>
               </div>
             </div>
           </div>
@@ -229,23 +259,23 @@ export default {
   data() {
     return {
       kelas: store.kelas,
-      kelasDetail: []
+      kelasDetail: [],
     };
   },
   methods: {
     getAllKelas() {
-      this.kelas.forEach(e => {
+      this.kelas.forEach((e) => {
         if (e.slug == this.$route.params.slug) {
           this.kelasDetail = e;
           console.log(this.kelasDetail);
         }
       });
-    }
+    },
   },
   mounted() {},
   created() {
     this.getAllKelas();
-  }
+  },
 };
 </script>
 

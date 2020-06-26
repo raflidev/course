@@ -1,7 +1,13 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <router-link class="navbar-brand" to="/">
-      <img src="../assets/logo.png" active-class="active" width="60" height="60" alt />
+      <img
+        src="../assets/logo.png"
+        active-class="active"
+        width="60"
+        height="60"
+        alt
+      />
     </router-link>
     <button
       class="navbar-toggler"
@@ -17,25 +23,31 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/kelas">KELAS</router-link>
+          <router-link class="nav-link" active-class="active" to="/kelas"
+            >KELAS</router-link
+          >
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/mading">MADING</router-link>
+          <router-link class="nav-link" active-class="active" to="/mading"
+            >MADING</router-link
+          >
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
+          <router-link class="nav-link" active-class="active" to="/roadmap"
+            >ALUR BELAJAR</router-link
+          >
         </li>
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/wishlist">
             <span class="material-icons">favorite_border</span>
-            <span class="badge badge-notify">{{ countWishlist }}</span>
+            <span class="badge badge-notify">{{ wishlist.length }}</span>
             <span class="d-sm-none">WISHLIST</span>
           </router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/cart">
             <span class="material-icons">shopping_cart</span>
-            <span class="badge badge-notify">{{ countCard.length }}</span>
+            <span class="badge badge-notify">{{ cart.length }}</span>
             <span class="d-sm-none">CART</span>
           </router-link>
         </li>
@@ -44,12 +56,12 @@
         </li>
         <li class="nav-item">
           <router-link
-            v-show="login == false"
             class="nav-link btn btn-dark"
             active-class="active"
             to="/login"
-          >LOGIN</router-link>
-          <router-link
+            >LOGIN</router-link
+          >
+          <!-- <router-link
             v-show="login == true"
             class="nav-link btn btn-link text-uppercase"
             active-class="active"
@@ -57,7 +69,7 @@
           >
             <img src="@/assets/logo.png" width="30" class="mr-3" />
             hi, Rafli
-          </router-link>
+          </router-link> -->
         </li>
       </ul>
     </div>
@@ -65,27 +77,35 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapState } from "vuex";
 export default {
-  name: "Navbar",
-  data() {
-    return {
-      login: true,
-      countWishlist: null,
-      countCard: []
-    };
+  computed: mapState(["cart", "wishlist"]),
+  created() {
+    this.$store.dispatch("loadCart");
+    this.$store.dispatch("loadWishlist");
   },
-  mounted() {
-    axios
-      .get("/api.json")
-      .then(
-        response => (
-          (this.countWishlist = response.data.wishlist.length),
-          (this.countCard = response.data.cart)
-        )
-      );
-  }
 };
+// import axios from "axios";
+// export default {
+//   name: "Navbar",
+//   data() {
+//     return {
+//       login: true,
+//       countWishlist: null,
+//       countCard: []
+//     };
+//   },
+//   mounted() {
+//     axios
+//       .get("/api.json")
+//       .then(
+//         response => (
+//           (this.countWishlist = response.data.wishlist.length),
+//           (this.countCard = response.data.cart)
+//         )
+//       );
+//   }
+// };
 </script>
 
 <style>
