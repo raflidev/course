@@ -15,30 +15,36 @@ export default new Vuex.Store({
     roadmap: [],
     wishlist: [],
     cart: [],
-    search: ""
+    populer: [],
+    search: "",
+    ulasan: [],
+    ulasanLoad: false,
   },
   getters: {
-    allKelas: state => state.kelas,
-    getSearch: state => state.search
+    allKelas: (state) => state.kelas,
+    getSearch: (state) => state.search,
+    getUlasan: (state) => state.ulasan,
+    getPopuler: (state) => state.populer,
+    getUlasanLoad: (state) => state.ulasanLoad,
   },
   actions: {
     loadMading({ commit }) {
       Vue.axios
         .get("api.json")
-        .then(result => {
+        .then((result) => {
           commit("ambilMading", result.data.mading);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     },
     loadRoadmap({ commit }) {
       Vue.axios
         .get("api.json")
-        .then(result => {
+        .then((result) => {
           commit("ambilRoadmap", result.data.roadmap);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     },
@@ -50,39 +56,43 @@ export default new Vuex.Store({
     loadWishlist({ commit }) {
       Vue.axios
         .get("api.json")
-        .then(result => {
+        .then((result) => {
           commit("ambilWishlist", result.data.wishlist);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
     },
     loadCart({ commit }) {
       Vue.axios
         .get("api.json")
-        .then(result => {
+        .then((result) => {
           commit("ambilCart", result.data.cart);
         })
-        .catch(err => {
+        .catch((err) => {
           console.log(err);
         });
-    }
+    },
+    async loadUlasan({ commit }) {
+      const response = await axios.get("/api.json");
+      commit("setUlasan", response.data.ulasan);
+      commit("setUlasanLoad", true);
+    },
+    async loadPopuler({ commit }) {
+      const response = await axios.get("/api.json");
+      commit("setPopuler", response.data.populer);
+    },
   },
   mutations: {
-    ambilRoadmap(state, roadmap) {
-      state.roadmap = roadmap;
-    },
-    ambilMading(state, mading) {
-      state.mading = mading;
-    },
-    ambilWishlist(state, wishlist) {
-      state.wishlist = wishlist;
-    },
-    ambilCart(state, cart) {
-      state.cart = cart;
-    },
+    ambilRoadmap: (state, roadmap) => (state.roadmap = roadmap),
+    ambilMading: (state, mading) => (state.mading = mading),
+    ambilWishlist: (state, wishlist) => (state.wishlist = wishlist),
+    ambilCart: (state, cart) => (state.cart = cart),
     setKelas: (state, kelas) => (state.kelas = kelas),
-    setSearch: (state, search) => (state.search = search)
+    setSearch: (state, search) => (state.search = search),
+    setUlasan: (state, ulasan) => (state.ulasan = ulasan),
+    setUlasanLoad: (state, ulasanLoad) => (state.ulasanLoad = ulasanLoad),
+    setPopuler: (state, populer) => (state.populer = populer),
   },
-  modules: {}
+  modules: {},
 });

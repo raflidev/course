@@ -20,7 +20,7 @@
               <div class="col-lg-10 bg-white result-item text-purple rounded mt-2" v-show="search">
                 <div
                   class="box-item p-4 mb-0 border-bottom"
-                  v-for="kelas in tampilData"
+                  v-for="kelas in kelas"
                   :key="kelas.index"
                 >
                   <a
@@ -136,7 +136,7 @@
           <h1 class="text-merri pb-3 text-center">Ulasan Mereka</h1>
           <carousel
             class="mt-5"
-            v-if="ulasan !== null"
+            v-if="ulasanLoad"
             :margin="20"
             :dots="false"
             :nav="false"
@@ -205,70 +205,42 @@
 </style>
 <script>
 import carousel from "v-owl-carousel";
-import axios from "axios";
+import { mapActions, mapState } from "vuex";
 export default {
   name: "Home",
   components: { carousel },
-  data() {
-    return {
-      loaded: false,
-      loadedUlasan: false,
-      show: false,
-      search: "",
-      kelas: [],
-      populer: [],
-      ulasan: [
-        {
-          pesan:
-            "Materi yang disampaikan sangat mudah dipahami dan membuat saya ingin berkarya lebih semangat",
-          oleh: "Mang Rudi"
-        },
-        {
-          pesan: "Kelas yang sangat sesuai teknologi dengan masa sekarang",
-          oleh: "Fujimaru Ritsuka"
-        },
-        {
-          pesan:
-            "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
-          oleh: "Rin Tohsaka"
-        },
-        {
-          pesan: "Bagus, Terimakasih",
-          oleh: "Rei Ayanami"
-        },
-        {
-          pesan:
-            "Ga ada ruginya beli kelas disini, materi mateng dan bisa dipraktekin langsung",
-          oleh: "Rin Tohsaka"
-        },
-        {
-          pesan: "Bagus, Terimakasih",
-          oleh: "Rei Ayanami"
-        }
-      ]
-    };
+  // data() {
+  //   return {
+  //     show: false,
+  //     search: ""
+  //   };
+  // },
+  methods: {
+    ...mapActions(["loadUlasan", "loadKelas", "loadPopuler"])
   },
-
-  mounted() {
-    axios
-      .get("/api.json")
-      .then(
-        response => (
-          (this.kelas = response.data.kelas),
-          (this.populer = response.data.populer)
-        )
-      )
-      .catch(err => console.log(err));
-
-    if (this.kelas !== null) {
-      this.loaded = true;
-    }
+  created() {
+    this.loadUlasan();
+    this.loadKelas();
+    this.loadPopuler();
   },
   computed: {
-    tampilData() {
-      return this.kelas.filter(post => {
-        return post.nama.toLowerCase().includes(this.search.toLowerCase());
-      });
+    ...mapState(["populer", "ulasan", "ulasanLoad"]),
+    kelas: {
+      get() {
+        return this.$store.getters.allKelas.filter(post => {
+          return post.nama
+            .toLowerCase()
+            .includes(this.$store.getters.getSearch.toLowerCase());
+        });
+      }
+    },
+    search: {
+      get() {
+        return this.$store.state.search;
+      },
+      set(value) {
+        this.$store.commit("setSearch", value);
+      }
     }
   }
 };
