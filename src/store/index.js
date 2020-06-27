@@ -15,12 +15,60 @@ export default new Vuex.Store({
     roadmap: [],
     wishlist: [],
     cart: [],
-    search: null,
+    search: ""
+  },
+  getters: {
+    allKelas: state => state.kelas,
+    getSearch: state => state.search
+  },
+  actions: {
+    loadMading({ commit }) {
+      Vue.axios
+        .get("api.json")
+        .then(result => {
+          commit("ambilMading", result.data.mading);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    loadRoadmap({ commit }) {
+      Vue.axios
+        .get("api.json")
+        .then(result => {
+          commit("ambilRoadmap", result.data.roadmap);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    async loadKelas({ commit }) {
+      const response = await axios.get("/api.json");
+
+      commit("setKelas", response.data.kelas);
+    },
+    loadWishlist({ commit }) {
+      Vue.axios
+        .get("api.json")
+        .then(result => {
+          commit("ambilWishlist", result.data.wishlist);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    loadCart({ commit }) {
+      Vue.axios
+        .get("api.json")
+        .then(result => {
+          commit("ambilCart", result.data.cart);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    }
   },
   mutations: {
-    ambilKelas(state, kelas) {
-      state.kelas = kelas;
-    },
     ambilRoadmap(state, roadmap) {
       state.roadmap = roadmap;
     },
@@ -33,70 +81,8 @@ export default new Vuex.Store({
     ambilCart(state, cart) {
       state.cart = cart;
     },
-    mencariKelas(state, word) {
-      state.search = word;
-      state.kelas.filter((kelas) => {
-        return kelas.nama.toLowerCase().includes(word.toLowerCase());
-      });
-    },
+    setKelas: (state, kelas) => (state.kelas = kelas),
+    setSearch: (state, search) => (state.search = search)
   },
-  actions: {
-    loadMading({ commit }) {
-      Vue.axios
-        .get("api.json")
-        .then((result) => {
-          commit("ambilMading", result.data.mading);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    loadRoadmap({ commit }) {
-      Vue.axios
-        .get("api.json")
-        .then((result) => {
-          commit("ambilRoadmap", result.data.roadmap);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    loadKelas({ commit }) {
-      Vue.axios
-        .get("api.json")
-        .then((result) => {
-          commit("ambilKelas", result.data.kelas);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    loadWishlist({ commit }) {
-      Vue.axios
-        .get("api.json")
-        .then((result) => {
-          commit("ambilWishlist", result.data.wishlist);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    loadCart({ commit }) {
-      Vue.axios
-        .get("api.json")
-        .then((result) => {
-          commit("ambilCart", result.data.cart);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
-    mencariKelas({ commit }, kelas) {
-      commit("mencariKelas", kelas);
-    },
-  },
-  modules: {},
-  getters: {
-    getKelas: (state) => state.kelas,
-  },
+  modules: {}
 });

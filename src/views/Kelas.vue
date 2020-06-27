@@ -6,7 +6,7 @@
         <p class="font-weight-light">Pelajari banyak teknologi di Skill-up</p>
         <div class="form-row justify-content-center py-4">
           <div class="col-lg-6 col-sm-12">
-            <input type="text" class="form-control" placeholder="Cari kelas" />
+            <input type="text" class="form-control" v-model="search" placeholder="Cari kelas" />
           </div>
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-11 col-sm-12">
             <div class="row justify-content-center">
-              <div class="col-lg-4 my-3" v-for="kelas in kelas" :key="kelas.index">
+              <div class="col-lg-4 my-3" v-for="kelas in getSearchKelas" :key="kelas.index">
                 <div class="card shadow-box">
                   <a :href="'kelas/' + kelas.slug" class="stretched-link custom-card">
                     <div class="card-body">
@@ -77,11 +77,32 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapActions } from "vuex";
 export default {
-  computed: mapState(["kelas"]),
+  computed: {
+    getSearchKelas: {
+      get() {
+        return this.$store.getters.allKelas.filter(post => {
+          return post.nama
+            .toLowerCase()
+            .includes(this.$store.getters.getSearch.toLowerCase());
+        });
+      }
+    },
+    search: {
+      get() {
+        return this.$store.state.search;
+      },
+      set(value) {
+        this.$store.commit("setSearch", value);
+      }
+    }
+  },
+  methods: {
+    ...mapActions(["loadKelas"])
+  },
   created() {
-    this.$store.dispatch("loadKelas");
+    this.loadKelas();
   }
 };
 </script>
