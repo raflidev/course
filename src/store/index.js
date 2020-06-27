@@ -15,6 +15,7 @@ export default new Vuex.Store({
     roadmap: [],
     wishlist: [],
     cart: [],
+    search: null,
   },
   mutations: {
     ambilKelas(state, kelas) {
@@ -31,6 +32,12 @@ export default new Vuex.Store({
     },
     ambilCart(state, cart) {
       state.cart = cart;
+    },
+    mencariKelas(state, word) {
+      state.search = word;
+      state.kelas.filter((kelas) => {
+        return kelas.nama.toLowerCase().includes(word.toLowerCase());
+      });
     },
   },
   actions: {
@@ -84,6 +91,12 @@ export default new Vuex.Store({
           console.log(err);
         });
     },
+    mencariKelas({ commit }, kelas) {
+      commit("mencariKelas", kelas);
+    },
   },
   modules: {},
+  getters: {
+    getKelas: (state) => state.kelas,
+  },
 });

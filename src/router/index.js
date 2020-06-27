@@ -12,6 +12,7 @@ import Roadmap from "../views/Roadmap.vue";
 import Wishlist from "../views/Wishlist.vue";
 import Cart from "../views/Cart.vue";
 import Redirect from "../views/Redirect.vue";
+import Testing from "../views/Testing.vue";
 // Detail Layout
 import DetailRoadmap from "../views/detail/Roadmap.vue";
 import DetailMading from "../views/detail/Mading.vue";
@@ -119,6 +120,11 @@ const routes = [
     path: "/Cart",
     name: "Cart",
     component: Cart,
+  },
+  {
+    path: "/test",
+    name: "test",
+    component: Testing,
   },
   {
     path: "*",
