@@ -1,7 +1,13 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <router-link class="navbar-brand" to="/">
-      <img src="../assets/logo.png" active-class="active" width="60" height="60" alt />
+      <img
+        src="../assets/logo.png"
+        active-class="active"
+        width="60"
+        height="60"
+        alt
+      />
     </router-link>
     <button
       class="navbar-toggler"
@@ -17,13 +23,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/kelas">KELAS</router-link>
+          <router-link class="nav-link" active-class="active" to="/kelas"
+            >KELAS</router-link
+          >
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/mading">MADING</router-link>
+          <router-link class="nav-link" active-class="active" to="/mading"
+            >MADING</router-link
+          >
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
+          <router-link class="nav-link" active-class="active" to="/roadmap"
+            >ALUR BELAJAR</router-link
+          >
         </li>
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/wishlist">
@@ -43,7 +55,12 @@
           <span class="nav-divider"></span>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link btn btn-dark" active-class="active" to="/login">LOGIN</router-link>
+          <router-link
+            class="nav-link btn btn-dark"
+            active-class="active"
+            to="/login"
+            >LOGIN</router-link
+          >
           <!-- <router-link
             v-show="login == true"
             class="nav-link btn btn-link text-uppercase"
@@ -60,13 +77,14 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   computed: mapState(["cart", "wishlist"]),
+  methods: mapActions(["loadCart", "loadWishlist"]),
   created() {
-    this.$store.dispatch("loadCart");
-    this.$store.dispatch("loadWishlist");
-  }
+    this.loadCart();
+    this.loadWishlist();
+  },
 };
 // import axios from "axios";
 // export default {

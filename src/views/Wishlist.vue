@@ -28,7 +28,10 @@
                     <span class="mx-2">·</span>
                     <span>{{ kelas.tingkat }}</span>
                     <hr />
-                    <button class="btn btn-dark form-control text-uppercase">
+                    <button
+                      @click="addCart(kelas)"
+                      class="btn btn-dark form-control text-uppercase"
+                    >
                       masukan keranjang
                     </button>
                   </div>
@@ -68,11 +71,18 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   computed: mapState(["wishlist"]),
+  methods: {
+    ...mapActions(["loadWishlist"]),
+    addCart(kelas) {
+      this.$store.state.cart.push(kelas);
+      console.log(this.cart);
+    },
+  },
   created() {
-    this.$store.dispatch("loadWishlist");
+    this.loadWishlist();
   },
   // methods: {
   //   addCart(kelas) {

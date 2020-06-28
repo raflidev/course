@@ -181,6 +181,7 @@
   "roadmap": [
     {
       "nama": "Full-Stack Web Developer",
+      "slug": "fullstack-web-developer",
       "level": "Menengah",
       "kelas": [
         {
@@ -235,6 +236,7 @@
     },
     {
       "nama": "Web Desainer",
+      "slug": "web-desainer",
       "level": "Menengah",
       "kelas": [
         {

@@ -6,17 +6,16 @@
         <p class="font-weight-light">
           Kumpulan karya member yang telah belajar di Skill-up
         </p>
-        <form action="get">
-          <div class="form-row justify-content-center">
-            <div class="col-lg-6 col-sm-12">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Cari karya"
-              />
-            </div>
+        <div class="form-row justify-content-center">
+          <div class="col-lg-6 col-sm-12">
+            <input
+              type="text"
+              class="form-control"
+              v-model="search"
+              placeholder="Cari karya"
+            />
           </div>
-        </form>
+        </div>
       </div>
     </section>
     <section class="bg-white text-purple py-3">
@@ -80,11 +79,32 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapActions } from "vuex";
 export default {
-  computed: mapState(["mading"]),
+  computed: {
+    mading: {
+      get() {
+        return this.$store.getters.getMading.filter((post) => {
+          return post.nama
+            .toLowerCase()
+            .includes(this.$store.getters.getSearch);
+        });
+      },
+    },
+    search: {
+      get() {
+        return this.$store.state.search;
+      },
+      set(value) {
+        this.$store.commit("setSearch", value);
+      },
+    },
+  },
+  methods: {
+    ...mapActions(["loadMading"]),
+  },
   created() {
-    this.$store.dispatch("loadMading");
+    this.loadMading();
   },
 };
 // import axios from "axios";
