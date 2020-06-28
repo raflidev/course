@@ -18,7 +18,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-4 my-3" v-for="kelas in getSearchKelas" :key="kelas.index">
                 <div class="card shadow-box">
-                  <a :href="'kelas/' + kelas.slug" class="stretched-link custom-card">
+                  <router-link :to="'kelas/' + kelas.slug" class="stretched-link custom-card">
                     <div class="card-body">
                       <img v-bind:src="kelas.image" class="card-img-top" />
 
@@ -40,7 +40,7 @@
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </router-link>
                 </div>
               </div>
             </div>

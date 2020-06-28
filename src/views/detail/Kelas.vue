@@ -3,7 +3,7 @@
     <section class="py-3 pb-5">
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">{{ kelasDetail.nama }}</h1>
-        <h5 class="text-muted">Dibuat oleh Rafli Ramadhan</h5>
+        <h5 class="text-muted">Dibuat oleh {{ kelasDetail.mentor.nama }}</h5>
         <a href="#beli" class="btn btn-outline-purple mt-3">BELI KELAS</a>
       </div>
     </section>
@@ -24,7 +24,7 @@
                         title="Player for 3  HTML Add Images"
                         width="875"
                         height="410"
-                        src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;cc_lang_pref=auto&amp;widget_referrer=https%3A%2F%2Fwww.buildwithangga.com%2Fkelas%2Fwebsite-tiketsaya&amp;noCookie=false&amp;rel=0&amp;showinfo=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fwww.buildwithangga.com&amp;widgetid=2"
+                        src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1"
                       ></iframe>
                     </div>
                   </div>
@@ -66,9 +66,7 @@
                         <div class="card-header shadow-box" id="headingOne">
                           <div>
                             Basic
-                            <i class="accord-icon material-icons mt-1"
-                              >keyboard_arrow_down</i
-                            >
+                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
                           </div>
                         </div>
                       </div>
@@ -83,25 +81,19 @@
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Instalasi Tools
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Konfigurasi
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Assets
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                       </div>
@@ -118,9 +110,7 @@
                         <div class="card-header shadow-box" id="headingTwo">
                           <div>
                             HTML Basic
-                            <i class="accord-icon material-icons mt-1"
-                              >keyboard_arrow_down</i
-                            >
+                            <i class="accord-icon material-icons mt-1">keyboard_arrow_down</i>
                           </div>
                         </div>
                       </div>
@@ -135,25 +125,19 @@
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Add Table
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Add Image
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                         <div class="card my-2">
                           <div class="card-header shadow-box">
                             Form
-                            <i class="accord-icon-item material-icons pr-2"
-                              >lock</i
-                            >
+                            <i class="accord-icon-item material-icons pr-2">lock</i>
                           </div>
                         </div>
                       </div>
@@ -241,9 +225,7 @@
                   </div>
                 </div>
                 <hr />
-                <button class="btn btn-primary form-control">
-                  BELI SEKARANG
-                </button>
+                <button class="btn btn-primary form-control">BELI SEKARANG</button>
               </div>
             </div>
           </div>
@@ -254,28 +236,25 @@
 </template>
 
 <script>
-import store from "@/services/store.js";
+import { mapActions, mapState } from "vuex";
 export default {
-  data() {
-    return {
-      kelas: store.kelas,
-      kelasDetail: [],
-    };
+  computed: {
+    ...mapState(["kelas"]),
+    kelasDetail: {
+      get() {
+        return this.$store.getters.allKelas.find(post => {
+          return post.slug == this.$route.params.slug;
+        });
+      }
+    }
   },
   methods: {
-    getAllKelas() {
-      this.kelas.forEach((e) => {
-        if (e.slug == this.$route.params.slug) {
-          this.kelasDetail = e;
-          console.log(this.kelasDetail);
-        }
-      });
-    },
+    ...mapActions(["loadKelas"])
   },
   mounted() {},
   created() {
-    this.getAllKelas();
-  },
+    this.loadKelas();
+  }
 };
 </script>
 

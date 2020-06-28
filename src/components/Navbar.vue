@@ -1,13 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <router-link class="navbar-brand" to="/">
-      <img
-        src="../assets/logo.png"
-        active-class="active"
-        width="60"
-        height="60"
-        alt
-      />
+      <img src="../assets/logo.png" active-class="active" width="60" height="60" alt />
     </router-link>
     <button
       class="navbar-toggler"
@@ -23,32 +17,26 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/kelas"
-            >KELAS</router-link
-          >
+          <router-link class="nav-link" active-class="active" to="/kelas">KELAS</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/mading"
-            >MADING</router-link
-          >
+          <router-link class="nav-link" active-class="active" to="/mading">MADING</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/roadmap"
-            >ALUR BELAJAR</router-link
-          >
+          <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/wishlist">
             <span class="material-icons">favorite_border</span>
             <span class="badge badge-notify">{{ wishlist.length }}</span>
-            <span class="d-sm-none">WISHLIST</span>
+            <span class="d-sm-none d-md-none">WISHLIST</span>
           </router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/cart">
             <span class="material-icons">shopping_cart</span>
             <span class="badge badge-notify">{{ cart.length }}</span>
-            <span class="d-sm-none">CART</span>
+            <span class="d-sm-none d-md-none">CART</span>
           </router-link>
         </li>
         <li class="nav-item">
@@ -56,20 +44,20 @@
         </li>
         <li class="nav-item">
           <router-link
+            v-show="!login"
             class="nav-link btn btn-dark"
             active-class="active"
             to="/login"
-            >LOGIN</router-link
-          >
-          <!-- <router-link
-            v-show="login == true"
-            class="nav-link btn btn-link text-uppercase"
+          >LOGIN</router-link>
+          <router-link
+            v-show="login"
+            class="nav-link btn btn-link text-uppercase text-left"
             active-class="active"
             to="/dashboard"
           >
             <img src="@/assets/logo.png" width="30" class="mr-3" />
             hi, Rafli
-          </router-link>-->
+          </router-link>
         </li>
       </ul>
     </div>
@@ -79,12 +67,17 @@
 <script>
 import { mapState, mapActions } from "vuex";
 export default {
+  data() {
+    return {
+      login: true
+    };
+  },
   computed: mapState(["cart", "wishlist"]),
   methods: mapActions(["loadCart", "loadWishlist"]),
   created() {
     this.loadCart();
     this.loadWishlist();
-  },
+  }
 };
 // import axios from "axios";
 // export default {
