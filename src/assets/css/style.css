@@ -38,9 +38,7 @@ body {
   padding-bottom: 30px;
   padding-left: 1rem;
 }
-.login-nav {
-  margin-left: 22rem;
-}
+
 .navbar-nav .nav-divider {
   width: 1px;
   height: calc(100% - 8px);
@@ -137,6 +135,14 @@ aside.sidebar {
   margin-top: 57px;
 }
 .benefit p {
-  width: 94px;
+  width: 110px;
   margin: 24px auto;
+}
+.login-nav {
+  margin-left: 22rem;
+}
+@media only screen and (max-width: 1125px) {
+  .login-nav {
+    margin-left: 10rem;
+  }
 }

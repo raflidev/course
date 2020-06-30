@@ -4,7 +4,7 @@
       <div class="container">
         <Navbar />
       </div>
-      <div class="container mt-5">
+      <div class="container pb-5 mt-5">
         <div class="row">
           <div class="col-lg-7">
             <h1 class="text-merri pb-3">Make Your Dreams Come True</h1>
@@ -51,17 +51,20 @@
       <div class="mt-5 container text-purple">
         <h1 class="pb-3 text-center">Kelas Populer</h1>
         <div class="row justify-content-center mt-5">
-          <div class="col col-12 col-lg-11">
+          <div class="col col-12 col-sm-5 col-md-12 col-lg-11">
             <div class="row justify-content-center">
-              <div class="col-11 col-lg-4 mb-4" v-for="kelas in populer" :key="kelas.index">
-                <div class="card shadow-box">
-                  <div class="card-body">
-                    <img v-bind:src="kelas.image" class="card-img-top" />
-                    <h6 class="line-height-1 mb-0 mt-3 font-weight-bold">{{ kelas.nama }}</h6>
-                    <span class="text-gray-500">70 Menit &middot; 10 Materi &middot; All-level</span>
-                    <button class="mt-2 btn btn-sm btn-outline-dark font-weight-bold">LIHAT KELAS</button>
-                  </div>
-                </div>
+              <div
+                class="col-sm-6 col-md-6 col-lg-4 mb-4"
+                v-for="kelas in populer"
+                :key="kelas.index"
+              >
+                <Card
+                  :image="kelas.image"
+                  :nama="kelas.nama"
+                  :menit="kelas.menit"
+                  :materi="kelas.materi"
+                  :level="kelas.level"
+                />
               </div>
             </div>
           </div>
@@ -72,29 +75,20 @@
       <div class="mt-5 container text-purple">
         <h1 class="pb-3 text-center">Kelas Pilihan</h1>
         <div class="row justify-content-center mt-5">
-          <div class="col col-12 col-lg-11">
+          <div class="col col-12 col-md-12 col-lg-11">
             <div class="row justify-content-center">
-              <div class="col-11 col-lg-4 mb-4" v-for="kelas in populer" :key="kelas.index">
-                <div class="card shadow-box">
-                  <div class="card-body">
-                    <img v-bind:src="kelas.image" class="card-img-top" />
-                    <h6 class="line-height-1 mb-0 mt-3 font-weight-bold">{{ kelas.nama }}</h6>
-                    <span class="text-gray-500">70 Menit &middot; 10 Materi &middot; All-level</span>
-                    <button class="mt-2 btn btn-sm btn-outline-dark font-weight-bold">LIHAT KELAS</button>
-                    <!-- <hr /> -->
-                    <!-- <div class="row">
-                      <div class="col-auto">
-                        <div class="mr-2">
-                          <img src="../assets/logo.png" width="50" height="50" />
-                        </div>
-                      </div>
-                      <div class="col pl-2">
-                        <h6 class="mb-0 line-height-1 text-600">{{ kelas.mentor.nama }}</h6>
-                        <p class="text-gray-500">{{ kelas.mentor.skill }}</p>
-                      </div>
-                    </div>-->
-                  </div>
-                </div>
+              <div
+                class="col-11 col-md-6 col-lg-4 mb-4"
+                v-for="kelas in populer"
+                :key="kelas.index"
+              >
+                <Card
+                  :image="kelas.image"
+                  :nama="kelas.nama"
+                  :menit="kelas.menit"
+                  :materi="kelas.materi"
+                  :level="kelas.level"
+                />
               </div>
             </div>
           </div>
@@ -105,21 +99,32 @@
       <div class="container">
         <div class="mt-5 text-white">
           <div class="row">
-            <div class="col-6 text-center">
+            <div class="col-lg-6 col-sm-12 text-center">
               <h2>Benefit Belajar Bersama kami</h2>
-              <p>Tingatkan keahlian kodingmu</p>
+              <p>Tingkatkan keahlian kodingmu</p>
               <div class="benefit row">
                 <div class="col-4 mb-5" v-for="benefit in benefit" :key="benefit.index">
-                  <img :src="require('@/assets/icon/'+ benefit.icon +'.svg')" alt srcset />
+                  <img
+                    :src="require('@/assets/icon/'+ benefit.icon +'.svg')"
+                    class="text-dark"
+                    alt
+                    srcset
+                  />
 
                   <p>{{benefit.isi}}</p>
                 </div>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-12">
               <div class="row justify-content-center">
                 <div class="col-lg-6">
-                  <img src="@/assets/benefit.svg" class="fluid-img" height="451" alt srcset />
+                  <img
+                    src="@/assets/benefit.svg"
+                    class="fluid-img d-none d-md-none d-lg-block"
+                    height="451"
+                    alt
+                    srcset
+                  />
                 </div>
               </div>
             </div>
@@ -131,7 +136,7 @@
       <div class="mt-5 container text-purple">
         <h1 class="pb-5 text-center">Keunggulan Belajar di Skill-Up</h1>
         <div class="row">
-          <div class="col-lg-4" v-for="kelas in 9" :key="kelas.index">
+          <div class="col-lg-4 col-md-6" v-for="kelas in 9" :key="kelas.index">
             <div class="card-keunggulan shadow rounded mb-4">
               <div class="p-3 pt-4">
                 <img src="@/assets/check.svg" class="float-left mr-3" alt srcset />
@@ -152,11 +157,16 @@
             :margin="20"
             :dots="false"
             :nav="false"
-            :items="3"
             :autoplay="true"
+            :responsive="{0:{items:1,nav:false,dots:true},600:{items:1,dots:true},800:{items:2,dots:true},1000:{items:3,dots:true}}"
           >
-            <div class="card shadow-box" v-for="ulasan in ulasan" :key="ulasan.index">
-              <div class="card-body p-3">
+            <div
+              class="card shadow-box card-carousel"
+              style="min-width:300px"
+              v-for="ulasan in ulasan"
+              :key="ulasan.index"
+            >
+              <div class="card-body p-3" style="min-width:300px">
                 <h6 class="line-height-1" style="min-height:70px">{{ulasan.pesan}}</h6>
                 <hr />
                 <h6 class="mb-0 line-height-1 text-600">{{ulasan.oleh}}</h6>
@@ -164,31 +174,6 @@
               </div>
             </div>
           </carousel>
-          <!-- <div class="row justify-content-center mt-5">
-            <div class="col col-12 col-lg-12">
-              <div class="row justify-content-center">
-                <div class="col-11 col-lg-4 mb-4" v-for="index in ulasanCount" :key="index">
-                  <div class="card shadow-box">
-                    <div class="card-body p-3">
-                      <h6 class="line-height-1">{{ ulasan[index - 1].pesan }}</h6>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">{{ ulasan[index - 1].oleh }}</h6>
-                          <span class="text-gray-500">Tukang Bakso</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
         </div>
       </div>
     </section>
@@ -218,12 +203,11 @@
 </style>
 <script>
 import carousel from "v-owl-carousel";
-import Footer from "@/components/Footer.vue";
-import Navbar from "@/components/Navbar.vue";
+import { Card, Footer, Navbar } from "@/components";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Home",
-  components: { carousel, Footer, Navbar },
+  components: { carousel, Footer, Navbar, Card },
   // data() {
   //   return {
   //     show: false,
