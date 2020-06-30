@@ -1,7 +1,7 @@
 <template>
   <section id="app" class="bg-purple">
     <div class="container">
-      <Navbar v-if="!$route.meta.hideNavigation" />
+      <Navbar :class="$route.meta.class" v-if="!$route.meta.hideNavigation " />
     </div>
     <router-view />
     <Footer v-if="!$route.meta.hideNavigation" />
@@ -21,7 +21,7 @@ export default {
   name: "App",
   components: {
     Footer,
-    Navbar,
-  },
+    Navbar
+  }
 };
 </script>

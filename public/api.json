@@ -277,5 +277,31 @@
         }
       ]
     }
+  ],
+  "benefit": [
+    {
+      "icon": "comment",
+      "isi": "Lifetime Konsultasi"
+    },
+    {
+      "icon": "download",
+      "isi": "Materi Dapat Didownload"
+    },
+    {
+      "icon": "update",
+      "isi": "Materi Terupdate"
+    },
+    {
+      "icon": "happy",
+      "isi": "Gampang Dipahami"
+    },
+    {
+      "icon": "sertifikat",
+      "isi": "Sertifikat"
+    },
+    {
+      "icon": "bahasa",
+      "isi": "Berbahasa Indonesia"
+    }
   ]
 }

@@ -1,27 +1,29 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 // Landing Layout
-import Home from "../views/Home.vue";
-import Mading from "../views/Mading.vue";
-import User from "../views/User.vue";
-import Kelas from "../views/Kelas.vue";
-import Login from "../views/Login.vue";
-import Dashboard from "../views/Dashboard.vue";
-import Register from "../views/Register.vue";
-import Roadmap from "../views/Roadmap.vue";
-import Wishlist from "../views/Wishlist.vue";
-import Cart from "../views/Cart.vue";
-import Redirect from "../views/Redirect.vue";
-import Testing from "../views/Testing.vue";
+import {
+  Home,
+  Mading,
+  User,
+  Kelas,
+  Login,
+  Dashboard,
+  Register,
+  Roadmap,
+  Wishlist,
+  Cart,
+  Redirect,
+  Testing,
+} from "@/views/";
 // Detail Layout
-import DetailRoadmap from "../views/detail/Roadmap.vue";
-import DetailMading from "../views/detail/Mading.vue";
-import DetailKelas from "../views/detail/Kelas.vue";
+import { DetailKelas, DetailMading, DetailRoadmap } from "../views/detail/";
 // Dashboard Layout
-import HomeDashboard from "../views/dashboard/Home.vue";
-import KelasDashboard from "../views/dashboard/Kelas.vue";
-import KaryaDashboard from "../views/dashboard/Karya.vue";
-import UserDashboard from "../views/dashboard/User.vue";
+import {
+  HomeDashboard,
+  KelasDashboard,
+  KaryaDashboard,
+  UserDashboard,
+} from "../views/dashboard/";
 
 Vue.use(VueRouter);
 
@@ -30,6 +32,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
+    meta: { hideNavigation: true },
   },
   {
     path: "/Login",
@@ -45,7 +48,7 @@ const routes = [
   },
 
   {
-    path: "/Dashboard",
+    path: "/dashboard",
     name: "Dashboard",
     component: Dashboard,
     meta: { hideNavigation: true },

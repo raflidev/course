@@ -1,7 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <router-link class="navbar-brand" to="/">
-      <img src="../assets/logo.png" active-class="active" width="60" height="60" alt />
+      <!-- <img src="../assets/logo.png" active-class="active" width="60" height="60" alt /> -->
+      <h4>Skill-Up></h4>
     </router-link>
     <button
       class="navbar-toggler"
@@ -15,7 +16,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-5">
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/kelas">KELAS</router-link>
         </li>
@@ -25,24 +26,21 @@
         <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/roadmap">ALUR BELAJAR</router-link>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/wishlist">
             <span class="material-icons">favorite_border</span>
             <span class="badge badge-notify">{{ wishlist.length }}</span>
             <span class="d-sm-none d-md-none">WISHLIST</span>
           </router-link>
-        </li>
-        <li class="nav-item">
+        </li>-->
+        <!-- <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/cart">
             <span class="material-icons">shopping_cart</span>
             <span class="badge badge-notify">{{ cart.length }}</span>
             <span class="d-sm-none d-md-none">CART</span>
           </router-link>
-        </li>
-        <li class="nav-item">
-          <span class="nav-divider"></span>
-        </li>
-        <li class="nav-item">
+        </li>-->
+        <li class="nav-item login-nav">
           <router-link
             v-show="!login"
             class="nav-link btn btn-dark"

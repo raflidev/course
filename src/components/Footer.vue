@@ -1,55 +1,23 @@
 <template>
-  <section class="footer py-5">
-    <div class="container text-purple">
+  <section class="footer py-5 bg-purple">
+    <div class="container text-white">
       <div class="row">
         <div class="col-lg-4 col-6">
-          <h5 class="text-600">Office</h5>
-          <p class="text-gray-500">
-            brand@gmail.com
-            <br />Bekasi, Indonesia
+          <h4 class="text-600">Skill-Up></h4>
+          <p class="text-gray-500" style="width:251px">
+            Tingkatkan skill dengan belajar
+            coding, design dan apapun
+            dibalik teknologi terkini
           </p>
         </div>
-        <div class="col-lg col-6">
-          <h5 class="text-600">Social</h5>
-          <ul class="text-gray-500 list-unstyled sitemap">
-            <li>
-              <a href="http://">Instagram</a>
-            </li>
-            <li>
-              <a href="http://">Youtube</a>
-            </li>
-            <li>
-              <a href="http://">Twitter</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg col-6">
-          <h5 class="text-600">Information</h5>
-          <ul class="text-gray-500 list-unstyled sitemap">
-            <li>
-              <a href="http://">Cara Membeli Kelas</a>
-            </li>
-            <li>
-              <a href="http://">FAQ</a>
-            </li>
-            <li>
-              <a href="http://">Kebijakan Privasi</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg col-6">
-          <h5 class="text-600">Resources</h5>
-          <ul class="text-gray-500 list-unstyled sitemap">
-            <li>
-              <a href="http://">Biaya Kelas</a>
-            </li>
-            <li>
-              <a href="http://">Menjadi Mentor</a>
-            </li>
-            <li>
-              <a href="http://">Contact Us</a>
-            </li>
-          </ul>
+        <div class="col-lg-4 offset-lg-4 col-6 text-right">
+          <div class="social-media">
+            <img src="@/assets/social-media/twitter.svg" alt srcset />
+            <img src="@/assets/social-media/fb.svg" alt srcset />
+            <img src="@/assets/social-media/ig.svg" alt srcset />
+            <img src="@/assets/social-media/github.svg" alt srcset />
+          </div>
+          <p style="margin-top:60px" class="text-gray-500">ask@skill-up.com</p>
         </div>
       </div>
     </div>

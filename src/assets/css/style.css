@@ -2,6 +2,14 @@
 body {
   color: #fff;
 }
+.g-color {
+  background: rgb(15, 82, 230);
+  background: linear-gradient(
+    165deg,
+    rgba(15, 82, 230, 1) 0%,
+    rgba(104, 27, 85, 1) 100%
+  );
+}
 .active > .nav-link,
 .navbar-nav .nav-link.active {
   color: #31de31 !important;
@@ -10,7 +18,7 @@ body {
   background-color: #31de31 !important;
 }
 .bg-purple {
-  background-color: #150e20 !important;
+  background-color: #020c23 !important;
 }
 .text-purple {
   color: #150e20 !important;
@@ -21,7 +29,7 @@ body {
   font-weight: 400;
   line-height: 30px;
 }
-.text-merri {
+.text-redhat {
   font-family: "Red Hat Display", sans-serif;
 }
 .navbar {
@@ -29,6 +37,9 @@ body {
   padding-right: 1rem;
   padding-bottom: 30px;
   padding-left: 1rem;
+}
+.login-nav {
+  margin-left: 22rem;
 }
 .navbar-nav .nav-divider {
   width: 1px;
@@ -58,9 +69,6 @@ body {
 .text-gray-500 {
   color: #a8a8a8 !important;
 }
-.text-600 {
-  font-weight: 600;
-}
 .line-height-1 {
   line-height: 1.5;
 }
@@ -71,6 +79,7 @@ html {
 .kenapa-kami,
 .kelas-populer,
 .ulasan-mereka,
+.keunggulan,
 .footer {
   background-color: #fff;
 }
@@ -103,9 +112,6 @@ a.custom-card:hover {
   color: inherit;
   text-decoration: none;
 }
-.shadow-box:hover {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2) !important;
-}
 
 aside.sidebar {
   width: 300px;
@@ -116,4 +122,21 @@ aside.sidebar {
   top: 0;
   left: 0;
   z-index: 2;
+}
+
+.card-keunggulan {
+  font-size: 14px;
+  min-width: 360px;
+  max-height: 122px;
+}
+
+.social-media img {
+  margin-left: 17px;
+}
+.benefit {
+  margin-top: 57px;
+}
+.benefit p {
+  width: 94px;
+  margin: 24px auto;
 }
