@@ -4,7 +4,7 @@
       <div class="container mt-5 text-center">
         <h1 class="text-merri pb-3">Kelas</h1>
         <p class="font-weight-light">Pelajari banyak teknologi di Skill-up</p>
-        <div class="form-row justify-content-center py-4">
+        <div class="form-row justify-content-center pt-2 pb-4">
           <div class="col-lg-6 col-sm-12">
             <input type="text" class="form-control" v-model="search" placeholder="Cari kelas" />
           </div>
@@ -17,31 +17,14 @@
           <div class="col-lg-11 col-sm-12">
             <div class="row justify-content-center">
               <div class="col-lg-4 my-3" v-for="kelas in getSearchKelas" :key="kelas.index">
-                <div class="card shadow-box">
-                  <router-link :to="'kelas/' + kelas.slug" class="stretched-link custom-card">
-                    <div class="card-body">
-                      <img v-bind:src="kelas.image" class="card-img-top" />
-
-                      <h5 class="line-height-1 mb-0 mt-3 text-600">{{ kelas.nama }}</h5>
-                      <h6>Rp {{ kelas.harga }}</h6>
-                      <span>{{ kelas.episode }} Episode</span>
-                      <span class="mx-2">·</span>
-                      <span>{{ kelas.tingkat }}</span>
-                      <hr />
-                      <div class="row">
-                        <div class="col-auto">
-                          <div class="mr-2">
-                            <img src="../assets/logo.png" width="50" height="50" />
-                          </div>
-                        </div>
-                        <div class="col pl-2">
-                          <h6 class="mb-0 line-height-1 text-600">{{ kelas.mentor.nama }}</h6>
-                          <p class="text-gray-500">{{ kelas.mentor.skill }}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </router-link>
-                </div>
+                <Card
+                  :image="kelas.image"
+                  :nama="kelas.nama"
+                  :menit="kelas.menit"
+                  :materi="kelas.episode"
+                  :level="kelas.tingkat"
+                  :link="kelas.slug"
+                />
               </div>
             </div>
           </div>
@@ -77,8 +60,10 @@
 </template>
 
 <script>
+import { Card } from "@/components";
 import { mapActions } from "vuex";
 export default {
+  components: { Card },
   computed: {
     getSearchKelas: {
       get() {

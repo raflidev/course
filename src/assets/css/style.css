@@ -14,6 +14,9 @@ body {
 .navbar-nav .nav-link.active {
   color: #31de31 !important;
 }
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
 .bg-green {
   background-color: #31de31 !important;
 }
@@ -123,9 +126,12 @@ aside.sidebar {
 }
 
 .card-keunggulan {
-  font-size: 14px;
   min-width: 360px;
   max-height: 122px;
+}
+.nav-video,
+.card-keunggulan {
+  font-size: 14px;
 }
 
 .social-media img {
@@ -141,8 +147,88 @@ aside.sidebar {
 .login-nav {
   margin-left: 22rem;
 }
+.deskripsi-kelas p {
+  width: 475px;
+}
+
+.btn-primary,
+.btn-outline-primary:hover {
+  background-color: #0f52e6;
+  border: 1px solid #0f52e6;
+}
+.deskripsi-kelas .btn {
+  font-weight: 600;
+  border-radius: 5px;
+}
+.deskripsi-kelas .btn-outline-primary {
+  color: #fff;
+}
+
+.materi-list {
+  height: 600px;
+  overflow: visible;
+  overflow-x: hidden;
+}
+.list-group {
+  overflow: hidden;
+}
+
+.video {
+  overflow: hidden;
+}
+.profil-image {
+  width: 50%;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.accord-icon {
+  float: right;
+}
+.accord-icon-item {
+  float: left;
+}
+.accord-materi {
+  float: right;
+}
+.item-fitur {
+  width: 100%;
+  overflow: hidden;
+}
+.item-fitur .fitur {
+  float: left;
+}
+.item-fitur .icon {
+  float: right;
+}
+.list-group .active,
+.list-group .text-gray-500 {
+  color: black !important;
+}
+.bg-lightpurple {
+  background-color: #681b55;
+}
+.nav-video a {
+  color: #fff;
+}
+
 @media only screen and (max-width: 1125px) {
   .login-nav {
     margin-left: 10rem;
+  }
+}
+@media only screen and (max-width: 438px) {
+  .deskripsi-kelas p {
+    width: auto;
+  }
+  .deskripsi-kelas h2 {
+    font-size: 30px;
+  }
+  .login-nav {
+    margin: 0;
+  }
+  ul.navbar-nav.ml-5 {
+    margin-left: 0 !important;
   }
 }

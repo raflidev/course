@@ -16,7 +16,12 @@ import {
   Testing,
 } from "@/views/";
 // Detail Layout
-import { DetailKelas, DetailMading, DetailRoadmap } from "../views/detail/";
+import {
+  DetailKelas,
+  DetailMading,
+  DetailRoadmap,
+  Video,
+} from "../views/detail/";
 // Dashboard Layout
 import {
   HomeDashboard,
@@ -108,6 +113,11 @@ const routes = [
     path: "/kelas/:slug",
     name: "Detailkelas",
     component: DetailKelas,
+  },
+  {
+    path: "/kelas/:slug/episode/:video",
+    name: "DetailVideo",
+    component: Video,
   },
   {
     path: "/mading/:id",

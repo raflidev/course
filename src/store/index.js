@@ -17,6 +17,7 @@ export default new Vuex.Store({
     ulasan: [],
     ulasanLoad: false,
     benefit: [],
+    keunggulan: [],
   },
   getters: {
     allKelas: (state) => state.kelas,
@@ -26,6 +27,7 @@ export default new Vuex.Store({
     getUlasanLoad: (state) => state.ulasanLoad,
     getMading: (state) => state.mading,
     getBenefit: (state) => state.benefit,
+    getKeunggulan: (state) => state.keunggulan,
   },
   actions: {
     async loadMading({ commit }) {
@@ -66,6 +68,10 @@ export default new Vuex.Store({
       const response = await axios.get("/api.json");
       commit("setBenefit", response.data.benefit);
     },
+    async loadKeunggulan({ commit }) {
+      const response = await axios.get("/api.json");
+      commit("setKeunggulan", response.data.keunggulan);
+    },
   },
   mutations: {
     setRoadmap: (state, roadmap) => (state.roadmap = roadmap),
@@ -78,6 +84,7 @@ export default new Vuex.Store({
     setUlasanLoad: (state, ulasanLoad) => (state.ulasanLoad = ulasanLoad),
     setPopuler: (state, populer) => (state.populer = populer),
     setBenefit: (state, benefit) => (state.benefit = benefit),
+    setKeunggulan: (state, keunggulan) => (state.keunggulan = keunggulan),
   },
   modules: {},
 });

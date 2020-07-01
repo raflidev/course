@@ -62,8 +62,9 @@
                   :image="kelas.image"
                   :nama="kelas.nama"
                   :menit="kelas.menit"
-                  :materi="kelas.materi"
-                  :level="kelas.level"
+                  :materi="kelas.episode"
+                  :level="kelas.tingkat"
+                  :link="kelas.slug"
                 />
               </div>
             </div>
@@ -86,8 +87,9 @@
                   :image="kelas.image"
                   :nama="kelas.nama"
                   :menit="kelas.menit"
-                  :materi="kelas.materi"
-                  :level="kelas.level"
+                  :materi="kelas.episode"
+                  :level="kelas.tingkat"
+                  :link="kelas.slug"
                 />
               </div>
             </div>
@@ -95,58 +97,8 @@
         </div>
       </div>
     </section>
-    <section class="kenapa-kami py-5 bg-purple">
-      <div class="container">
-        <div class="mt-5 text-white">
-          <div class="row">
-            <div class="col-lg-6 col-sm-12 text-center">
-              <h2>Benefit Belajar Bersama kami</h2>
-              <p>Tingkatkan keahlian kodingmu</p>
-              <div class="benefit row">
-                <div class="col-4 mb-5" v-for="benefit in benefit" :key="benefit.index">
-                  <img
-                    :src="require('@/assets/icon/'+ benefit.icon +'.svg')"
-                    class="text-dark"
-                    alt
-                    srcset
-                  />
-
-                  <p>{{benefit.isi}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 col-sm-12">
-              <div class="row justify-content-center">
-                <div class="col-lg-6">
-                  <img
-                    src="@/assets/benefit.svg"
-                    class="fluid-img d-none d-md-none d-lg-block"
-                    height="451"
-                    alt
-                    srcset
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="keunggulan py-5 border-top">
-      <div class="mt-5 container text-purple">
-        <h1 class="pb-5 text-center">Keunggulan Belajar di Skill-Up</h1>
-        <div class="row">
-          <div class="col-lg-4 col-md-6" v-for="kelas in 9" :key="kelas.index">
-            <div class="card-keunggulan shadow rounded mb-4">
-              <div class="p-3 pt-4">
-                <img src="@/assets/check.svg" class="float-left mr-3" alt srcset />
-                <p style="width:340px">Kelas yang disediakan sudah paling terupdate untuk belajar</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <BenefitSection />
+    <KeunggulanSection />
     <section class="ulasan-mereka py-5 border-top">
       <div class="container text-purple">
         <div class="mt-5 text-purple">
@@ -203,28 +155,34 @@
 </style>
 <script>
 import carousel from "v-owl-carousel";
-import { Card, Footer, Navbar } from "@/components";
+import {
+  Card,
+  Footer,
+  Navbar,
+  BenefitSection,
+  KeunggulanSection
+} from "@/components";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Home",
-  components: { carousel, Footer, Navbar, Card },
-  // data() {
-  //   return {
-  //     show: false,
-  //     search: ""
-  //   };
-  // },
+  components: {
+    carousel,
+    Footer,
+    Navbar,
+    Card,
+    KeunggulanSection,
+    BenefitSection
+  },
   methods: {
-    ...mapActions(["loadUlasan", "loadKelas", "loadPopuler", "loadBenefit"])
+    ...mapActions(["loadUlasan", "loadKelas", "loadPopuler"])
   },
   created() {
     this.loadUlasan();
     this.loadKelas();
     this.loadPopuler();
-    this.loadBenefit();
   },
   computed: {
-    ...mapState(["populer", "ulasan", "ulasanLoad", "benefit"]),
+    ...mapState(["populer", "ulasan", "ulasanLoad"]),
     kelas: {
       get() {
         return this.$store.getters.allKelas.filter(post => {

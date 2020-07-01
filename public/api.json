@@ -2,46 +2,12 @@
   "populer": [
     {
       "nama": "Full-Stack Javascript",
-      "harga": 500000,
-      "episode": 82,
-      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-      "tingkat": "Pemula",
-      "mentor": {
-        "nama": "Rafli Ramadhan",
-        "skill": "Full-Stack Developer"
-      }
-    },
-    {
-      "nama": "Full-Stack Web Developer",
-      "harga": 360000,
-      "episode": 67,
-      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-      "tingkat": "Pemula",
-      "mentor": {
-        "nama": "David Santoso",
-        "skill": "Front-end Developer"
-      }
-    },
-    {
-      "nama": "Front-end Android",
-      "harga": 280000,
-      "episode": 40,
-      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-      "tingkat": "Pemula",
-      "mentor": {
-        "nama": "Mayang Sagu",
-        "skill": "Android Developer"
-      }
-    }
-  ],
-  "kelas": [
-    {
-      "nama": "Full-Stack Javascript",
       "slug": "fullstack-javascript",
       "harga": 500000,
       "episode": 82,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
       "tingkat": "Pemula",
+      "menit": 50,
       "mentor": {
         "nama": "Rafli Ramadhan",
         "skill": "Full-Stack Developer"
@@ -50,11 +16,11 @@
     {
       "nama": "Full-Stack Web Developer",
       "slug": "fullstack-web-developer",
-
       "harga": 360000,
       "episode": 67,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
       "tingkat": "Pemula",
+      "menit": 50,
       "mentor": {
         "nama": "David Santoso",
         "skill": "Front-end Developer"
@@ -63,14 +29,111 @@
     {
       "nama": "Front-end Android",
       "slug": "frontend-android",
-
       "harga": 280000,
       "episode": 40,
       "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
       "tingkat": "Pemula",
+      "menit": 50,
       "mentor": {
         "nama": "Mayang Sagu",
         "skill": "Android Developer"
+      }
+    }
+  ],
+  "kelas": [
+    {
+      "nama": "Full-Stack Javascript Developer",
+      "slug": "fullstack-javascript",
+      "desc": "Kelas ini akan membahas full tentang javascript, mulai dari frontend dan backendnya sampai deploy agar bisa di akses lewat internet.",
+      "harga": 500000,
+      "episode": 82,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "menit": 50,
+      "mentor": {
+        "nama": "Rafli Ramadhan",
+        "skill": "Full-Stack Developer"
+      },
+      "materi": [
+        {
+          "judul": "Perkenalan",
+          "slug": "perkenalan",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "Instalasi Software",
+          "slug": "instalasi-software",
+          "video": "zpOULjyy-n8"
+        },
+        {
+          "judul": "Persiapan Tool dan konfigurasi",
+          "slug": "perisiapan-tool-dan-konfigurasi",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "Kita mulai dari dasar ya",
+          "slug": "kita-mulai-dari-dasar-ya",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "Buat landing page dulu",
+          "slug": "buat-landing-page-dulu",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "Integrasi ke component",
+          "slug": "integrasi-ke-component",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "import ke view juga dong",
+          "slug": "import-ke-view-juga-dong",
+          "video": "CKeFLCdOaX4"
+        },
+        {
+          "judul": "mantapnya css scope",
+          "slug": "mantapnya-css-scope",
+          "video": "CKeFLCdOaX4"
+        }
+      ]
+    },
+    {
+      "nama": "Full-Stack Web Developer",
+      "slug": "fullstack-web-developer",
+      "harga": 360000,
+      "episode": 67,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "menit": 50,
+      "mentor": {
+        "nama": "David Santoso",
+        "skill": "Front-end Developer"
+      }
+    },
+    {
+      "nama": "Front-end Android",
+      "slug": "frontend-android",
+      "harga": 280000,
+      "episode": 40,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "Pemula",
+      "menit": 50,
+      "mentor": {
+        "nama": "Mayang Sagu",
+        "skill": "Android Developer"
+      }
+    },
+    {
+      "nama": "Web Funding Codeigniter Vue JS",
+      "slug": "funding-codeigniter-vuejs",
+      "harga": 280000,
+      "episode": 40,
+      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+      "tingkat": "All Level",
+      "menit": 80,
+      "mentor": {
+        "nama": "Yayan Masrun",
+        "skill": "Fullstack Developer"
       }
     }
   ],
@@ -302,6 +365,35 @@
     {
       "icon": "bahasa",
       "isi": "Berbahasa Indonesia"
+    }
+  ],
+  "keunggulan": [
+    {
+      "isi": "Kelas yang disediakan sudah paling terupdate untuk belajar"
+    },
+    {
+      "isi": "Penyampaian yang diberikan mentor, gampang di pahami"
+    },
+    {
+      "isi": "Terdapat contoh kasus program yang bisa langsung dipraktekan"
+    },
+    {
+      "isi": "Dapat berkonsultasi dengan mentor atau member digrup"
+    },
+    {
+      "isi": "Mendapatkan sertifikat yang bisa dipakai untuk portfolio"
+    },
+    {
+      "isi": "Cocok untuk pemula yang baru ingin masuk dunia program"
+    },
+    {
+      "isi": "Diarahkan alur belajar agar mempercepat waktui belajar"
+    },
+    {
+      "isi": "Akses kelas seumur hidup hanya sekali bayar"
+    },
+    {
+      "isi": "Download video materi untuk belajar secara offline"
     }
   ]
 }
