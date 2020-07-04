@@ -118,6 +118,13 @@ const routes = [
     path: "/kelas/:slug/episode/:video",
     name: "DetailVideo",
     component: Video,
+    // props: (route) => {
+    //   const video = Number.parseInt(route.params.video, 10);
+    //   if (Number.isNaN(video)) {
+    //     return 0;
+    //   }
+    //   return { video };
+    // },
   },
   {
     path: "/mading/:id",

@@ -19,19 +19,15 @@
               <td>{{ kelas.nama }} - {{ kelas.mentor.nama }}</td>
               <td>Rp. {{ kelas.harga }}</td>
               <td>
-                <button class="btn btn-danger" @click="hapusKelas(kelas.index)">
-                  Hapus
-                </button>
+                <button class="btn btn-danger" @click="hapusKelas(kelas.index)">Hapus</button>
               </td>
             </tr>
             <tr v-show="cart.length > 0">
               <td colspan="3" class="text-right">Total Semua</td>
-              <td class="font-weight-bold">
-                Rp.{{ formatPrice(totalHarga()) }}
-              </td>
+              <td class="font-weight-bold">Rp.{{ formatPrice(totalHarga()) }}</td>
             </tr>
             <tr>
-              <td colspan="4" class="text-right">
+              <td colspan="4" class="text-right" v-show="cart.length > 0">
                 <button class="btn btn-lg btn-success">Beli Sekarang</button>
               </td>
             </tr>
@@ -58,17 +54,17 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+// import { mapActions } from "vuex";
 export default {
   computed: {
     cart: {
       get() {
         return this.$store.state.cart;
-      },
-    },
+      }
+    }
   },
   methods: {
-    ...mapActions(["loadCart"]),
+    // ...mapActions(["loadCart"]),
     hapusKelas(index) {
       this.cart.splice(index, 1);
       console.log(this.cart);
@@ -83,11 +79,11 @@ export default {
     formatPrice(value) {
       let val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    },
+    }
   },
   created() {
-    this.loadCart();
-  },
+    // this.loadCart();
+  }
 };
 // import axios from "axios";
 // export default {

@@ -33,13 +33,13 @@
             <span class="d-sm-none d-md-none">WISHLIST</span>
           </router-link>
         </li>-->
-        <!-- <li class="nav-item">
+        <li class="nav-item">
           <router-link class="nav-link" active-class="active" to="/cart">
             <span class="material-icons">shopping_cart</span>
             <span class="badge badge-notify">{{ cart.length }}</span>
             <span class="d-sm-none d-md-none">CART</span>
           </router-link>
-        </li>-->
+        </li>
         <li class="nav-item login-nav">
           <router-link
             v-show="!login"

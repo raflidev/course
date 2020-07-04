@@ -5,7 +5,8 @@
         <h2 class="font-weight-bold pb-3">{{ kelasDetail.nama }}</h2>
         <p>{{kelasDetail.desc}}</p>
         <a href="#materi" class="btn btn-outline-primary mt-3 mr-3">LIHAT MATERI</a>
-        <a href="#beli" class="btn btn-primary mt-3">IKUTI KELAS</a>
+        <a href="#beli" class="btn btn-primary mt-3 mr-3">IKUTI KELAS</a>
+        <button class="btn btn-outline-success mt-3 material-icons">bookmark_border</button>
       </div>
     </section>
     <section class="bg-white text-purple py-3" id="materi">
@@ -15,7 +16,7 @@
             <div class="materi-list">
               <ul class="list-group">
                 <router-link
-                  :to="kelasDetail.slug +'/episode/'+ kelas.slug"
+                  :to="kelasDetail.slug +'/episode/'+ kelas.episode"
                   class="list-group-item list-group-item-action"
                   v-for="(kelas, index) in kelasDetail.materi"
                   :key="kelas.index"
@@ -118,7 +119,10 @@
                   </div>
                 </div>
                 <hr />
-                <button class="btn btn-primary form-control">BELI SEKARANG</button>
+                <button
+                  @click="addCart(kelasDetail)"
+                  class="btn btn-primary form-control"
+                >BELI SEKARANG</button>
               </div>
             </div>
           </div>
@@ -129,6 +133,7 @@
 </template>
 
 <script>
+// import router from "vue-router";
 import { mapActions, mapState } from "vuex";
 import { BenefitSection, KeunggulanSection } from "@/components";
 export default {
@@ -144,7 +149,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["loadKelas"])
+    ...mapActions(["loadKelas"]),
+    addCart(kelas) {
+      this.$store.state.cart.push(kelas);
+      console.log(this.$store.state.cart);
+      this.$router.push({ path: "/Cart" });
+    }
   },
   mounted() {},
   created() {

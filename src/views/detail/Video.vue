@@ -22,7 +22,11 @@
           ></iframe>
         </div>
         <div class="bg-purple text-white py-4 px-3 text-right">
-          <button class="btn btn-primary ml-3">Tandai jika sudah selesai</button>
+          <router-link
+            :to="nextVideos.toString()"
+            class="btn btn-primary ml-3"
+          >Tandai jika sudah selesai</router-link>
+          <!-- {{nextVideos}} -->
         </div>
         <!-- <iframe
             id="youtube-5481"
@@ -39,7 +43,7 @@
         <div class="materi-list">
           <ul class="list-group px-2">
             <router-link
-              :to="kelas.slug"
+              :to="kelas.episode"
               active-class="active"
               class="list-group-item list-group-item-action"
               v-for="(kelas, index) in kelasDetail.materi"
@@ -62,6 +66,11 @@ export default {
   name: "video",
   computed: {
     ...mapState(["kelas"]),
+    nextVideos: {
+      get() {
+        return parseInt(this.$route.params.video) + 1;
+      }
+    },
     kelasDetail: {
       get() {
         return this.$store.getters.allKelas.find(post => {
@@ -72,7 +81,7 @@ export default {
     materi: {
       get() {
         return this.kelasDetail.materi.find(post => {
-          return post.slug == this.$route.params.video;
+          return post.episode == this.$route.params.video;
         });
       }
     }

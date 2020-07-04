@@ -145,7 +145,7 @@ aside.sidebar {
   margin: 24px auto;
 }
 .login-nav {
-  margin-left: 22rem;
+  margin-left: 15rem;
 }
 .deskripsi-kelas p {
   width: 475px;
@@ -160,6 +160,12 @@ aside.sidebar {
   font-weight: 600;
   border-radius: 5px;
 }
+
+.deskripsi-kelas .btn.material-icons {
+  font-weight: 400;
+  border-radius: 5px;
+}
+
 .deskripsi-kelas .btn-outline-primary {
   color: #fff;
 }
@@ -215,7 +221,7 @@ aside.sidebar {
 
 @media only screen and (max-width: 1125px) {
   .login-nav {
-    margin-left: 10rem;
+    margin-left: 7rem;
   }
 }
 @media only screen and (max-width: 438px) {
