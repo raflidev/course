@@ -150,13 +150,28 @@ aside.sidebar {
 .deskripsi-kelas p {
   width: 475px;
 }
-
+.btn-lightpurple,
+.btn-outline-lightpurple:hover {
+  color: #fff;
+  background-color: #681b55;
+  border: 1px solid #681b55;
+}
+.btn-lightpurple:hover {
+  color: #fff;
+  background-color: #8c2272;
+  border: 1px solid #8c2272;
+}
+.btn-outline-lightpurple {
+  color: #000;
+  border: 1px solid #681b55;
+}
 .btn-primary,
 .btn-outline-primary:hover {
   background-color: #0f52e6;
   border: 1px solid #0f52e6;
 }
-.deskripsi-kelas .btn {
+.deskripsi-kelas .btn,
+.success.btn {
   font-weight: 600;
   border-radius: 5px;
 }

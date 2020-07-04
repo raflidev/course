@@ -153,7 +153,7 @@ export default {
     addCart(kelas) {
       this.$store.state.cart.push(kelas);
       console.log(this.$store.state.cart);
-      this.$router.push({ path: "/Cart" });
+      this.$router.push({ path: "/Cart/success" });
     }
   },
   mounted() {},

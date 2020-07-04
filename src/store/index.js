@@ -50,11 +50,11 @@ export default new Vuex.Store({
 
       commit("setWishlist", response.data.wishlist);
     },
-    async loadCart({ commit }) {
-      const response = await axios.get("/api.json");
+    // async loadCart({ commit }) {
+    //   const response = await axios.get("/api.json");
 
-      commit("setCart", response.data.cart);
-    },
+    //   commit("setCart", response.data.cart);
+    // },
     async loadUlasan({ commit }) {
       const response = await axios.get("/api.json");
       commit("setUlasan", response.data.ulasan);
@@ -77,7 +77,7 @@ export default new Vuex.Store({
     setRoadmap: (state, roadmap) => (state.roadmap = roadmap),
     setMading: (state, mading) => (state.mading = mading),
     setWishlist: (state, wishlist) => (state.wishlist = wishlist),
-    setCart: (state, cart) => (state.cart = cart),
+    // setCart: (state, cart) => (state.cart = cart),
     setKelas: (state, kelas) => (state.kelas = kelas),
     setSearch: (state, search) => (state.search = search),
     setUlasan: (state, ulasan) => (state.ulasan = ulasan),

@@ -21,6 +21,7 @@ import {
   DetailMading,
   DetailRoadmap,
   Video,
+  successCart,
 } from "../views/detail/";
 // Dashboard Layout
 import {
@@ -140,6 +141,12 @@ const routes = [
     path: "/Cart",
     name: "Cart",
     component: Cart,
+  },
+  {
+    path: "/Cart/success",
+    name: "successCart",
+    component: successCart,
+    meta: { hideNavigation: true },
   },
   {
     path: "/test",
