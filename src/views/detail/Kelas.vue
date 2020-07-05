@@ -3,10 +3,14 @@
     <section class="deskripsi-kelas py-3 pb-5">
       <div class="container mt-5 text-left">
         <h2 class="font-weight-bold pb-3">{{ kelasDetail.nama }}</h2>
-        <p>{{kelasDetail.desc}}</p>
-        <a href="#materi" class="btn btn-outline-primary mt-3 mr-3">LIHAT MATERI</a>
+        <p>{{ kelasDetail.desc }}</p>
+        <a href="#materi" class="btn btn-outline-primary mt-3 mr-3"
+          >LIHAT MATERI</a
+        >
         <a href="#beli" class="btn btn-primary mt-3 mr-3">IKUTI KELAS</a>
-        <button class="btn btn-outline-success mt-3 material-icons">bookmark_border</button>
+        <button class="btn btn-outline-success mt-3 material-icons">
+          bookmark_border
+        </button>
       </div>
     </section>
     <section class="bg-white text-purple py-3" id="materi">
@@ -16,14 +20,21 @@
             <div class="materi-list">
               <ul class="list-group">
                 <router-link
-                  :to="kelasDetail.slug +'/episode/'+ kelas.episode"
+                  :to="kelasDetail.slug + '/episode/' + kelas.episode"
                   class="list-group-item list-group-item-action"
                   v-for="(kelas, index) in kelasDetail.materi"
                   :key="kelas.index"
                 >
-                  <img src="@/assets/icon/play.svg" class="image pt-2 mr-3 float-left" alt srcset />
-                  <p class="title mb-0">{{kelas.judul}}</p>
-                  <div class="materi-desc text-gray-500">04:20 &middot; Episode {{index + 1}}</div>
+                  <img
+                    src="@/assets/icon/play.svg"
+                    class="image pt-2 mr-3 float-left"
+                    alt
+                    srcset
+                  />
+                  <p class="title mb-0">{{ kelas.judul }}</p>
+                  <div class="materi-desc text-gray-500">
+                    04:20 &middot; Episode {{ index + 1 }}
+                  </div>
                 </router-link>
               </ul>
             </div>
@@ -66,9 +77,15 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 text-center">
           <h3 class="font-weight-bold mb-4">Dimentori Langsung Oleh</h3>
-          <img class="rounded-circle" src="@/assets/profil/test.svg" width="200" />
-          <h4 class="font-weight-600 mb-0 mt-4">{{kelasDetail.mentor.nama}}</h4>
-          <p>{{kelasDetail.mentor.skill}}</p>
+          <img
+            class="rounded-circle"
+            src="@/assets/profil/test.svg"
+            width="200"
+          />
+          <h4 class="font-weight-600 mb-0 mt-4">
+            {{ kelasDetail.mentor.nama }}
+          </h4>
+          <p>{{ kelasDetail.mentor.skill }}</p>
         </div>
       </div>
     </section>
@@ -119,10 +136,18 @@
                   </div>
                 </div>
                 <hr />
-                <button
+                <!-- <button
                   @click="addCart(kelasDetail)"
                   class="btn btn-primary form-control"
-                >BELI SEKARANG</button>
+                >
+                  BELI SEKARANG
+                </button> -->
+                <button
+                  @click="nyoba(kelasDetail)"
+                  class="btn btn-primary form-control"
+                >
+                  BELI SEKARANG
+                </button>
               </div>
             </div>
           </div>
@@ -142,26 +167,73 @@ export default {
     ...mapState(["kelas"]),
     kelasDetail: {
       get() {
-        return this.$store.getters.allKelas.find(post => {
+        return this.$store.getters.allKelas.find((post) => {
           return post.slug == this.$route.params.slug;
         });
-      }
-    }
+      },
+    },
   },
   methods: {
     ...mapActions(["loadKelas"]),
     addCart(kelas) {
       this.$store.state.cart.push(kelas);
+
+      this.$swal
+        .fire({
+          title: "Berhasil",
+          text: "Pesanan masuk ke keranjang",
+          icon: "success",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText: "Beli lagi",
+          confirmButtonText: "Bayar sekarang",
+        })
+        .then((result) => {
+          if (result.value) {
+            this.$router.push({ path: "/Cart/" });
+          }
+        });
+
       console.log(this.$store.state.cart);
-      this.$router.push({ path: "/Cart/success" });
-    }
+    },
+    nyoba: function(kelasku) {
+      this.$store.state.cart.find((post) => {
+        if (post.slug == this.$route.params.slug) {
+          this.$store.state.cart.then(
+            this.$swal({
+              icon: "warning",
+              title: "Waduh..",
+              text: "Kelas ini sudah ada di keranjang",
+            })
+          );
+        }
+      });
+
+      this.$store.state.cart.push(kelasku);
+      this.$swal
+        .fire({
+          title: "Berhasil",
+          text: "Pesanan masuk ke keranjang",
+          icon: "success",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          cancelButtonText: "Beli lagi",
+          confirmButtonText: "Bayar sekarang",
+        })
+        .then((result) => {
+          if (result.value) {
+            this.$router.push({ path: "/Cart/" });
+          }
+        });
+    },
   },
   mounted() {},
   created() {
     this.loadKelas();
-  }
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

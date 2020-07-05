@@ -1,12 +1,4 @@
 <template>
-  <!-- <div class="bg-white text-purple d-flex justify-content-center align-items-center vh-100">
-    <div>
-      <img src="@/assets/success.svg" width="200" />
-
-      <router-link to="/" class="success btn btn-outline-lightpurple mr-3">BAYAR SEKARANG</router-link>
-      <router-link to="/" class="success btn btn-lightpurple">BELANJA LAGI</router-link>
-    </div>
-  </div>-->
   <div class="bg-white text-purple">
     <div class="row">
       <div class="col-md-12">
@@ -30,10 +22,3 @@
 <script>
 export default {};
 </script>
-<style scoped>
-@media only screen and (max-width: 438px) {
-  /* h1 {
-    font-size: 2rem;
-  } */
-}
-</style>

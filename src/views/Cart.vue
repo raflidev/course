@@ -14,17 +14,21 @@
             <tr v-if="cart.length == 0">
               <td colspan="4" class="text-center">tidak ada pesanan</td>
             </tr>
-            <tr v-for="(kelas, index) in cart" :key="kelas.index">
+            <tr v-for="(kelas, index) in cart" :key="kelas.slug">
               <td>{{ index + 1 }}</td>
               <td>{{ kelas.nama }} - {{ kelas.mentor.nama }}</td>
               <td>Rp. {{ kelas.harga }}</td>
               <td>
-                <button class="btn btn-danger" @click="hapusKelas(kelas.index)">Hapus</button>
+                <button class="btn btn-danger" @click="hapusKelas(kelas.slug)">
+                  Hapus
+                </button>
               </td>
             </tr>
             <tr v-show="cart.length > 0">
               <td colspan="3" class="text-right">Total Semua</td>
-              <td class="font-weight-bold">Rp.{{ formatPrice(totalHarga()) }}</td>
+              <td class="font-weight-bold">
+                Rp.{{ formatPrice(totalHarga()) }}
+              </td>
             </tr>
             <tr>
               <td colspan="4" class="text-right" v-show="cart.length > 0">
@@ -60,8 +64,8 @@ export default {
     cart: {
       get() {
         return this.$store.state.cart;
-      }
-    }
+      },
+    },
   },
   methods: {
     // ...mapActions(["loadCart"]),
@@ -79,11 +83,11 @@ export default {
     formatPrice(value) {
       let val = (value / 1).toFixed(2).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    }
+    },
   },
   created() {
     // this.loadCart();
-  }
+  },
 };
 // import axios from "axios";
 // export default {

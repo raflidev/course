@@ -28,6 +28,7 @@ export default new Vuex.Store({
     getMading: (state) => state.mading,
     getBenefit: (state) => state.benefit,
     getKeunggulan: (state) => state.keunggulan,
+    getCart: (state) => state.cart,
   },
   actions: {
     async loadMading({ commit }) {
