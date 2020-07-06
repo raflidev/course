@@ -196,30 +196,7 @@
       }
     }
   ],
-  "wishlist": [
-    {
-      "nama": "Full-Stack Web Developer",
-      "harga": 360000,
-      "episode": 67,
-      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-      "tingkat": "Pemula",
-      "mentor": {
-        "nama": "David Santoso",
-        "skill": "Front-end Developer"
-      }
-    },
-    {
-      "nama": "Front-end Android",
-      "harga": 280000,
-      "episode": 40,
-      "image": "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
-      "tingkat": "Pemula",
-      "mentor": {
-        "nama": "Mayang Sagu",
-        "skill": "Android Developer"
-      }
-    }
-  ],
+  "wishlist": [],
   "ulasan": [
     {
       "pesan": "Materi yang disampaikan sangat mudah dipahami dan membuat saya ingin berkarya lebih semangat",
@@ -429,6 +406,16 @@
     },
     {
       "isi": "Download video materi untuk belajar secara offline"
+    }
+  ],
+  "kupon": [
+    {
+      "kode": "UPSKILL10",
+      "reward": 10
+    },
+    {
+      "kode": "UPSKILL20",
+      "reward": 20
     }
   ]
 }

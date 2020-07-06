@@ -11,13 +11,156 @@ export default new Vuex.Store({
     mading: [],
     roadmap: [],
     wishlist: [],
-    cart: [],
+    cart: [
+      {
+        nama: "Full-Stack Javascript Developer",
+        slug: "fullstack-javascript",
+        desc:
+          "Kelas ini akan membahas full tentang javascript, mulai dari frontend dan backendnya sampai deploy agar bisa di akses lewat internet.",
+        harga: 500000,
+        episode: 82,
+        image:
+          "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+        tingkat: "Pemula",
+        menit: 50,
+        mentor: {
+          nama: "Rafli Ramadhan",
+          skill: "Full-Stack Developer",
+        },
+        materi: [
+          {
+            judul: "Perkenalan",
+            episode: "1",
+            slug: "perkenalan",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Instalasi Software",
+            episode: "2",
+            slug: "instalasi-software",
+            video: "zpOULjyy-n8",
+          },
+          {
+            judul: "Persiapan Tool dan konfigurasi",
+            episode: "3",
+            slug: "perisiapan-tool-dan-konfigurasi",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Kita mulai dari dasar ya",
+            episode: "4",
+            slug: "kita-mulai-dari-dasar-ya",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Buat landing page dulu",
+            episode: "5",
+            slug: "buat-landing-page-dulu",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Integrasi ke component",
+            episode: "6",
+            slug: "integrasi-ke-component",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "import ke view juga dong",
+            episode: "7",
+            slug: "import-ke-view-juga-dong",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "mantapnya css scope",
+            episode: "8",
+            slug: "mantapnya-css-scope",
+            video: "CKeFLCdOaX4",
+          },
+        ],
+      },
+      {
+        nama: "Full-Stack Web Developer",
+        slug: "fullstack-web-developer",
+        desc:
+          "Kelas ini akan membahas full tentang javascript, mulai dari frontend dan backendnya sampai deploy agar bisa di akses lewat internet.",
+        harga: 360000,
+        episode: 67,
+        image:
+          "https://storage.googleapis.com/fastwork-static/082dcee4-19a9-477b-ae5c-f703558764f2.jpg",
+        tingkat: "Pemula",
+        menit: 50,
+        mentor: {
+          nama: "David Santoso",
+          skill: "Front-end Developer",
+        },
+        materi: [
+          {
+            judul: "Perkenalan",
+            episode: "1",
+            slug: "perkenalan",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Instalasi Software",
+            episode: "2",
+            slug: "instalasi-software",
+            video: "zpOULjyy-n8",
+          },
+          {
+            judul: "Persiapan Tool dan konfigurasi",
+            episode: "3",
+            slug: "perisiapan-tool-dan-konfigurasi",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Kita mulai dari dasar ya",
+            episode: "4",
+            slug: "kita-mulai-dari-dasar-ya",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Buat landing page dulu",
+            episode: "5",
+            slug: "buat-landing-page-dulu",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "Integrasi ke component",
+            episode: "6",
+            slug: "integrasi-ke-component",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "import ke view juga dong",
+            episode: "7",
+            slug: "import-ke-view-juga-dong",
+            video: "CKeFLCdOaX4",
+          },
+          {
+            judul: "mantapnya css scope",
+            episode: "8",
+            slug: "mantapnya-css-scope",
+            video: "CKeFLCdOaX4",
+          },
+        ],
+      },
+    ],
     populer: [],
     search: "",
     ulasan: [],
     ulasanLoad: false,
     benefit: [],
     keunggulan: [],
+    listkupon: [
+      {
+        kode: "UPSKILL10",
+        reward: 10,
+      },
+      {
+        kode: "UPSKILL20",
+        reward: 20,
+      },
+    ],
   },
   getters: {
     allKelas: (state) => state.kelas,

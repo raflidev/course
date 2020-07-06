@@ -4,13 +4,9 @@
       <div class="container mt-5 text-left">
         <h2 class="font-weight-bold pb-3">{{ kelasDetail.nama }}</h2>
         <p>{{ kelasDetail.desc }}</p>
-        <a href="#materi" class="btn btn-outline-primary mt-3 mr-3"
-          >LIHAT MATERI</a
-        >
+        <a href="#materi" class="btn btn-outline-primary mt-3 mr-3">LIHAT MATERI</a>
         <a href="#beli" class="btn btn-primary mt-3 mr-3">IKUTI KELAS</a>
-        <button class="btn btn-outline-success mt-3 material-icons">
-          bookmark_border
-        </button>
+        <button @click="bookmark(kelasDetail)" :class="kelasBookmark">{{iconBookmark}}</button>
       </div>
     </section>
     <section class="bg-white text-purple py-3" id="materi">
@@ -25,16 +21,9 @@
                   v-for="(kelas, index) in kelasDetail.materi"
                   :key="kelas.index"
                 >
-                  <img
-                    src="@/assets/icon/play.svg"
-                    class="image pt-2 mr-3 float-left"
-                    alt
-                    srcset
-                  />
+                  <img src="@/assets/icon/play.svg" class="image pt-2 mr-3 float-left" alt srcset />
                   <p class="title mb-0">{{ kelas.judul }}</p>
-                  <div class="materi-desc text-gray-500">
-                    04:20 &middot; Episode {{ index + 1 }}
-                  </div>
+                  <div class="materi-desc text-gray-500">04:20 &middot; Episode {{ index + 1 }}</div>
                 </router-link>
               </ul>
             </div>
@@ -77,14 +66,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 text-center">
           <h3 class="font-weight-bold mb-4">Dimentori Langsung Oleh</h3>
-          <img
-            class="rounded-circle"
-            src="@/assets/profil/test.svg"
-            width="200"
-          />
-          <h4 class="font-weight-600 mb-0 mt-4">
-            {{ kelasDetail.mentor.nama }}
-          </h4>
+          <img class="rounded-circle" src="@/assets/profil/test.svg" width="200" />
+          <h4 class="font-weight-600 mb-0 mt-4">{{ kelasDetail.mentor.nama }}</h4>
           <p>{{ kelasDetail.mentor.skill }}</p>
         </div>
       </div>
@@ -141,13 +124,11 @@
                   class="btn btn-primary form-control"
                 >
                   BELI SEKARANG
-                </button> -->
+                </button>-->
                 <button
                   @click="nyoba(kelasDetail)"
                   class="btn btn-primary form-control"
-                >
-                  BELI SEKARANG
-                </button>
+                >BELI SEKARANG</button>
               </div>
             </div>
           </div>
@@ -162,19 +143,48 @@
 import { mapActions, mapState } from "vuex";
 import { BenefitSection, KeunggulanSection } from "@/components";
 export default {
+  data() {
+    return {
+      kelasBookmark: "btn btn-outline-success mt-3 material-icons",
+      iconBookmark: "bookmark_border"
+    };
+  },
   components: { BenefitSection, KeunggulanSection },
   computed: {
     ...mapState(["kelas"]),
     kelasDetail: {
       get() {
-        return this.$store.getters.allKelas.find((post) => {
+        return this.$store.getters.allKelas.find(post => {
           return post.slug == this.$route.params.slug;
         });
-      },
-    },
+      }
+    }
   },
   methods: {
     ...mapActions(["loadKelas"]),
+    bookmark(book) {
+      this.$store.state.wishlist.find(post => {
+        if (post.slug == this.$route.params.slug) {
+          const index = this.$store.state.wishlist.findIndex(
+            cari => cari.slug === post.slug
+          );
+          console.log(index);
+          if (index > -1) {
+            const list = this.$store.state.wishlist;
+            list.splice(0, 1);
+            console.log(list);
+
+            this.kelasBookmark = "btn btn-success mt-3 material-icons";
+            this.iconBookmark = "bookmark";
+          }
+        }
+      });
+
+      this.$store.state.wishlist.push(book);
+      this.kelasBookmark = "btn btn-success mt-3 material-icons";
+      this.iconBookmark = "bookmark";
+    },
+    switchBookmark() {},
     addCart(kelas) {
       this.$store.state.cart.push(kelas);
 
@@ -187,9 +197,9 @@ export default {
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           cancelButtonText: "Beli lagi",
-          confirmButtonText: "Bayar sekarang",
+          confirmButtonText: "Bayar sekarang"
         })
-        .then((result) => {
+        .then(result => {
           if (result.value) {
             this.$router.push({ path: "/Cart/" });
           }
@@ -198,13 +208,13 @@ export default {
       console.log(this.$store.state.cart);
     },
     nyoba: function(kelasku) {
-      this.$store.state.cart.find((post) => {
+      this.$store.state.cart.find(post => {
         if (post.slug == this.$route.params.slug) {
-          this.$store.state.cart.then(
+          post.then(
             this.$swal({
               icon: "warning",
               title: "Waduh..",
-              text: "Kelas ini sudah ada di keranjang",
+              text: "Kelas ini sudah ada di keranjang"
             })
           );
         }
@@ -220,19 +230,19 @@ export default {
           confirmButtonColor: "#3085d6",
           cancelButtonColor: "#d33",
           cancelButtonText: "Beli lagi",
-          confirmButtonText: "Bayar sekarang",
+          confirmButtonText: "Bayar sekarang"
         })
-        .then((result) => {
+        .then(result => {
           if (result.value) {
             this.$router.push({ path: "/Cart/" });
           }
         });
-    },
+    }
   },
   mounted() {},
   created() {
     this.loadKelas();
-  },
+  }
 };
 </script>
 
