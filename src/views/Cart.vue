@@ -3,7 +3,7 @@
     <div class="container py-5">
       <!-- <h1 class="text-merri py-3">Keranjang</h1> -->
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-9" id="second">
           <p>Pilih metode pembayaran</p>
 
           <!-- <button class="btn btn-cart btn-primary mr-3">Pembayaran Otomatis</button> -->
@@ -23,14 +23,18 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3" id="first">
           <div v-for="(kelas,index) in cart" :key="kelas.slug">
             <div class="row">
               <div class="col-8 pr-0">
                 <p class="mb-0">Kelas online</p>
               </div>
               <div class="col-3 pr-0">
-                <button @click="hapusKelas(index)" class="material-icons btn float-right p-0">close</button>
+                <button
+                  @click="hapusKelas(index)"
+                  v-show="!notifkupon"
+                  class="material-icons btn float-right p-0"
+                >close</button>
               </div>
             </div>
             <div class="row">
@@ -75,19 +79,6 @@
             class="btn form-control btn-success font-weight-600"
           >Beli Sekarang</button>
           <hr />
-          <!-- <h4 class="my-4">Detail Client</h4>
-          <div class="pb-2">
-            <p class="mb-0 font-weight-bold">Nama Lengkap</p>
-            <span>Rafli Ramadhan</span>
-          </div>
-          <div class="pb-2">
-            <p class="mb-0 font-weight-bold">Username</p>
-            <span>@rafliram</span>
-          </div>
-          <div class="pb-2">
-            <p class="mb-0 font-weight-bold">Email</p>
-            <span>rafliramdhn@gmail.com</span>
-          </div>-->
         </div>
       </div>
     </div>
@@ -126,11 +117,9 @@ export default {
       this.notifkupon = false;
       this.totalHarga();
     },
-    // ...mapActions(["loadCart"]),
     hapusKelas(index) {
       this.cart.splice(index, 1);
-      // console.log(index);
-      this.getkupon();
+      this.totalHarga();
 
       if (this.$store.state.cart.length == 0) {
         this.$swal.fire({
@@ -149,7 +138,7 @@ export default {
           if (post.kode.includes(this.kupon)) {
             post.then(
               (this.harga = this.harga - (this.harga * post.reward) / 100),
-              (this.notifkupon = `anda dapat potongan ${post.reward}`),
+              (this.notifkupon = `anda dapat potongan ${post.reward}%`),
               (this.classkupon = "mb-0 mt-1 text-success"),
               (this.formkupon = false),
               console.log(this.harga)
@@ -159,39 +148,7 @@ export default {
           this.notifkupon = "kode kupon tidak tersedia";
           this.classkupon = "mb-0 mt-1 text-danger";
         }
-
-        // new Promise(resolve => setTimeout(resolve, 1)).then(
-        //   () =>
-        // );
-
-        // else if (!post.kode.includes(this.kupon)) {
-        //   console.log(post.kode);
-
-        //   this.totalHarga();
-        //   this.notifkupon = "kode kupon tidak tersedia";
-        //   this.classkupon = "mb-0 mt-1 text-danger";
-        // }
-        // } else {
-        //   this.totalHarga();
-        //   this.notifkupon = "kode kupon tidak tersedia";
-        //   this.classkupon = "mb-0 mt-1 text-danger";
-        // }
-        // if (post.kode.includes(this.kupon)) {
-        //   this.harga = this.harga - potong;
-        //   const potong = (this.harga * post.reward) / 100;
-        //   this.kupon.then(
-        //     (this.notifkupon = "anda dapat potongan 10"),
-        //     (this.classkupon = "mb-0 mt-1 text-success")
-        //   );
-        // } else {
-        //   this.totalHarga();
-        //   this.notifkupon = "kode kupon tidak tersedia";
-        //   this.classkupon = "mb-0 mt-1 text-danger";
-        // }
       });
-      // this.listkupon.find(post => {
-
-      // });
     },
     totalHarga() {
       let harga = 0;
@@ -260,5 +217,13 @@ export default {
 }
 .cart-metode {
   font-size: 14px;
+}
+@media only screen and (max-width: 400px) {
+  #first {
+    order: 1;
+  }
+  #second {
+    order: 2;
+  }
 }
 </style>

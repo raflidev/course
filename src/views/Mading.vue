@@ -20,7 +20,7 @@
                 <div class="card shadow-box">
                   <a :href="'mading/' + index" class="stretched-link custom-card">
                     <div class="card-body mading">
-                      <h3 class="card-title line-height-1 mb-0 text-600">{{ mading.nama }}</h3>
+                      <h3 class="card-title line-height-1 mb-0 font-weight-600">{{ mading.nama }}</h3>
                       <p class="card-text">{{ mading.desc }}</p>
                       <span>@{{ mading.penulis }}</span>
                       <span class="mx-2">&middot;</span>

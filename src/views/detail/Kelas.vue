@@ -6,7 +6,17 @@
         <p>{{ kelasDetail.desc }}</p>
         <a href="#materi" class="btn btn-outline-primary mt-3 mr-3">LIHAT MATERI</a>
         <a href="#beli" class="btn btn-primary mt-3 mr-3">IKUTI KELAS</a>
-        <button @click="bookmark(kelasDetail)" :class="kelasBookmark">{{iconBookmark}}</button>
+
+        <button
+          v-if="bookmarkCheck"
+          @click="tambahBookmark(kelasDetail);"
+          class="btn btn-outline-success mt-3 material-icons"
+        >bookmark_border</button>
+        <button
+          v-else
+          @click="hapusBookmark(kelasDetail);"
+          class="btn btn-success mt-3 material-icons"
+        >bookmark</button>
       </div>
     </section>
     <section class="bg-white text-purple py-3" id="materi">
@@ -126,7 +136,13 @@
                   BELI SEKARANG
                 </button>-->
                 <button
-                  @click="nyoba(kelasDetail)"
+                  v-if="beliCheck"
+                  @click="beliKelas(kelasDetail)"
+                  class="btn btn-primary form-control"
+                >BELI SEKARANG</button>
+                <button
+                  v-else
+                  @click="hapusKelas()"
                   class="btn btn-primary form-control"
                 >BELI SEKARANG</button>
               </div>
@@ -139,14 +155,13 @@
 </template>
 
 <script>
-// import router from "vue-router";
 import { mapActions, mapState } from "vuex";
 import { BenefitSection, KeunggulanSection } from "@/components";
 export default {
   data() {
     return {
-      kelasBookmark: "btn btn-outline-success mt-3 material-icons",
-      iconBookmark: "bookmark_border"
+      bookmarkCheck: true,
+      beliCheck: true
     };
   },
   components: { BenefitSection, KeunggulanSection },
@@ -162,65 +177,44 @@ export default {
   },
   methods: {
     ...mapActions(["loadKelas"]),
-    bookmark(book) {
+
+    // Method Bookmark/Wishlist Feature
+    bookmark() {
+      // console.log(this.$store.state.wishlist);
       this.$store.state.wishlist.find(post => {
         if (post.slug == this.$route.params.slug) {
-          const index = this.$store.state.wishlist.findIndex(
-            cari => cari.slug === post.slug
-          );
-          console.log(index);
-          if (index > -1) {
-            const list = this.$store.state.wishlist;
-            list.splice(0, 1);
-            console.log(list);
-
-            this.kelasBookmark = "btn btn-success mt-3 material-icons";
-            this.iconBookmark = "bookmark";
-          }
+          this.bookmarkCheck = false;
         }
       });
-
-      this.$store.state.wishlist.push(book);
-      this.kelasBookmark = "btn btn-success mt-3 material-icons";
-      this.iconBookmark = "bookmark";
     },
-    switchBookmark() {},
-    addCart(kelas) {
-      this.$store.state.cart.push(kelas);
-
-      this.$swal
-        .fire({
-          title: "Berhasil",
-          text: "Pesanan masuk ke keranjang",
-          icon: "success",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          cancelButtonText: "Beli lagi",
-          confirmButtonText: "Bayar sekarang"
-        })
-        .then(result => {
-          if (result.value) {
-            this.$router.push({ path: "/Cart/" });
-          }
-        });
-
-      console.log(this.$store.state.cart);
+    tambahBookmark(kelas) {
+      this.$store.state.wishlist.push(kelas);
+      this.bookmarkCheck = false;
     },
-    nyoba: function(kelasku) {
+    hapusBookmark() {
+      const wishlist = [];
+      this.$store.state.wishlist.forEach(post => {
+        wishlist.push(post.slug);
+      });
+      const index = wishlist.indexOf(this.$route.params.slug);
+      console.log(index);
+      this.$store.state.wishlist.splice(index, 1);
+      this.bookmarkCheck = true;
+      // console.log(this.$store.state.wishlist.slug)
+    },
+    // END OF Method Bookmark/Wishlist Feature
+
+    // Method Add Cart Feature
+    beli() {
+      // console.log(this.$store.state.wishlist);
       this.$store.state.cart.find(post => {
         if (post.slug == this.$route.params.slug) {
-          post.then(
-            this.$swal({
-              icon: "warning",
-              title: "Waduh..",
-              text: "Kelas ini sudah ada di keranjang"
-            })
-          );
+          this.beliCheck = false;
         }
       });
-
-      this.$store.state.cart.push(kelasku);
+    },
+    beliKelas(kelas) {
+      this.$store.state.cart.push(kelas);
       this.$swal
         .fire({
           title: "Berhasil",
@@ -237,10 +231,35 @@ export default {
             this.$router.push({ path: "/Cart/" });
           }
         });
+      this.beliCheck = false;
+    },
+    hapusKelas() {
+      const kelas = [];
+      this.$store.state.cart.forEach(post => {
+        kelas.push(post.slug);
+      });
+      const index = kelas.indexOf(this.$route.params.slug);
+      console.log(index);
+      if (index > -1) {
+        this.$swal({
+          icon: "warning",
+          title: "Waduh..",
+          text: "Kelas ini sudah ada di keranjang"
+        });
+      } else {
+        this.$swal({
+          icon: "error",
+          title: "Error.",
+          text: "System error"
+        });
+      }
     }
+    // END OF Method Add Cart Feature
   },
   mounted() {},
   created() {
+    this.bookmark();
+    this.beli();
     this.loadKelas();
   }
 };
