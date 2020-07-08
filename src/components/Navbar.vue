@@ -54,7 +54,7 @@
             to="/dashboard"
           >
             <img src="@/assets/logo.png" width="30" class="mr-3" />
-            hi, Rafli
+            hi, {{user.nama}}
           </router-link>
         </li>
       </ul>
@@ -70,29 +70,8 @@ export default {
       login: true
     };
   },
-  computed: mapState(["cart", "wishlist"])
+  computed: mapState(["cart", "wishlist", "user"])
 };
-// import axios from "axios";
-// export default {
-//   name: "Navbar",
-//   data() {
-//     return {
-//       login: true,
-//       countWishlist: null,
-//       countCard: []
-//     };
-//   },
-//   mounted() {
-//     axios
-//       .get("/api.json")
-//       .then(
-//         response => (
-//           (this.countWishlist = response.data.wishlist.length),
-//           (this.countCard = response.data.cart)
-//         )
-//       );
-//   }
-// };
 </script>
 
 <style>

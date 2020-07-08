@@ -77,6 +77,7 @@
           <button
             v-show="this.$store.state.cart.length > 0"
             class="btn form-control btn-success font-weight-600"
+            @click="buyNow(cart)"
           >Beli Sekarang</button>
           <hr />
         </div>
@@ -154,6 +155,19 @@ export default {
         this.notifkupon = "kode kupon tidak tersedia";
         this.classkupon = "mb-0 mt-1 text-danger";
       }
+    },
+    buyNow(cart) {
+      cart.forEach(post => {
+        this.$store.commit("setUserKelas", post.slug);
+      });
+
+      this.$swal.fire({
+        icon: "success",
+        title: "Terima kasih",
+        text: "Anda telah membeli kelas"
+      });
+      this.$store.state.cart = [];
+      this.$router.push({ path: "/dashboard" });
     },
     totalHarga() {
       let harga = 0;

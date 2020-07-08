@@ -24,7 +24,7 @@
         <div class="row py-5">
           <div class="col-lg-8 video pb-5">
             <div class="materi-list">
-              <ul class="list-group">
+              <ul class="list-group" v-if="premium == true">
                 <router-link
                   :to="kelasDetail.slug + '/episode/' + kelas.episode"
                   class="list-group-item list-group-item-action"
@@ -35,6 +35,17 @@
                   <p class="title mb-0">{{ kelas.judul }}</p>
                   <div class="materi-desc text-gray-500">04:20 &middot; Episode {{ index + 1 }}</div>
                 </router-link>
+              </ul>
+              <ul class="list-group" v-else>
+                <div
+                  class="list-group-item list-group-item-action"
+                  v-for="(kelas, index) in kelasDetail.materi"
+                  :key="kelas.index"
+                >
+                  <img src="@/assets/icon/lock.svg" class="image pt-2 mr-3 float-left" alt srcset />
+                  <p class="title mb-0">{{ kelas.judul }}</p>
+                  <div class="materi-desc text-gray-500">04:20 &middot; Episode {{ index + 1 }}</div>
+                </div>
               </ul>
             </div>
           </div>
@@ -129,12 +140,6 @@
                   </div>
                 </div>
                 <hr />
-                <!-- <button
-                  @click="addCart(kelasDetail)"
-                  class="btn btn-primary form-control"
-                >
-                  BELI SEKARANG
-                </button>-->
                 <button
                   v-if="beliCheck"
                   @click="beliKelas(kelasDetail)"
@@ -161,7 +166,8 @@ export default {
   data() {
     return {
       bookmarkCheck: true,
-      beliCheck: true
+      beliCheck: true,
+      premium: ""
     };
   },
   components: { BenefitSection, KeunggulanSection },
@@ -200,7 +206,6 @@ export default {
       console.log(index);
       this.$store.state.wishlist.splice(index, 1);
       this.bookmarkCheck = true;
-      // console.log(this.$store.state.wishlist.slug)
     },
     // END OF Method Bookmark/Wishlist Feature
 
@@ -214,24 +219,32 @@ export default {
       });
     },
     beliKelas(kelas) {
-      this.$store.state.cart.push(kelas);
-      this.$swal
-        .fire({
-          title: "Berhasil",
-          text: "Pesanan masuk ke keranjang",
-          icon: "success",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          cancelButtonText: "Beli lagi",
-          confirmButtonText: "Bayar sekarang"
-        })
-        .then(result => {
-          if (result.value) {
-            this.$router.push({ path: "/Cart/" });
-          }
+      if (this.premium == true) {
+        this.$swal({
+          icon: "warning",
+          title: "Waduh..",
+          text: "Anda telah membeli kelas ini"
         });
-      this.beliCheck = false;
+      } else {
+        this.$store.state.cart.push(kelas);
+        this.$swal
+          .fire({
+            title: "Berhasil",
+            text: "Pesanan masuk ke keranjang",
+            icon: "success",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "Beli lagi",
+            confirmButtonText: "Bayar sekarang"
+          })
+          .then(result => {
+            if (result.value) {
+              this.$router.push({ path: "/Cart/" });
+            }
+          });
+        this.beliCheck = false;
+      }
     },
     hapusKelas() {
       const kelas = [];
@@ -253,11 +266,22 @@ export default {
           text: "System error"
         });
       }
-    }
+    },
     // END OF Method Add Cart Feature
+    premiumCheck() {
+      const index = this.$store.state.user.kelas.indexOf(
+        this.$route.params.slug
+      );
+      if (index > -1) {
+        this.premium = true;
+      } else {
+        this.premium = false;
+      }
+    }
   },
   mounted() {},
   created() {
+    this.premiumCheck();
     this.bookmark();
     this.beli();
     this.loadKelas();

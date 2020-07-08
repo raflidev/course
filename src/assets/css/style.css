@@ -223,15 +223,22 @@ aside.sidebar {
 .item-fitur .icon {
   float: right;
 }
-.list-group .active,
-.list-group .text-gray-500 {
-  color: black !important;
+.list-group .active .text-gray-500 {
+  color: #fff !important;
 }
 .bg-lightpurple {
   background-color: #681b55;
 }
 .nav-video a {
   color: #fff;
+}
+
+.list-group .title {
+  color: #000;
+}
+
+.list-group .active .title {
+  color: #fff !important;
 }
 
 @media only screen and (max-width: 1125px) {
