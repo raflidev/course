@@ -63,19 +63,14 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   data() {
     return {
       login: true
     };
   },
-  computed: mapState(["cart", "wishlist"]),
-  methods: mapActions(["loadCart", "loadWishlist"]),
-  created() {
-    this.loadCart();
-    this.loadWishlist();
-  }
+  computed: mapState(["cart", "wishlist"])
 };
 // import axios from "axios";
 // export default {

@@ -86,11 +86,12 @@
 </template>
 
 <script>
-// import { mapActions } from "vuex";
+import { mapActions } from "vuex";
 export default {
   data() {
     return {
       inikupon: "",
+      kupon: "",
       harga: "",
       notifkupon: "",
       classkupon: "",
@@ -110,10 +111,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["loadKupon"]),
     hapuskupon() {
       this.formkupon = true;
       this.inikupon = "";
-      this.kupon = "";
       this.notifkupon = false;
       this.totalHarga();
     },
@@ -132,23 +133,27 @@ export default {
       }
     },
     getkupon() {
-      this.inikupon = this.kupon;
-      this.listkupon.find(post => {
-        if (post.kode == this.kupon) {
-          if (post.kode.includes(this.kupon)) {
-            post.then(
-              (this.harga = this.harga - (this.harga * post.reward) / 100),
-              (this.notifkupon = `anda dapat potongan ${post.reward}%`),
-              (this.classkupon = "mb-0 mt-1 text-success"),
-              (this.formkupon = false),
-              console.log(this.harga)
-            );
-          }
-        } else {
-          this.notifkupon = "kode kupon tidak tersedia";
-          this.classkupon = "mb-0 mt-1 text-danger";
-        }
+      // Variable kupon untuk mengambil list kode kupon dari state listkupon
+      const kupon = [];
+      this.listkupon.forEach(post => {
+        kupon.push(post.kode);
       });
+
+      // Variable index untuk mengecek / validasi kupon dari model this.kupon
+      const index = kupon.indexOf(this.kupon);
+      // -1 disini berarti value tidak ditemukan dia array kupon
+      if (index > -1) {
+        const post = this.listkupon[index];
+
+        this.harga = this.harga - (this.harga * post.reward) / 100;
+        this.notifkupon = `anda dapat potongan ${post.reward}%`;
+        this.classkupon = "mb-0 mt-1 text-success";
+        this.formkupon = false;
+        this.inikupon = post.kode;
+      } else {
+        this.notifkupon = "kode kupon tidak tersedia";
+        this.classkupon = "mb-0 mt-1 text-danger";
+      }
     },
     totalHarga() {
       let harga = 0;
@@ -163,7 +168,7 @@ export default {
     }
   },
   created() {
-    // this.loadCart();\
+    this.loadKupon();
     this.totalHarga();
     if (this.$store.state.cart.length == 0) {
       this.$swal.fire({
@@ -176,34 +181,6 @@ export default {
     }
   }
 };
-// import axios from "axios";
-// export default {
-//   data() {
-//     return {
-//       cart: []
-//     };
-//   },
-//   mounted() {
-//     axios.get("/api.json").then(response => (this.cart = response.data.cart));
-//   },
-//   methods: {
-//     hapusKelas(index) {
-//       this.cart.splice(index, 1);
-//       console.log(this.cart);
-//     },
-//     totalHarga() {
-//       let harga = 0;
-//       this.cart.forEach(function(item) {
-//         harga += item.harga;
-//       });
-//       return harga;
-//     },
-//     formatPrice(value) {
-//       let val = (value / 1).toFixed(2).replace(".", ",");
-//       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-//     }
-//   }
-// };
 </script>
 
 <style scoped>

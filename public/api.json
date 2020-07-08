@@ -416,6 +416,10 @@
     {
       "kode": "UPSKILL20",
       "reward": 20
+    },
+    {
+      "kode": "UPSKILL30",
+      "reward": 30
     }
   ]
 }

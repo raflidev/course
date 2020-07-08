@@ -92,8 +92,8 @@
             <div class="card p-3 my-3">
               <div class="card-body">
                 <div class="text-center">
-                  <span>Fullstack Web Developer</span>
-                  <h1>Rp. 360.000</h1>
+                  <span>{{kelasDetail.nama}}</span>
+                  <h1>Rp. {{kelasDetail.harga}}</h1>
                 </div>
                 <hr />
                 <div>
