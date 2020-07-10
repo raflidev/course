@@ -158,7 +158,9 @@ export default {
     },
     buyNow(cart) {
       cart.forEach(post => {
-        this.$store.commit("setUserKelas", post.slug);
+        console.log(post);
+
+        this.$store.commit("setUserKelas", post);
       });
 
       this.$swal.fire({

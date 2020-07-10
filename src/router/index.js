@@ -55,7 +55,6 @@ const routes = [
 
   {
     path: "/dashboard",
-    name: "Dashboard",
     component: Dashboard,
     meta: { hideNavigation: true },
     children: [

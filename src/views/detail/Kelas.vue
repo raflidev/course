@@ -269,9 +269,11 @@ export default {
     },
     // END OF Method Add Cart Feature
     premiumCheck() {
-      const index = this.$store.state.user.kelas.indexOf(
-        this.$route.params.slug
-      );
+      const userKelas = [];
+      this.$store.state.user.kelas.forEach(post => {
+        userKelas.push(post.slug);
+      });
+      const index = userKelas.indexOf(this.$route.params.slug);
       if (index > -1) {
         this.premium = true;
       } else {

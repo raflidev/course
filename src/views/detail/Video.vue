@@ -24,20 +24,10 @@
         <div class="bg-purple text-white py-4 px-3 text-right">
           <router-link
             :to="nextVideos.toString()"
+            @click.native="nextEpisode(kelasDetail)"
             class="btn btn-primary ml-3"
           >Tandai jika sudah selesai</router-link>
-          <!-- {{nextVideos}} -->
         </div>
-        <!-- <iframe
-            id="youtube-5481"
-            frameborder="0"
-            allowfullscreen="1"
-            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-            title="Player for 3  HTML Add Images"
-            width="875"
-            height="410"
-            src="https://www.youtube.com/embed/CKeFLCdOaX4?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1"
-        ></iframe>-->
       </div>
       <div class="col-lg-4 bg-white py-2 px-0">
         <div class="materi-list">
@@ -87,7 +77,31 @@ export default {
     }
   },
   methods: {
-    ...mapActions(["loadKelas"])
+    ...mapActions(["loadKelas"]),
+    nextEpisode(kelas) {
+      // const index = this.$route.params.video - 1;
+      // console.log(kelas.materi[index]);
+      const kelasku = [];
+      this.$store.state.user.kelas.forEach(post => {
+        kelasku.push(post.slug);
+      });
+      console.log(kelasku);
+
+      const indexKelas = kelasku.indexOf(this.$route.params.slug);
+      console.log(indexKelas);
+
+      const array = {
+        index: indexKelas,
+        episode: this.materi.judul,
+        slug: this.materi.slug,
+        nama: kelas.nama,
+        kelasslug: kelas.slug,
+        video: this.$route.params.video
+      };
+      console.log(array);
+
+      this.$store.commit("setJourneyKelas", array);
+    }
   },
   mounted() {},
   created() {

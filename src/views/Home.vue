@@ -62,7 +62,7 @@
                   :image="kelas.image"
                   :nama="kelas.nama"
                   :menit="kelas.menit"
-                  :materi="kelas.episode"
+                  :materi="kelas.materi.length"
                   :level="kelas.tingkat"
                   :link="kelas.slug"
                 />
