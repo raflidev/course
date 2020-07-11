@@ -13,7 +13,8 @@
             </div>
           </div>
         </div>
-
+        {{history.journey.video }}
+        {{kelasDetail.materi[$route.params.video - 1].episode}}
         <div class="embed-responsive embed-responsive-16by9">
           <iframe
             class="embed-responsive-item"
@@ -40,7 +41,11 @@
               :key="kelas.index"
             >
               <img src="@/assets/icon/play.svg" class="image pt-2 mr-3 float-left" alt srcset />
-              <p class="title mb-0">{{kelas.judul}}</p>
+              <p class="title mb-0">
+                {{kelas.judul}}
+                <span v-if="kelas.episode < history.journey.video ">&middot; selesai</span>
+                <span v-else></span>
+              </p>
               <div class="materi-desc text-gray-500">04:20 &middot; Episode {{index + 1}}</div>
             </router-link>
           </ul>
@@ -56,6 +61,13 @@ export default {
   name: "video",
   computed: {
     ...mapState(["kelas"]),
+    history: {
+      get() {
+        return this.$store.state.user.kelas.find(post => {
+          return post.slug == this.$route.params.slug;
+        });
+      }
+    },
     nextVideos: {
       get() {
         return parseInt(this.$route.params.video) + 1;
@@ -78,6 +90,20 @@ export default {
   },
   methods: {
     ...mapActions(["loadKelas"]),
+    // centang() {
+    //   const kelasku = [];
+    //   this.$store.state.user.kelas.forEach(post => {
+    //     kelasku.push(post.slug);
+    //   });
+    //   console.log(kelasku);
+
+    //   const indexKelas = kelasku.indexOf(this.$route.params.slug);
+    //   console.log(indexKelas);
+
+    //   console.log(this.$store.state.user.kelas[indexKelas].journey);
+
+    //   this.history.push(this.$store.state.user.kelas[indexKelas].journey);
+    // },
     nextEpisode(kelas) {
       // const index = this.$route.params.video - 1;
       // console.log(kelas.materi[index]);
@@ -99,6 +125,7 @@ export default {
         video: this.$route.params.video
       };
       console.log(array);
+      this.$store.state.user.kelas[indexKelas].journey = this.history;
 
       this.$store.commit("setJourneyKelas", array);
     }
@@ -106,6 +133,7 @@ export default {
   mounted() {},
   created() {
     this.loadKelas();
+    this.centang();
   }
 };
 </script>
