@@ -16,7 +16,6 @@
               :key="user.index"
             >
               <p class="mb-2 font-weight-600">{{user.nama}}</p>
-              <!-- {{user.journey}} -->
               <div class="progress mb-3">
                 <div
                   v-if="user.journey != ''"
@@ -43,9 +42,15 @@
               >LANJUTKAN BELAJAR</router-link>
               <router-link
                 to
+                class="btn btn-sm btn-warning font-weight-600"
+                v-if="user.journey.video == journey[user.journey.index].materi.length"
+              >FEEDBACK</router-link>
+              <router-link
+                to
                 class="btn btn-sm btn-outline-primary font-weight-600"
-                v-if="4 == userKelas.kelas.length"
+                v-if="user.journey.video == journey[user.journey.index].materi.length"
               >CETAK SERTIFIKAT</router-link>
+
               <router-link
                 to
                 class="btn btn-sm btn-outline-primary disabled font-weight-600"

@@ -13,8 +13,6 @@
             </div>
           </div>
         </div>
-        {{history.journey.video }}
-        {{kelasDetail.materi[$route.params.video - 1].episode}}
         <div class="embed-responsive embed-responsive-16by9">
           <iframe
             class="embed-responsive-item"
@@ -23,31 +21,63 @@
           ></iframe>
         </div>
         <div class="bg-purple text-white py-4 px-3 text-right">
-          <router-link
-            :to="nextVideos.toString()"
-            @click.native="nextEpisode(kelasDetail)"
+          <button
             class="btn btn-primary ml-3"
-          >Tandai jika sudah selesai</router-link>
+            v-if="history.materi.length -1 == history.journey.video"
+            @click="nextEpisode(kelasDetail); endKelas(kelasDetail)"
+          >Selesaikan Kelas</button>
+          <button
+            v-else
+            class="btn btn-primary ml-3"
+            @click="nextEpisode(kelasDetail)"
+          >Tandai jika sudah selesai</button>
         </div>
       </div>
       <div class="col-lg-4 bg-white py-2 px-0">
         <div class="materi-list">
           <ul class="list-group px-2">
-            <router-link
-              :to="kelas.episode"
-              active-class="active"
-              class="list-group-item list-group-item-action"
-              v-for="(kelas, index) in kelasDetail.materi"
-              :key="kelas.index"
-            >
-              <img src="@/assets/icon/play.svg" class="image pt-2 mr-3 float-left" alt srcset />
-              <p class="title mb-0">
-                {{kelas.judul}}
-                <span v-if="kelas.episode < history.journey.video ">&middot; selesai</span>
-                <span v-else></span>
-              </p>
-              <div class="materi-desc text-gray-500">04:20 &middot; Episode {{index + 1}}</div>
-            </router-link>
+            <div v-for="(kelas, index) in kelasDetail.materi" :key="kelas.index">
+              <router-link
+                :to="kelas.episode"
+                active-class="active"
+                class="list-group-item list-group-item-action"
+                v-if="kelas.episode <= history.journey.video+1"
+              >
+                <div>
+                  <img
+                    src="@/assets/check.svg"
+                    width="40"
+                    class="image pt-2 mr-3 float-left"
+                    alt
+                    srcset
+                  />
+                  <p class="title mb-0">
+                    {{kelas.judul}}
+                    &middot;
+                    <span class="text-success">selesai</span>
+                  </p>
+                  <div class="materi-desc text-gray-500">04:20 &middot; Episode {{index + 1}}</div>
+                </div>
+              </router-link>
+              <router-link
+                :to="kelas.episode"
+                active-class="active"
+                class="list-group-item list-group-item-action disabled"
+                v-else
+              >
+                <div>
+                  <img
+                    src="@/assets/icon/play.svg"
+                    width="40"
+                    class="image pt-2 mr-3 float-left"
+                    alt
+                    srcset
+                  />
+                  <p class="title mb-0">{{kelas.judul}}</p>
+                  <div class="materi-desc text-gray-500">04:20 &middot; Episode {{index + 1}}</div>
+                </div>
+              </router-link>
+            </div>
           </ul>
         </div>
       </div>
@@ -57,6 +87,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+// import { router } from "vue-router";
 export default {
   name: "video",
   computed: {
@@ -90,31 +121,25 @@ export default {
   },
   methods: {
     ...mapActions(["loadKelas"]),
-    // centang() {
-    //   const kelasku = [];
-    //   this.$store.state.user.kelas.forEach(post => {
-    //     kelasku.push(post.slug);
-    //   });
-    //   console.log(kelasku);
-
-    //   const indexKelas = kelasku.indexOf(this.$route.params.slug);
-    //   console.log(indexKelas);
-
-    //   console.log(this.$store.state.user.kelas[indexKelas].journey);
-
-    //   this.history.push(this.$store.state.user.kelas[indexKelas].journey);
-    // },
+    checkKelas() {
+      if (this.history == undefined) {
+        this.$swal({
+          icon: "warning",
+          title: "Waduh..",
+          text: "Anda tidak punya hak dikelas ini"
+        });
+        this.$router.push({ name: "Home" });
+      }
+    },
     nextEpisode(kelas) {
-      // const index = this.$route.params.video - 1;
-      // console.log(kelas.materi[index]);
       const kelasku = [];
       this.$store.state.user.kelas.forEach(post => {
         kelasku.push(post.slug);
       });
-      console.log(kelasku);
+      // console.log(kelasku);
 
       const indexKelas = kelasku.indexOf(this.$route.params.slug);
-      console.log(indexKelas);
+      // console.log(indexKelas);
 
       const array = {
         index: indexKelas,
@@ -124,16 +149,29 @@ export default {
         kelasslug: kelas.slug,
         video: this.$route.params.video
       };
-      console.log(array);
+      // console.log(array);
       this.$store.state.user.kelas[indexKelas].journey = this.history;
 
       this.$store.commit("setJourneyKelas", array);
+      this.$router.push({
+        name: "DetailVideo",
+        params: { slug: this.history.slug, video: this.nextVideos.toString() }
+      });
+      // router.push({ path: "home" });
+    },
+    endKelas(kelas) {
+      this.$swal({
+        icon: "success",
+        title: "Selamat",
+        text: `Anda menyelesaikan kelas ${kelas.nama}`
+      });
+      this.$router.push({ path: "/dashboard" });
     }
   },
   mounted() {},
   created() {
     this.loadKelas();
-    this.centang();
+    this.checkKelas();
   }
 };
 </script>
