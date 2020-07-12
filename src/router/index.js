@@ -29,6 +29,7 @@ import {
   KelasDashboard,
   KaryaDashboard,
   UserDashboard,
+  WishlistDashboard,
 } from "../views/dashboard/";
 
 Vue.use(VueRouter);
@@ -70,6 +71,11 @@ const routes = [
       {
         path: "kelas",
         component: KelasDashboard,
+        meta: { hideNavigation: true },
+      },
+      {
+        path: "wishlist",
+        component: WishlistDashboard,
         meta: { hideNavigation: true },
       },
       {

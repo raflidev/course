@@ -679,5 +679,10 @@
       "kode": "UPSKILL30",
       "reward": 30
     }
-  ]
+  ],
+  "user": {
+    "username": "raflidev",
+    "nama": "RAFLI RAMADHAN",
+    "kelas": []
+  }
 }

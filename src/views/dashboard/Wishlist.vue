@@ -2,13 +2,13 @@
   <main>
     <div class="main-core d-none bg-white py-4 d-sm-block">
       <div class="container">
-        <h4>Kelasku</h4>
-        <p class="text-muted">Berikut ini adalah daftar kelas yang anda ikuti</p>
-        <div class="item-kelas border px-4" v-if="user.kelas == ''">
+        <h4>Wishlistku</h4>
+        <p class="text-muted">Berikut ini adalah daftar wishlist anda</p>
+        <div class="item-kelas border px-4" v-if="wishlist == ''">
           <p>Anda belum mengikuti kelas apapun</p>
         </div>
         <div class="row">
-          <div class="col-lg-4" v-for="kelas in user.kelas" :key="kelas.index">
+          <div class="col-lg-4" v-for="kelas in wishlist" :key="kelas.index">
             <div class="item-kelas">
               <img :src="kelas.image" class="img-fluid rounded mb-2" />
               <p class="font-weight-600 mb-0">{{kelas.nama}}</p>
@@ -25,10 +25,10 @@
     </div>
     <div class="d-block d-sm-none bg-white py-4 main-core-mobile">
       <div class="container">
-        <h4>Kelasku</h4>
-        <p class="text-muted">Berikut ini adalah daftar kelas yang anda ikuti</p>
+        <h4>Wishlistku</h4>
+        <p class="text-muted">Berikut ini adalah daftar wishlist anda</p>
         <div class="row">
-          <div class="col-lg-12" v-for="kelas in user.kelas" :key="kelas.index">
+          <div class="col-lg-12" v-for="kelas in wishlist" :key="kelas.index">
             <div class="item-kelas">
               <img :src="kelas.image" class="img-fluid rounded mb-2" />
               <p class="font-weight-600 mb-0">{{kelas.nama}}</p>
@@ -49,9 +49,9 @@
 <script>
 export default {
   computed: {
-    user: {
+    wishlist: {
       get() {
-        return this.$store.getters.getUser;
+        return this.$store.getters.getWishlist;
       }
     }
   }

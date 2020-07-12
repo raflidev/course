@@ -94,9 +94,10 @@ export default {
     ...mapState(["kelas"]),
     history: {
       get() {
-        return this.$store.state.user.kelas.find(post => {
-          return post.slug == this.$route.params.slug;
-        });
+        return this.$store.state.user.kelas;
+        // return this.$store.getters.getUser.kelas.find(post => {
+        //   return post.slug == this.$route.params.slug;
+        // });
       }
     },
     nextVideos: {
@@ -171,7 +172,7 @@ export default {
   mounted() {},
   created() {
     this.loadKelas();
-    this.checkKelas();
+    // this.checkKelas();
   }
 };
 </script>

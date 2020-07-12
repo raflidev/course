@@ -10,6 +10,7 @@
             <div class="item-kelas border rounded px-4" v-if="userKelas.kelas.length < 1">
               <p>Anda belum mengikuti kelas apapun</p>
             </div>
+
             <div
               class="item-kelas border rounded px-4"
               v-for="user in userKelas.kelas"
@@ -40,17 +41,24 @@
                 :to="'/kelas/' + user.slug"
                 class="btn mr-2 btn-sm btn-primary font-weight-600"
               >LANJUTKAN BELAJAR</router-link>
-              <router-link
-                to
-                class="btn btn-sm btn-warning font-weight-600"
-                v-if="user.journey.video == journey[user.journey.index].materi.length"
-              >FEEDBACK</router-link>
-              <router-link
-                to
-                class="btn btn-sm btn-outline-primary font-weight-600"
-                v-if="user.journey.video == journey[user.journey.index].materi.length"
-              >CETAK SERTIFIKAT</router-link>
+              <div v-if="user.journey != ''">
+                <router-link
+                  to
+                  class="btn btn-sm btn-warning font-weight-600"
+                  v-if="user.journey.video == journey[user.journey.index].materi.length"
+                >FEEDBACK</router-link>
+                <router-link
+                  to
+                  class="btn btn-sm btn-outline-primary font-weight-600"
+                  v-if="user.journey.video == journey[user.journey.index].materi.length"
+                >CETAK SERTIFIKAT</router-link>
 
+                <router-link
+                  to
+                  class="btn btn-sm btn-outline-primary disabled font-weight-600"
+                  v-else
+                >CETAK SERTIFIKAT</router-link>
+              </div>
               <router-link
                 to
                 class="btn btn-sm btn-outline-primary disabled font-weight-600"
@@ -95,7 +103,6 @@
               :key="user.index"
             >
               <p class="mb-2 font-weight-600">{{user.nama}}</p>
-              <!-- {{user.journey}} -->
               <div class="progress mb-3">
                 <div
                   v-if="user.journey != ''"
@@ -120,14 +127,27 @@
                 :to="'/kelas/' + user.slug"
                 class="btn mr-2 btn-sm btn-primary form-control mb-2 font-weight-600"
               >LANJUTKAN BELAJAR</router-link>
+              <div v-if="user.journey != ''">
+                <router-link
+                  to
+                  class="btn btn-sm btn-warning form-control mb-2 font-weight-600"
+                  v-if="user.journey.video == journey[user.journey.index].materi.length"
+                >FEEDBACK</router-link>
+                <router-link
+                  to
+                  class="btn btn-sm btn-outline-primary form-control mb-2 font-weight-600"
+                  v-if="user.journey.video == journey[user.journey.index].materi.length"
+                >CETAK SERTIFIKAT</router-link>
+
+                <router-link
+                  to
+                  class="btn btn-sm btn-outline-primary form-control mb-2 disabled font-weight-600"
+                  v-else
+                >CETAK SERTIFIKAT</router-link>
+              </div>
               <router-link
                 to
-                class="btn btn-sm btn-outline-primary form-control mb-2 font-weight-600"
-                v-if="4 == userKelas.kelas.length"
-              >CETAK SERTIFIKAT</router-link>
-              <router-link
-                to
-                class="btn btn-sm btn-outline-primary disabled form-control mb-2 font-weight-600"
+                class="btn btn-sm btn-outline-primary form-control mb-2 disabled font-weight-600"
                 v-else
               >CETAK SERTIFIKAT</router-link>
             </div>
@@ -153,6 +173,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
   computed: {
     userKelas: {
@@ -165,6 +186,12 @@ export default {
         return this.$store.state.user.kelas;
       }
     }
+  },
+  methods: {
+    ...mapActions(["loadKelas"])
+  },
+  created() {
+    this.loadKelas();
   }
 };
 </script>

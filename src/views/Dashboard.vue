@@ -13,6 +13,8 @@
 
           <router-link active-class="active" to="/dashboard/karya">Karyaku</router-link>
 
+          <router-link active-class="active" to="/dashboard/wishlist">Wishlist</router-link>
+
           <router-link active-class="active" to="/dashboard/kelas">Semua Kelas</router-link>
         </div>
         <div class="menu">

@@ -63,14 +63,22 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
   data() {
     return {
       login: true
     };
   },
-  computed: mapState(["cart", "wishlist", "user"])
+  computed: {
+    ...mapState(["cart", "wishlist", "user"])
+  },
+  methods: {
+    ...mapActions(["loadUser"])
+  },
+  created() {
+    this.loadUser();
+  }
 };
 </script>
 
