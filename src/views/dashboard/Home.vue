@@ -41,10 +41,10 @@
                 :to="'/kelas/' + user.slug"
                 class="btn mr-2 btn-sm btn-primary font-weight-600"
               >LANJUTKAN BELAJAR</router-link>
-              <div v-if="user.journey != ''">
+              <span v-if="user.journey != ''">
                 <router-link
                   to
-                  class="btn btn-sm btn-warning font-weight-600"
+                  class="btn btn-sm btn-warning font-weight-600 mr-2"
                   v-if="user.journey.video == journey[user.journey.index].materi.length"
                 >FEEDBACK</router-link>
                 <router-link
@@ -58,7 +58,7 @@
                   class="btn btn-sm btn-outline-primary disabled font-weight-600"
                   v-else
                 >CETAK SERTIFIKAT</router-link>
-              </div>
+              </span>
               <router-link
                 to
                 class="btn btn-sm btn-outline-primary disabled font-weight-600"

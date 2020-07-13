@@ -20,6 +20,7 @@ export default new Vuex.Store({
     benefit: [],
     keunggulan: [],
     listkupon: [],
+    login: false,
   },
   getters: {
     allKelas: (state) => state.kelas,
@@ -99,6 +100,7 @@ export default new Vuex.Store({
     setJourneyKelas(state, user) {
       state.user.kelas[user.index].journey = user;
     },
+    setLogin: (state, login) => (state.login = login),
   },
   modules: {},
 });
