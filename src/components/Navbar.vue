@@ -90,4 +90,11 @@ export default {
   top: -20px;
   left: -35px;
 }
+
+/* .login-nav {
+  flex: 1;
+  margin: auto !important;
+  display: flex;
+  justify-content: space-between;
+} */
 </style>

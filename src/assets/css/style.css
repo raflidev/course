@@ -145,7 +145,8 @@ aside.sidebar {
   margin: 24px auto;
 }
 .login-nav {
-  margin-left: 15rem;
+  position: absolute;
+  right: 0;
 }
 .deskripsi-kelas p {
   width: 475px;
@@ -170,9 +171,6 @@ aside.sidebar {
   background-color: #0f52e6;
   border: 1px solid #0f52e6;
 }
-/* .btn-outline-primary.disabled, .btn-outline-primary:disabled{
-  color: #000;
-} */
 .deskripsi-kelas .btn,
 .success.btn {
   font-weight: 600;
@@ -193,13 +191,11 @@ aside.sidebar {
   overflow: visible;
   overflow-x: hidden;
 }
-.list-group {
-  overflow: hidden;
-}
-
+.list-group,
 .video {
   overflow: hidden;
 }
+
 .profil-image {
   width: 50%;
 }
@@ -207,14 +203,12 @@ aside.sidebar {
   font-weight: 600;
 }
 
-.accord-icon {
+.accord-icon,
+.accord-materi {
   float: right;
 }
 .accord-icon-item {
   float: left;
-}
-.accord-materi {
-  float: right;
 }
 .item-fitur {
   width: 100%;
@@ -249,7 +243,7 @@ aside.sidebar {
 
 @media only screen and (max-width: 1125px) {
   .login-nav {
-    margin-left: 7rem;
+    position: relative;
   }
 }
 @media only screen and (max-width: 438px) {
@@ -260,7 +254,7 @@ aside.sidebar {
     font-size: 30px;
   }
   .login-nav {
-    margin: 0;
+    position: relative;
   }
   ul.navbar-nav.ml-5 {
     margin-left: 0 !important;
