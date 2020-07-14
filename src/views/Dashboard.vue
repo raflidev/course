@@ -3,9 +3,9 @@
     <aside class="sidebar d-none d-sm-block">
       <div class="card py-5">
         <div class="card-body text-center">
-          <img src="@/assets/logo.png" width="100" class="img-fluid pb-4" />
-          <h5>Rafli Ramadhan</h5>
-          <p>Web Developer</p>
+          <img :src="user.image" width="150" class="img-fluid rounded-circle pb-4" />
+          <h5>{{user.nama}}</h5>
+          <p>{{user.skill}}</p>
         </div>
         <div class="menu">
           <div class="list-menu-header">Progress Belajarku</div>
@@ -33,9 +33,9 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <img src="@/assets/logo.png" width="60" class="float-left mr-3" />
+            <img :src="user.image" width="60" class="float-left rounded-circle mr-3" />
             <div class="user-name">
-              <p class="mb-0">Rafli Ramadhan</p>
+              <p class="mb-0">{{user.nama}}</p>
               <p class="font-weight-light">Web Developer</p>
             </div>
             <router-link
@@ -104,8 +104,10 @@
 </template>
 
 <script>
-// import { mapActions } from "vuex";
-export default {};
+import { mapState } from "vuex";
+export default {
+  computed: mapState(["user"])
+};
 </script>
 <style>
 .sidebar .card {

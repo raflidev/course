@@ -21,34 +21,12 @@
           </div>
         </div>
       </div>
-      <!-- <div class="container">
-        <h4>Karya</h4>
-        <p>Berikan karya terbaik anda, karya anda akan diletakan dimading</p>
-        <div class="form-group">
-          <label>
-            Nama Project
-            <input type="text" name id class="form-control" />
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            Deskripsi
-            <input type="text" name id class="form-control" />
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            Link Karya
-            <input type="text" name id class="form-control" />
-          </label>
-        </div>
-      </div>-->
     </div>
   </main>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   data() {
     return {
@@ -56,11 +34,7 @@ export default {
     };
   },
   computed: {
-    // madingku: {
-    //   get() {
-    //     return this.$store.state.mading.penulis.includes("raflidev");
-    //   }
-    // },
+    ...mapState(["mading"]),
     user: {
       get() {
         return this.$store.state.user;
@@ -77,10 +51,9 @@ export default {
       });
     }
   },
-  mounted() {
-    this.cekmading();
-  },
+  mounted() {},
   created() {
+    this.cekmading();
     this.loadMading();
   }
 };

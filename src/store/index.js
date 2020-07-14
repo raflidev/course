@@ -85,6 +85,7 @@ export default new Vuex.Store({
   mutations: {
     setRoadmap: (state, roadmap) => (state.roadmap = roadmap),
     setMading: (state, mading) => (state.mading = mading),
+    addMading: (state, mading) => state.mading.push(mading),
     setWishlist: (state, wishlist) => (state.wishlist = wishlist),
     setKelas: (state, kelas) => (state.kelas = kelas),
     setSearch: (state, search) => (state.search = search),
