@@ -156,13 +156,13 @@
             <h4 class="title mt-4">Terakhir Dipelajari</h4>
             <p class="text-muted m-0">Ayo, selesaikan kelas</p>
           </div>
-          <div v-for="(history,index) in journey" :key="history.index">
+          <div class="col-lg-12" v-for="(history,index) in journey" :key="history.index">
             <div v-if="journey[index].journey != ''" class="item-kelas history border rounded px-4">
               <p class="font-weight-600 mb-0">{{history.journey.episode}}</p>
               <p class="text-muted mb-2">{{history.journey.nama}}</p>
               <router-link
                 :to="'/kelas/'+ history.journey.kelasslug +'/episode/'+history.journey.video"
-                class="btn mr-2 btn-sm btn-primary px-4 font-weight-600"
+                class="btn mr-2 btn-sm btn-primary px-4 font-weight-600 form-control"
               >LANJUT</router-link>
             </div>
           </div>

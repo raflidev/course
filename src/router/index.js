@@ -30,6 +30,7 @@ import {
   KaryaDashboard,
   UserDashboard,
   WishlistDashboard,
+  UpKaryaDashboard,
 } from "../views/dashboard/";
 
 Vue.use(VueRouter);
@@ -84,6 +85,11 @@ const routes = [
         meta: { hideNavigation: true },
       },
       {
+        path: "karya/up",
+        component: UpKaryaDashboard,
+        meta: { hideNavigation: true },
+      },
+      {
         path: "user",
         component: UserDashboard,
         meta: { hideNavigation: true },
@@ -133,7 +139,7 @@ const routes = [
     // },
   },
   {
-    path: "/mading/:id",
+    path: "/mading/:slug",
     name: "DetailMading",
     component: DetailMading,
   },

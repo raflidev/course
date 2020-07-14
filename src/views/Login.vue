@@ -41,7 +41,7 @@ export default {
     ...mapActions(["loadUser"]),
     aktifUser() {
       this.$store.commit("setLogin", true);
-      this.$router.push({ path: "/dashboard" });
+      this.$router.push({ path: "/" });
     }
   },
   created() {

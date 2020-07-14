@@ -16,9 +16,9 @@
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <div class="row justify-content-center">
-              <div class="col-lg-6 my-3" v-for="(mading, index) in mading" :key="mading.index">
+              <div class="col-lg-6 my-3" v-for="mading in mading" :key="mading.index">
                 <div class="card shadow-box">
-                  <a :href="'mading/' + index" class="stretched-link custom-card">
+                  <a :href="'mading/' + mading.slug" class="stretched-link custom-card">
                     <div class="card-body mading">
                       <h3 class="card-title line-height-1 mb-0 font-weight-600">{{ mading.nama }}</h3>
                       <p class="card-text">{{ mading.desc }}</p>
@@ -63,9 +63,10 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapState } from "vuex";
 export default {
   computed: {
+    ...mapState(["mading"]),
     mading: {
       get() {
         return this.$store.getters.getMading.filter(post => {

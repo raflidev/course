@@ -484,6 +484,7 @@
   "mading": [
     {
       "nama": "Aplikasi Perbankan",
+      "slug": "aplikasi-perbankan-rafliram",
       "desc": "Aplikasi khusus perbankan dan pengelohan data uang",
       "penulis": "rafliram",
       "link": "http://aplikasi-perbankan.com",
@@ -491,6 +492,7 @@
     },
     {
       "nama": "COVID-19 Counter",
+      "slug": "COVID-19-Counter-rafliram",
       "desc": "penghitung orang yang terjangkit virus",
       "penulis": "rafliram",
       "link": "https://covid19.go.id",
@@ -498,16 +500,18 @@
     },
     {
       "nama": "Cari Film",
+      "slug": "cari-film-rafliram",
       "desc": "Cara mudah untuk mencari film kesukaanmu",
       "link": "http://carifilm.herokuapp.com/",
-      "penulis": "rafliram",
+      "penulis": "raflidev",
       "waktu": "30 menit lalu"
     },
     {
       "nama": "Portal Berita",
+      "slug": "portal-berita-rafliram",
       "desc": "Cara mudah untuk mencari film kesukaanmu",
       "link": "http://detik.com/",
-      "penulis": "rafliram",
+      "penulis": "raflidev",
       "waktu": "30 menit lalu"
     }
   ],

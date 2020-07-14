@@ -238,10 +238,10 @@ aside.sidebar {
   color: #fff !important;
 }
 .item-kelas {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
-@media only screen and (max-width: 1125px) {
+@media only screen and (max-width: 1189px) {
   .login-nav {
     position: relative;
   }

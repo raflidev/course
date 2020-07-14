@@ -46,19 +46,22 @@
 </template>
 
 <script>
-import axios from "axios";
+import { mapActions } from "vuex";
 export default {
-  data() {
-    return {
-      mading: []
-    };
+  computed: {
+    mading: {
+      get() {
+        return this.$store.state.mading.find(post => {
+          return post.slug == this.$route.params.slug;
+        });
+      }
+    }
+  },
+  methods: {
+    ...mapActions(["loadMading"])
   },
   created() {
-    axios
-      .get("/api.json")
-      .then(
-        response => (this.mading = response.data.mading[this.$route.params.id])
-      );
+    this.loadMading();
   }
 };
 </script>

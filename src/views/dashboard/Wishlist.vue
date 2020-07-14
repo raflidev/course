@@ -5,7 +5,7 @@
         <h4>Wishlistku</h4>
         <p class="text-muted">Berikut ini adalah daftar wishlist anda</p>
         <div class="item-kelas border px-4" v-if="wishlist == ''">
-          <p>Anda belum mengikuti kelas apapun</p>
+          <p>Anda belum ada wishlist apapun</p>
         </div>
         <div class="row">
           <div class="col-lg-4" v-for="kelas in wishlist" :key="kelas.index">

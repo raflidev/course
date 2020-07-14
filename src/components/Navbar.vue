@@ -43,7 +43,7 @@
         <li class="nav-item login-nav">
           <router-link
             v-show="!login"
-            class="nav-link btn btn-dark"
+            class="nav-link btn btn-dark login"
             active-class="active"
             to="/login"
           >LOGIN</router-link>
@@ -66,7 +66,7 @@
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["cart", "wishlist", "user", "login"])
+    ...mapState(["cart", "wishlist", "user", "login", "mading"])
   }
 };
 </script>
