@@ -5,6 +5,7 @@ import {
   Home,
   Mading,
   User,
+  Mentor,
   Kelas,
   Login,
   Dashboard,
@@ -102,9 +103,14 @@ const routes = [
     component: Mading,
   },
   {
-    path: "/User/rafliram",
+    path: "/User/:username",
     name: "User",
     component: User,
+  },
+  {
+    path: "/Mentor/:username",
+    name: "Mentor",
+    component: Mentor,
   },
   {
     path: "/kelas",

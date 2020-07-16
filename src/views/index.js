@@ -1,6 +1,7 @@
 import Home from "./Home.vue";
 import Mading from "./Mading.vue";
 import User from "./User.vue";
+import Mentor from "./Mentor.vue";
 import Kelas from "./Kelas.vue";
 import Login from "./Login.vue";
 import Dashboard from "./Dashboard.vue";
@@ -15,6 +16,7 @@ export {
   Home,
   Mading,
   User,
+  Mentor,
   Kelas,
   Login,
   Dashboard,

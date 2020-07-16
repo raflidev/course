@@ -15,11 +15,10 @@
     </section>
     <section class="bg-white text-purple py-3">
       <div class="container">
-        <h4 class="text-center font-weight-600 py-4">Kelas yang diikuti</h4>
+        <h4 class="text-center font-weight-600 py-4">Kelas yang dibuat</h4>
         <div class="row justify-content-center">
           <div class="col-lg-9">
             <div class="row justify-content-center">
-              <p v-if="kelas.length == 0">belum mengikuti kelas apapun</p>
               <div class="col-lg-6 my-3" v-for="kelas in kelas" :key="kelas.index">
                 <Card
                   :image="kelas.image"
@@ -45,33 +44,13 @@ import { mapActions, mapState } from "vuex";
 export default {
   components: { Card },
   computed: {
-    ...mapState(["user", "kelas"]),
-    getUser: {
-      get() {
-        return this.user.username == this.$route.params.username;
-      }
-    },
-    getKelas: {
-      get() {
-        return this.user.kelas;
-      }
-    }
+    ...mapState(["kelas"])
   },
   methods: {
-    ...mapActions(["loadUser", "loadKelas"]),
-    checkUser() {
-      if (this.kelas.mentor == true) {
-        this.$router.push({ path: "/mentor/" + this.user.username });
-      }
-    }
-  },
-  mounted() {
-    this.checkUser();
+    ...mapActions(["loadKelas"])
   },
   created() {
-    this.loadUser();
     this.loadKelas();
-    this.checkUser();
   }
 };
 </script>
